@@ -82,7 +82,7 @@ public class VistaPrincipal extends JFrame {
 		
 		btnRegIni = new JButton("Registrar");
 		btnRegIni.setBackground(new Color(178, 34, 34));
-		btnRegIni.setBounds(765, 10, 84, 19);
+		btnRegIni.setBounds(753, 10, 96, 19);
 		contentPane.add(btnRegIni);
 
 	}
