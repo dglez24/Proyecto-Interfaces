@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VistaPrincipal extends JFrame {
 
@@ -49,23 +51,27 @@ public class VistaPrincipal extends JFrame {
 		contentPane.setLayout(null);
 		
 		Regis = new JPanel();
-		Regis.setBounds(235, 10, 382, 445);
+		Regis.setBounds(230, 12, 400, 450);
 		contentPane.add(Regis);
 		Regis.setLayout(null);
 		
 		btnRegistrar = new JButton("Registrar");
 		btnRegistrar.setBackground(new Color(255, 140, 0));
-		btnRegistrar.setBounds(62, 342, 113, 33);
+		btnRegistrar.setBounds(62, 342, 126, 33);
 		Regis.add(btnRegistrar);
 		
 		btnIniciar = new JButton("Iniciar Sesion");
+		btnIniciar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnIniciar.setBackground(new Color(255, 140, 0));
-		btnIniciar.setBounds(203, 342, 113, 33);
+		btnIniciar.setBounds(218, 342, 126, 33);
 		Regis.add(btnIniciar);
 		
 		btnAdmin = new JButton("Iniciar como Administrador");
 		btnAdmin.setBackground(new Color(255, 140, 0));
-		btnAdmin.setBounds(85, 385, 206, 46);
+		btnAdmin.setBounds(97, 385, 206, 46);
 		Regis.add(btnAdmin);
 		
 		panel = new JPanel();
