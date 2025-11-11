@@ -70,19 +70,19 @@ public class VistaPrincipal extends JFrame {
 		
 		panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 0));
-		panel.setBounds(0, 29, 859, 413);
+		panel.setBounds(0, 42, 859, 400);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		panel_1 = new JPanel();
 		panel_1.setBackground(new Color(255, 140, 0));
-		panel_1.setBounds(0, 22, 859, 370);
+		panel_1.setBounds(0, 22, 859, 357);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
 		btnRegIni = new JButton("Registrar");
 		btnRegIni.setBackground(new Color(178, 34, 34));
-		btnRegIni.setBounds(775, 0, 84, 29);
+		btnRegIni.setBounds(765, 10, 84, 19);
 		contentPane.add(btnRegIni);
 
 	}
