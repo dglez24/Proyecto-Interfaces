@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import controlador.Funcionalidad;
+
 public class VistaPrincipal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -19,6 +21,7 @@ public class VistaPrincipal extends JFrame {
 			public void run() {
 				try {
 					VistaPrincipal frame = new VistaPrincipal();
+					Funcionalidad funcionalidad = new Funcionalidad(frame);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
