@@ -63,62 +63,61 @@ public class Funcionalidad extends Thread implements ActionListener{
 				String correo2 = null;
 				
 				for (int i = 0; i < usuarios.size(); i++) {
-					System.out.println("0");
 					if(usuarios.get(i).getContra().equals(contra)) {
 						contra2 = contra;
-						System.out.println("1");
 					} 
 					if(usuarios.get(i).getCorreo().equals(correo)) {
 						correo2 = correo;
-						System.out.println("2");
 					} 
 				}
 				
-				if (contra2 == contra) {
-					System.out.println("3");
+				if (contra2 == contra && correo2 == correo) {
+
+					HiloCorreo h = new HiloCorreo(vista);
+					HiloContra h2 = new HiloContra(vista);
 					
-					HiloCorreo h = new HiloCorreo(frame);
+					h.start();
+					h2.start();
+					
+				} else if (correo2 == correo) {
+					
+					HiloCorreo h = new HiloCorreo(vista);
 					
 					h.start();
 					
-				} else if (correo2 == correo) {
-
-					System.out.println("4");
+				} else if (contra2 == contra ) {
+					HiloContra h = new HiloContra(vista);
 					
-				} else if (contra2 == contra && correo2 == correo) {
-					System.out.println("5");
-					
+					h.start();
 					
 				} else {
 					
 					if (vista.TFClave.isVisible()) {
-						System.out.println("6");
 						if(!vista.TFClave.getText().isEmpty()) {
 							if(vista.TFClave.getText().equals("5202")) {
-								System.out.println("7");
 								usuarios.add(new Administrador(nombre, apellidos, correo, contra));
 								Administrador a1 = new Administrador(nombre, apellidos, correo, contra);
 							} else {
+								vista.LblAvisoClave.setText("Clave Incorrecta");
+								HiloClave h = new HiloClave(vista);
 								
-								System.out.println("8");
+								h.start();
 								
 							}
 						}else {
-							System.out.println("9");
+							vista.LblAvisoClave.setText("Clave vacia");
 							
+							HiloClave h = new HiloClave(vista);
+							
+							h.start();
 						}
 						
 						
 						} else {
-							System.out.println("10");
 							usuarios.add(new Cliente(nombre, apellidos, correo, contra));
 							Cliente c1 = new Cliente(nombre, apellidos, correo, contra);
 
 						
-					}
-					
-					for (int i = 0; i < usuarios.size(); i++) {
-						System.out.println(usuarios.get(i).toString());
 					}
 				}
 				
@@ -127,7 +126,16 @@ public class Funcionalidad extends Thread implements ActionListener{
 				vista.TFCorreo.setText("");
 				vista.TFContra.setText("");
 				vista.TFClave.setText("");
+			} else {
+				
 			}
+		}
+		
+		
+		
+		
+		if(e.getSource() == vista.btnIniciar) {
+			
 		}
 		
 	}

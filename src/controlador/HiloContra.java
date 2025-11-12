@@ -2,15 +2,15 @@ package controlador;
 
 import vista.VistaPrincipal;
 
-public class HiloCorreo extends Thread{
+public class HiloContra extends Thread{
 	VistaPrincipal vista = new VistaPrincipal();
-	public HiloCorreo(VistaPrincipal frame) {
+	public HiloContra(VistaPrincipal frame) {
 		this.vista = frame;
 	}
 	
 	public void run() {
 
-			this.vista.PanelAvisoCorreo.setVisible(true);
+			this.vista.PanelAvisoContra.setVisible(true);
 			
 			try {
 				this.sleep(2000);
@@ -19,7 +19,7 @@ public class HiloCorreo extends Thread{
 				e.printStackTrace();
 			}
 			
-			this.vista.PanelAvisoCorreo.setVisible(false);
+			this.vista.PanelAvisoContra.setVisible(false);
 
 
 	}
