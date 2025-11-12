@@ -60,6 +60,8 @@ public class VistaPrincipal extends JFrame {
 	public JPanel PanelAvisoCorreo;
 	public JPanel PanelAvisoContra;
 	public JLabel LblAvisoContra;
+	public JPanel PanelAvisoClave;
+	public JLabel LblAvisoClave;
 	/**
 	 * Launch the application.
 	 */
@@ -103,7 +105,7 @@ public class VistaPrincipal extends JFrame {
 		btnRegistrar = new JButton("Registrar");
 		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnRegistrar.setBackground(new Color(255, 128, 64));
-		btnRegistrar.setBounds(49, 351, 126, 33);
+		btnRegistrar.setBounds(49, 364, 126, 26);
 		PanelRegistro.add(btnRegistrar);
 		
 		btnIniciar = new JButton("Iniciar Sesion");
@@ -113,13 +115,17 @@ public class VistaPrincipal extends JFrame {
 			}
 		});
 		btnIniciar.setBackground(new Color(255, 128, 64));
-		btnIniciar.setBounds(216, 351, 126, 33);
+		btnIniciar.setBounds(217, 364, 126, 26);
 		PanelRegistro.add(btnIniciar);
 		
 		btnAdmin = new JButton("Iniciar como Administrador");
+		btnAdmin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnAdmin.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnAdmin.setBackground(new Color(255, 128, 64));
-		btnAdmin.setBounds(89, 394, 206, 33);
+		btnAdmin.setBounds(89, 400, 206, 33);
 		PanelRegistro.add(btnAdmin);
 		
 	
@@ -143,6 +149,7 @@ public class VistaPrincipal extends JFrame {
 		PanelRegistro.add(PanelAvisoContra);
 		
 		LblAvisoContra = new JLabel("La Contraseña ya existe");
+		LblAvisoContra.setHorizontalAlignment(SwingConstants.CENTER);
 		LblAvisoContra.setForeground(new Color(209, 3, 3));
 		LblAvisoContra.setFont(new Font("Tahoma", Font.BOLD, 11));
 		LblAvisoContra.setBounds(2, 2, 132, 14);
@@ -247,10 +254,27 @@ public class VistaPrincipal extends JFrame {
 		TFClave.setBounds(172, 314, 170, 18);
 		PanelRegistro.add(TFClave);
 		
+		PanelAvisoClave = new JPanel();
+		PanelAvisoClave.setLayout(null);
+		PanelAvisoClave.setBackground(Color.WHITE);
+		PanelAvisoClave.setBounds(35, 336, 107, 18);
+		PanelRegistro.add(PanelAvisoClave);
+		
+		LblAvisoClave = new JLabel("Clave Incorrecta");
+		LblAvisoClave.setHorizontalAlignment(SwingConstants.CENTER);
+		LblAvisoClave.setForeground(new Color(209, 3, 3));
+		LblAvisoClave.setFont(new Font("Tahoma", Font.BOLD, 11));
+		LblAvisoClave.setBounds(2, 2, 102, 14);
+		PanelAvisoClave.add(LblAvisoClave);
+		
 		FotoFondoReg = new JLabel("");
 		FotoFondoReg.setBounds(10, 10, 360, 430);
 		PanelRegistro.add(FotoFondoReg);
 		FotoFondoReg.setIcon(new ImageIcon("Imagenes/FondoRegistro.png"));
+		
+
+		
+
 		
 
 		

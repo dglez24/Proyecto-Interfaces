@@ -4,11 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import modelo.Administrador;
 import modelo.Cliente;
 import modelo.Usuario;
 import vista.VistaPrincipal;
 
-public class Funcionalidad implements ActionListener{
+public class Funcionalidad extends Thread implements ActionListener{
 	
 	VistaPrincipal vista = new VistaPrincipal();
 	
@@ -24,6 +25,7 @@ public class Funcionalidad implements ActionListener{
 		vista.TFClave.setVisible(false);
 		vista.PanelAvisoCorreo.setVisible(false);
 		vista.PanelAvisoContra.setVisible(false);
+		vista.PanelAvisoClave.setVisible(false);
 
 	}
 
@@ -61,27 +63,70 @@ public class Funcionalidad implements ActionListener{
 				String correo2 = null;
 				
 				for (int i = 0; i < usuarios.size(); i++) {
-					if(usuarios.get(i).getContra() == contra) {
-						contra2 = usuarios.get(i).getContra();
+					System.out.println("0");
+					if(usuarios.get(i).getContra().equals(contra)) {
+						contra2 = contra;
+						System.out.println("1");
 					} 
-					if(usuarios.get(i).getCorreo() == correo) {
-						correo2 = usuarios.get(i).getCorreo();
+					if(usuarios.get(i).getCorreo().equals(correo)) {
+						correo2 = correo;
+						System.out.println("2");
 					} 
 				}
 				
 				if (contra2 == contra) {
+					System.out.println("3");
+					
+					HiloCorreo h = new HiloCorreo(frame);
+					
+					h.start();
 					
 				} else if (correo2 == correo) {
+
+					System.out.println("4");
 					
 				} else if (contra2 == contra && correo2 == correo) {
+					System.out.println("5");
+					
 					
 				} else {
-					if (!vista.TFClave.isVisible()) {
-						usuarios.add(new Cliente(nombre, apellidos, correo, contra));
-						Cliente c1 = new Cliente(nombre, apellidos, correo, contra);
+					
+					if (vista.TFClave.isVisible()) {
+						System.out.println("6");
+						if(!vista.TFClave.getText().isEmpty()) {
+							if(vista.TFClave.getText().equals("5202")) {
+								System.out.println("7");
+								usuarios.add(new Administrador(nombre, apellidos, correo, contra));
+								Administrador a1 = new Administrador(nombre, apellidos, correo, contra);
+							} else {
+								
+								System.out.println("8");
+								
+							}
+						}else {
+							System.out.println("9");
+							
+						}
+						
+						
+						} else {
+							System.out.println("10");
+							usuarios.add(new Cliente(nombre, apellidos, correo, contra));
+							Cliente c1 = new Cliente(nombre, apellidos, correo, contra);
+
 						
 					}
+					
+					for (int i = 0; i < usuarios.size(); i++) {
+						System.out.println(usuarios.get(i).toString());
+					}
 				}
+				
+				vista.TFNombre.setText("");
+				vista.TFApellidos.setText("");
+				vista.TFCorreo.setText("");
+				vista.TFContra.setText("");
+				vista.TFClave.setText("");
 			}
 		}
 		
