@@ -53,6 +53,9 @@ public class Funcionalidad extends Thread implements ActionListener{
 		}
 		
 		if(e.getSource() == vista.btnRegistrar) {
+			
+			
+			
 			if(!vista.TFNombre.getText().isEmpty() && !vista.TFApellidos.getText().isEmpty() && !vista.TFCorreo.getText().isEmpty() && !vista.TFContra.getText().isEmpty()) {
 				
 				String nombre = vista.TFNombre.getText();
@@ -135,6 +138,10 @@ public class Funcionalidad extends Thread implements ActionListener{
 		
 		
 		if(e.getSource() == vista.btnIniciar) {
+			
+			if(vista.TFNombre.isVisible()) {
+				
+			}
 			
 		}
 		
