@@ -156,6 +156,7 @@ public class VistaPrincipal extends JFrame {
 		PanelAvisoContra.add(LblAvisoContra);
 		
 		LblAvisoCorreo = new JLabel("El Correo ya existe");
+		LblAvisoCorreo.setHorizontalAlignment(SwingConstants.CENTER);
 		LblAvisoCorreo.setBounds(2, 2, 102, 14);
 		PanelAvisoCorreo.add(LblAvisoCorreo);
 		LblAvisoCorreo.setForeground(new Color(209, 3, 3));

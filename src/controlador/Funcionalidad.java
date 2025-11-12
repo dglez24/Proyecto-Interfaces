@@ -54,9 +54,28 @@ public class Funcionalidad extends Thread implements ActionListener{
 		
 		if(e.getSource() == vista.btnRegistrar) {
 			
-			
-			
-			if(!vista.TFNombre.getText().isEmpty() && !vista.TFApellidos.getText().isEmpty() && !vista.TFCorreo.getText().isEmpty() && !vista.TFContra.getText().isEmpty()) {
+			if (!vista.TFNombre.isVisible()) {
+				
+				vista.TFNombre.setVisible(true);
+				vista.TFApellidos.setVisible(true);
+				vista.btnAdmin.setVisible(true);
+				vista.PNombre.setVisible(true);
+				vista.PApellidos.setVisible(true);
+				
+				vista.TFNombre.setText("");
+				vista.TFApellidos.setText("");
+				vista.TFCorreo.setText("");
+				vista.TFContra.setText("");
+				vista.TFClave.setText("");
+				
+				vista.PCorreo.setBounds(49, 207, 105, 17);
+				vista.TFCorreo.setBounds(172, 207, 170, 18);
+				vista.PContra.setBounds(49, 262, 105, 17);
+				vista.TFContra.setBounds(172, 262, 170, 18);
+				vista.PanelAvisoCorreo.setBounds(35, 234, 107, 18);
+				vista.PanelAvisoContra.setBounds(35, 287, 137, 18);
+				
+			} else if(!vista.TFNombre.getText().isEmpty() && !vista.TFApellidos.getText().isEmpty() && !vista.TFCorreo.getText().isEmpty() && !vista.TFContra.getText().isEmpty()) {
 				
 				String nombre = vista.TFNombre.getText();
 				String apellidos = vista.TFApellidos.getText();
@@ -75,6 +94,9 @@ public class Funcionalidad extends Thread implements ActionListener{
 				}
 				
 				if (contra2 == contra && correo2 == correo) {
+					
+					this.vista.LblAvisoContra.setText("La Contraseña ya existe");
+					this.vista.LblAvisoCorreo.setText("El correo ya existe");
 
 					HiloCorreo h = new HiloCorreo(vista);
 					HiloContra h2 = new HiloContra(vista);
@@ -83,12 +105,15 @@ public class Funcionalidad extends Thread implements ActionListener{
 					h2.start();
 					
 				} else if (correo2 == correo) {
+					this.vista.LblAvisoCorreo.setText("El correo ya existe");
 					
 					HiloCorreo h = new HiloCorreo(vista);
 					
 					h.start();
 					
 				} else if (contra2 == contra ) {
+					this.vista.LblAvisoContra.setText("La Contraseña ya existe");
+					
 					HiloContra h = new HiloContra(vista);
 					
 					h.start();
@@ -100,6 +125,8 @@ public class Funcionalidad extends Thread implements ActionListener{
 							if(vista.TFClave.getText().equals("5202")) {
 								usuarios.add(new Administrador(nombre, apellidos, correo, contra));
 								Administrador a1 = new Administrador(nombre, apellidos, correo, contra);
+								
+								vista.PanelRegistro.setVisible(false);
 							} else {
 								vista.LblAvisoClave.setText("Clave Incorrecta");
 								HiloClave h = new HiloClave(vista);
@@ -120,7 +147,7 @@ public class Funcionalidad extends Thread implements ActionListener{
 							usuarios.add(new Cliente(nombre, apellidos, correo, contra));
 							Cliente c1 = new Cliente(nombre, apellidos, correo, contra);
 
-						
+							vista.PanelRegistro.setVisible(false);
 					}
 				}
 				
@@ -130,7 +157,7 @@ public class Funcionalidad extends Thread implements ActionListener{
 				vista.TFContra.setText("");
 				vista.TFClave.setText("");
 			} else {
-				
+				//sonido
 			}
 		}
 		
@@ -139,7 +166,94 @@ public class Funcionalidad extends Thread implements ActionListener{
 		
 		if(e.getSource() == vista.btnIniciar) {
 			
+			
+			
 			if(vista.TFNombre.isVisible()) {
+				vista.TFNombre.setVisible(false);
+				vista.TFApellidos.setVisible(false);
+				vista.btnAdmin.setVisible(false);
+				vista.PNombre.setVisible(false);
+				vista.PApellidos.setVisible(false);
+				vista.PClave.setVisible(false);
+				vista.TFClave.setVisible(false);
+				
+				vista.TFNombre.setText("");
+				vista.TFApellidos.setText("");
+				vista.TFCorreo.setText("");
+				vista.TFContra.setText("");
+				vista.TFClave.setText("");
+				
+				vista.PanelAvisoCorreo.setBounds(35, 180, 107, 18);
+				vista.PanelAvisoContra.setBounds(35, 234, 137, 18);
+				vista.PCorreo.setBounds(49, 154, 105, 17);
+				vista.TFCorreo.setBounds(172, 154, 170, 18);
+				vista.PContra.setBounds(49, 207, 105, 17);
+				vista.TFContra.setBounds(172, 207, 170, 18);
+				
+			} else {
+				String correo = null;
+				String contra = null;
+
+				
+				for(int i = 0; i< usuarios.size(); i++) {
+					
+					if(vista.TFCorreo.getText().equals(usuarios.get(i).getCorreo())) {
+						correo = usuarios.get(i).getCorreo();
+					}
+					if (vista.TFContra.getText().equals(usuarios.get(i).getContra())) {
+						contra = usuarios.get(i).getContra();
+					}
+				}
+				
+				
+				if (vista.TFCorreo.getText().equals(correo) && vista.TFContra.getText().equals(contra)) {
+					for(int i = 0; i < usuarios.size(); i++) {
+						if(usuarios.get(i).getContra() == contra && usuarios.get(i).getCorreo() == correo && usuarios.get(i).isAdmin()) {
+							Administrador a1 = new Administrador(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
+							this.vista.PanelRegistro.setVisible(false);
+						} else {
+							Cliente a1 = new Cliente(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
+							this.vista.PanelRegistro.setVisible(false);
+						}
+					}
+					
+					
+				}else if(vista.TFCorreo.getText().isEmpty() || vista.TFContra.getText().isEmpty()) {
+					
+					//sonido
+					
+				}else if (!vista.TFCorreo.getText().equals(correo) && !vista.TFContra.getText().equals(contra)) {
+					
+					this.vista.LblAvisoContra.setText("Contraseña incorrecta");
+					this.vista.LblAvisoCorreo.setText("Correo incorrecto");
+
+					HiloCorreo h = new HiloCorreo(vista);
+					HiloContra h2 = new HiloContra(vista);
+					
+					h.start();
+					h2.start();
+					
+				} else if (!vista.TFCorreo.getText().equals(correo)) {
+					this.vista.LblAvisoCorreo.setText("Correo incorrecto");
+					
+					HiloCorreo h = new HiloCorreo(vista);
+					
+					h.start();
+					
+				} else if (!vista.TFContra.getText().equals(contra)) {
+					this.vista.LblAvisoContra.setText("Contraseña incorrecta");
+					
+					HiloContra h = new HiloContra(vista);
+					
+					h.start();
+					
+				} 
+
+
+				vista.TFCorreo.setText("");
+				vista.TFContra.setText("");
+
+				
 				
 			}
 			
