@@ -13,10 +13,19 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.LineBorder;
+
+import controlador.Funcionalidad;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JTextField;
+import java.awt.GridLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.FlowLayout;
+import java.awt.BorderLayout;
+import javax.swing.BoxLayout;
 
 public class VistaPrincipal extends JFrame {
 
@@ -44,7 +53,13 @@ public class VistaPrincipal extends JFrame {
 	public JLabel LblApellidos;
 	public JLabel LblCorreo;
 	public JLabel LblContrasea;
-
+	public JPanel PClave;
+	public JLabel LblClave;
+	public JTextField TFClave;
+	public JLabel LblAvisoCorreo;
+	public JPanel PanelAvisoCorreo;
+	public JPanel PanelAvisoContra;
+	public JLabel LblAvisoContra;
 	/**
 	 * Launch the application.
 	 */
@@ -53,6 +68,7 @@ public class VistaPrincipal extends JFrame {
 			public void run() {
 				try {
 					VistaPrincipal frame = new VistaPrincipal();
+					Funcionalidad funcionalidad = new Funcionalidad(frame);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -65,11 +81,14 @@ public class VistaPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public VistaPrincipal() {
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 873, 512);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(128, 64, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
 		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -82,30 +101,58 @@ public class VistaPrincipal extends JFrame {
 		PanelRegistro.setLayout(null);
 		
 		btnRegistrar = new JButton("Registrar");
+		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnRegistrar.setBackground(new Color(255, 128, 64));
-		btnRegistrar.setBounds(49, 342, 126, 33);
+		btnRegistrar.setBounds(49, 351, 126, 33);
 		PanelRegistro.add(btnRegistrar);
 		
 		btnIniciar = new JButton("Iniciar Sesion");
+		btnIniciar.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnIniciar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		btnIniciar.setBackground(new Color(255, 128, 64));
-		btnIniciar.setBounds(216, 342, 126, 33);
+		btnIniciar.setBounds(216, 351, 126, 33);
 		PanelRegistro.add(btnIniciar);
 		
 		btnAdmin = new JButton("Iniciar como Administrador");
+		btnAdmin.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnAdmin.setBackground(new Color(255, 128, 64));
-		btnAdmin.setBounds(87, 385, 206, 46);
+		btnAdmin.setBounds(89, 394, 206, 33);
 		PanelRegistro.add(btnAdmin);
 		
 	
 		
 		PanelTituloReg = new JPanel();
+		PanelTituloReg.setBackground(new Color(255, 255, 255));
 		PanelTituloReg.setBounds(49, 27, 293, 53);
 		PanelRegistro.add(PanelTituloReg);
 		PanelTituloReg.setLayout(null);
+		
+		PanelAvisoCorreo = new JPanel();
+		PanelAvisoCorreo.setBackground(new Color(255, 255, 255));
+		PanelAvisoCorreo.setBounds(35, 234, 107, 18);
+		PanelRegistro.add(PanelAvisoCorreo);
+		PanelAvisoCorreo.setLayout(null);
+		
+		PanelAvisoContra = new JPanel();
+		PanelAvisoContra.setLayout(null);
+		PanelAvisoContra.setBackground(Color.WHITE);
+		PanelAvisoContra.setBounds(35, 287, 137, 18);
+		PanelRegistro.add(PanelAvisoContra);
+		
+		LblAvisoContra = new JLabel("La Contraseña ya existe");
+		LblAvisoContra.setForeground(new Color(209, 3, 3));
+		LblAvisoContra.setFont(new Font("Tahoma", Font.BOLD, 11));
+		LblAvisoContra.setBounds(2, 2, 132, 14);
+		PanelAvisoContra.add(LblAvisoContra);
+		
+		LblAvisoCorreo = new JLabel("El Correo ya existe");
+		LblAvisoCorreo.setBounds(2, 2, 102, 14);
+		PanelAvisoCorreo.add(LblAvisoCorreo);
+		LblAvisoCorreo.setForeground(new Color(209, 3, 3));
+		LblAvisoCorreo.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
 		lblNewLabel = new JLabel("Registro");
 		lblNewLabel.setFont(new Font("Times New Roman", Font.ITALIC, 25));
@@ -113,10 +160,9 @@ public class VistaPrincipal extends JFrame {
 		lblNewLabel.setBounds(0, 0, 293, 53);
 		PanelTituloReg.add(lblNewLabel);
 		
-
-		
 		PNombre = new JPanel();
-		PNombre.setBounds(49, 122, 105, 17);
+		PNombre.setBackground(new Color(255, 255, 255));
+		PNombre.setBounds(49, 102, 105, 17);
 		PanelRegistro.add(PNombre);
 		PNombre.setLayout(null);
 		
@@ -127,7 +173,8 @@ public class VistaPrincipal extends JFrame {
 		PNombre.add(LblNombre);
 		
 		PApellidos = new JPanel();
-		PApellidos.setBounds(49, 174, 105, 17);
+		PApellidos.setBackground(new Color(255, 255, 255));
+		PApellidos.setBounds(49, 154, 105, 17);
 		PanelRegistro.add(PApellidos);
 		PApellidos.setLayout(null);
 		
@@ -138,7 +185,8 @@ public class VistaPrincipal extends JFrame {
 		PApellidos.add(LblApellidos);
 		
 		PCorreo = new JPanel();
-		PCorreo.setBounds(49, 227, 105, 17);
+		PCorreo.setBackground(new Color(255, 255, 255));
+		PCorreo.setBounds(49, 207, 105, 17);
 		PanelRegistro.add(PCorreo);
 		PCorreo.setLayout(null);
 		
@@ -149,7 +197,8 @@ public class VistaPrincipal extends JFrame {
 		PCorreo.add(LblCorreo);
 		
 		PContra = new JPanel();
-		PContra.setBounds(49, 282, 105, 17);
+		PContra.setBackground(new Color(255, 255, 255));
+		PContra.setBounds(49, 262, 105, 17);
 		PanelRegistro.add(PContra);
 		PContra.setLayout(null);
 		
@@ -159,30 +208,59 @@ public class VistaPrincipal extends JFrame {
 		LblContrasea.setBounds(0, 0, 105, 18);
 		PContra.add(LblContrasea);
 		
+		PClave = new JPanel();
+		PClave.setBackground(new Color(255, 255, 255));
+		PClave.setLayout(null);
+		PClave.setBounds(49, 315, 105, 17);
+		PanelRegistro.add(PClave);
+		
+		LblClave = new JLabel("Clave");
+		LblClave.setHorizontalAlignment(SwingConstants.CENTER);
+		LblClave.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		LblClave.setBounds(0, 0, 105, 18);
+		PClave.add(LblClave);
+		
 		TFNombre = new JTextField();
-		TFNombre.setBounds(172, 121, 170, 18);
+		TFNombre.setBounds(172, 102, 170, 18);
 		PanelRegistro.add(TFNombre);
 		TFNombre.setColumns(10);
 		
 		TFApellidos = new JTextField();
 		TFApellidos.setColumns(10);
-		TFApellidos.setBounds(172, 173, 170, 18);
+		TFApellidos.setBounds(172, 154, 170, 18);
 		PanelRegistro.add(TFApellidos);
 		
 		TFCorreo = new JTextField();
 		TFCorreo.setColumns(10);
-		TFCorreo.setBounds(172, 226, 170, 18);
+		TFCorreo.setBounds(172, 207, 170, 18);
 		PanelRegistro.add(TFCorreo);
 		
 		TFContra = new JTextField();
 		TFContra.setColumns(10);
-		TFContra.setBounds(172, 281, 170, 18);
+		TFContra.setBounds(172, 262, 170, 18);
 		PanelRegistro.add(TFContra);
+		
+
+		
+		TFClave = new JTextField();
+		TFClave.setColumns(10);
+		TFClave.setBounds(172, 314, 170, 18);
+		PanelRegistro.add(TFClave);
 		
 		FotoFondoReg = new JLabel("");
 		FotoFondoReg.setBounds(10, 10, 360, 430);
 		PanelRegistro.add(FotoFondoReg);
 		FotoFondoReg.setIcon(new ImageIcon("Imagenes/FondoRegistro.png"));
+		
+
+		
+
+		
+	
+		
+
+		
+
 		
 		panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 81));
