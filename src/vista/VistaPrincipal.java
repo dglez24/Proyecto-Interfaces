@@ -62,6 +62,16 @@ public class VistaPrincipal extends JFrame {
 	public JLabel LblAvisoContra;
 	public JPanel PanelAvisoClave;
 	public JLabel LblAvisoClave;
+	public JButton BTNHamburguesa;
+	public JButton BTNComponentes;
+	public JButton BTNBebidas;
+	public JButton BTNPostres;
+	public JButton BTNPromociones;
+	public JButton BTNMenu;
+	public JPanel POferta;
+	public JPanel PLogo;
+	public JLabel FotoLogo;
+	public JLabel LblSaludo;
 	/**
 	 * Launch the application.
 	 */
@@ -95,12 +105,115 @@ public class VistaPrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
 		PanelRegistro = new JPanel();
-		PanelRegistro.setBackground(new Color(192, 192, 192));
-		PanelRegistro.setBorder(new LineBorder(new Color(0, 0, 0), 5));
 		PanelRegistro.setBounds(235, 12, 380, 450);
 		contentPane.add(PanelRegistro);
+		PanelRegistro.setBackground(new Color(192, 192, 192));
+		PanelRegistro.setBorder(new LineBorder(new Color(0, 0, 0), 5));
 		PanelRegistro.setLayout(null);
+		/*235, 12, 380, 450*/
+
+		
+
+		
+		panel = new JPanel();
+		panel.setBackground(new Color(255, 255, 81));
+		panel.setBounds(0, 42, 859, 400);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		panel_1 = new JPanel();
+		panel_1.setBackground(new Color(255, 128, 64));
+		panel_1.setBounds(0, 22, 859, 357);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+
+		
+		btnRegIni = new JButton("Registrar");
+		btnRegIni.setBackground(new Color(178, 34, 34));
+		btnRegIni.setBounds(753, 10, 96, 19);
+		contentPane.add(btnRegIni);
+		
+
+		
+		BTNHamburguesa = new JButton("Hamburguesas");
+		BTNHamburguesa.setBackground(new Color(255, 255, 255));
+		BTNHamburguesa.setOpaque(false);
+		BTNHamburguesa.setBorderPainted(false);
+		BTNHamburguesa.setFont(new Font("Tahoma", Font.BOLD, 18));
+		BTNHamburguesa.setHorizontalAlignment(SwingConstants.LEFT);
+		BTNHamburguesa.setBounds(37, 74, 186, 37);
+		panel_1.add(BTNHamburguesa);
+		
+		BTNComponentes = new JButton("Componentes");
+		BTNComponentes.setBackground(new Color(255, 255, 255));
+		BTNComponentes.setOpaque(false);
+		BTNComponentes.setBorderPainted(false);
+		BTNComponentes.setFont(new Font("Tahoma", Font.BOLD, 18));
+		BTNComponentes.setHorizontalAlignment(SwingConstants.LEFT);
+		BTNComponentes.setBounds(37, 121, 173, 37);
+		panel_1.add(BTNComponentes);
+		
+		BTNBebidas = new JButton("Bebidas");
+		BTNBebidas.setBackground(new Color(255, 255, 255));
+		BTNBebidas.setOpaque(false);
+		BTNBebidas.setBorderPainted(false);
+		BTNBebidas.setFont(new Font("Tahoma", Font.BOLD, 18));
+		BTNBebidas.setHorizontalAlignment(SwingConstants.LEFT);
+		BTNBebidas.setBounds(37, 168, 119, 37);
+		panel_1.add(BTNBebidas);
+		
+		BTNPostres = new JButton("Postres");
+		BTNPostres.setBackground(new Color(255, 255, 255));
+		BTNPostres.setOpaque(false);
+		BTNPostres.setBorderPainted(false);
+		BTNPostres.setFont(new Font("Tahoma", Font.BOLD, 18));
+		BTNPostres.setHorizontalAlignment(SwingConstants.LEFT);
+		BTNPostres.setBounds(37, 215, 107, 37);
+		panel_1.add(BTNPostres);
+		
+		BTNPromociones = new JButton("Promociones");
+		BTNPromociones.setBackground(new Color(255, 255, 255));
+		BTNPromociones.setOpaque(false);
+		BTNPromociones.setBorderPainted(false);
+		BTNPromociones.setFont(new Font("Tahoma", Font.BOLD, 18));
+		BTNPromociones.setHorizontalAlignment(SwingConstants.LEFT);
+		BTNPromociones.setBounds(37, 262, 157, 37);
+		panel_1.add(BTNPromociones);
+		
+		BTNMenu = new JButton("Menu");
+		BTNMenu.setBackground(new Color(255, 255, 255));
+		BTNMenu.setOpaque(false);
+		BTNMenu.setBorderPainted(false);
+		BTNMenu.setFont(new Font("Tahoma", Font.BOLD, 18));
+		BTNMenu.setHorizontalAlignment(SwingConstants.LEFT);
+		BTNMenu.setBounds(37, 27, 95, 37);
+		panel_1.add(BTNMenu);
+		
+		POferta = new JPanel();
+		POferta.setBackground(new Color(255, 115, 47));
+		POferta.setBounds(302, 102, 362, 198);
+		panel_1.add(POferta);
+		POferta.setLayout(null);
+		
+		PLogo = new JPanel();
+		PLogo.setBackground(new Color(255, 115, 47));
+		PLogo.setBounds(706, 7, 143, 143);
+		panel_1.add(PLogo);
+		PLogo.setLayout(null);
+		
+		FotoLogo = new JLabel("");
+		FotoLogo.setBounds(10, 10, 123, 123);
+		PLogo.add(FotoLogo);
+		FotoLogo.setIcon(new ImageIcon("Imagenes/LogoTrabajo.png"));
+		
+		LblSaludo = new JLabel("");
+		LblSaludo.setFont(new Font("Tahoma", Font.BOLD, 25));
+		LblSaludo.setHorizontalAlignment(SwingConstants.CENTER);
+		LblSaludo.setBounds(235, 10, 429, 37);
+		panel_1.add(LblSaludo);
 		
 		btnRegistrar = new JButton("Registrar");
 		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -110,19 +223,11 @@ public class VistaPrincipal extends JFrame {
 		
 		btnIniciar = new JButton("Iniciar Sesion");
 		btnIniciar.setFont(new Font("Tahoma", Font.BOLD, 10));
-		btnIniciar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnIniciar.setBackground(new Color(255, 128, 64));
 		btnIniciar.setBounds(217, 364, 126, 26);
 		PanelRegistro.add(btnIniciar);
 		
 		btnAdmin = new JButton("Iniciar como Administrador");
-		btnAdmin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnAdmin.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnAdmin.setBackground(new Color(255, 128, 64));
 		btnAdmin.setBounds(89, 400, 206, 33);
@@ -272,37 +377,6 @@ public class VistaPrincipal extends JFrame {
 		FotoFondoReg.setBounds(10, 10, 360, 430);
 		PanelRegistro.add(FotoFondoReg);
 		FotoFondoReg.setIcon(new ImageIcon("Imagenes/FondoRegistro.png"));
-		
-
-		
-
-		
-
-		
-
-		
-	
-		
-
-		
-
-		
-		panel = new JPanel();
-		panel.setBackground(new Color(255, 255, 81));
-		panel.setBounds(0, 42, 859, 400);
-		contentPane.add(panel);
-		panel.setLayout(null);
-		
-		panel_1 = new JPanel();
-		panel_1.setBackground(new Color(255, 128, 64));
-		panel_1.setBounds(0, 22, 859, 357);
-		panel.add(panel_1);
-		panel_1.setLayout(null);
-		
-		btnRegIni = new JButton("Registrar");
-		btnRegIni.setBackground(new Color(178, 34, 34));
-		btnRegIni.setBounds(753, 10, 96, 19);
-		contentPane.add(btnRegIni);
 
 	}
 }

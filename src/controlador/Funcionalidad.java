@@ -21,12 +21,30 @@ public class Funcionalidad extends Thread implements ActionListener{
 		vista.btnAdmin.addActionListener(this);
 		vista.btnIniciar.addActionListener(this);
 		vista.btnRegistrar.addActionListener(this);
+		vista.BTNMenu.addActionListener(this);
+		vista.BTNHamburguesa.addActionListener(this);
+		vista.BTNBebidas.addActionListener(this);
+		vista.BTNComponentes.addActionListener(this);
+		vista.BTNPostres.addActionListener(this);
+		vista.BTNPromociones.addActionListener(this);
+		
+		
+		
 		vista.PClave.setVisible(false);
 		vista.TFClave.setVisible(false);
 		vista.PanelAvisoCorreo.setVisible(false);
 		vista.PanelAvisoContra.setVisible(false);
 		vista.PanelAvisoClave.setVisible(false);
-
+		
+		vista.BTNMenu.setVisible(false);
+		vista.BTNHamburguesa.setVisible(false);
+		vista.BTNBebidas.setVisible(false);
+		vista.BTNComponentes.setVisible(false);
+		vista.BTNPostres.setVisible(false);
+		vista.BTNPromociones.setVisible(false);
+		vista.POferta.setVisible(false);
+		vista.PLogo.setVisible(false);
+		vista.btnRegIni.setVisible(false);
 	}
 
 
@@ -148,6 +166,16 @@ public class Funcionalidad extends Thread implements ActionListener{
 							Cliente c1 = new Cliente(nombre, apellidos, correo, contra);
 
 							vista.PanelRegistro.setVisible(false);
+							vista.BTNMenu.setVisible(true);
+							vista.BTNHamburguesa.setVisible(true);
+							vista.BTNBebidas.setVisible(true);
+							vista.BTNComponentes.setVisible(true);
+							vista.BTNPostres.setVisible(true);
+							vista.BTNPromociones.setVisible(true);
+							vista.POferta.setVisible(true);
+							vista.PLogo.setVisible(true);
+							vista.btnRegIni.setVisible(true);
+							vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
 					}
 				}
 				
@@ -212,8 +240,18 @@ public class Funcionalidad extends Thread implements ActionListener{
 							Administrador a1 = new Administrador(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
 							this.vista.PanelRegistro.setVisible(false);
 						} else {
-							Cliente a1 = new Cliente(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
+							Cliente c1 = new Cliente(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
 							this.vista.PanelRegistro.setVisible(false);
+							vista.BTNMenu.setVisible(true);
+							vista.BTNHamburguesa.setVisible(true);
+							vista.BTNBebidas.setVisible(true);
+							vista.BTNComponentes.setVisible(true);
+							vista.BTNPostres.setVisible(true);
+							vista.BTNPromociones.setVisible(true);
+							vista.POferta.setVisible(true);
+							vista.PLogo.setVisible(true);
+							vista.btnRegIni.setVisible(true);
+							vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
 						}
 					}
 					
