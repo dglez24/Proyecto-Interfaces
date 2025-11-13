@@ -45,6 +45,13 @@ public class Funcionalidad extends Thread implements ActionListener{
 		vista.POferta.setVisible(false);
 		vista.PLogo.setVisible(false);
 		vista.btnRegIni.setVisible(false);
+		vista.PanelMenu.setVisible(false);
+		vista.PanelHamburguesa.setVisible(false);
+		vista.PanelComponentes.setVisible(false);
+		vista.PanelPostres.setVisible(false);
+		vista.PanelPromocion.setVisible(false);
+		vista.PanelBebida.setVisible(false);
+		
 	}
 
 
@@ -297,9 +304,75 @@ public class Funcionalidad extends Thread implements ActionListener{
 			
 		}
 		
+		
+		
+		if(e.getSource() == vista.BTNMenu) {
+			vista.PanelMenu.setVisible(true);
+			vista.BTNMenu.setVisible(false);
+			vista.BTNHamburguesa.setVisible(false);
+			vista.BTNBebidas.setVisible(false);
+			vista.BTNComponentes.setVisible(false);
+			vista.BTNPostres.setVisible(false);
+			vista.BTNPromociones.setVisible(false);
+			vista.btnRegIni.setVisible(false);
+		}
+		
+		if(e.getSource() == vista.BTNHamburguesa) {
+			vista.PanelHamburguesa.setVisible(true);
+			vista.BTNMenu.setVisible(false);
+			vista.BTNHamburguesa.setVisible(false);
+			vista.BTNBebidas.setVisible(false);
+			vista.BTNComponentes.setVisible(false);
+			vista.BTNPostres.setVisible(false);
+			vista.BTNPromociones.setVisible(false);
+			vista.btnRegIni.setVisible(false);
+		}
+		
+		if(e.getSource() == vista.BTNBebidas) {
+			vista.PanelBebida.setVisible(true);
+			vista.BTNMenu.setVisible(false);
+			vista.BTNHamburguesa.setVisible(false);
+			vista.BTNBebidas.setVisible(false);
+			vista.BTNComponentes.setVisible(false);
+			vista.BTNPostres.setVisible(false);
+			vista.BTNPromociones.setVisible(false);
+			vista.btnRegIni.setVisible(false);
+		}
+		
+		if(e.getSource() == vista.BTNComponentes) {
+			vista.PanelComponentes.setVisible(true);
+			vista.BTNMenu.setVisible(false);
+			vista.BTNHamburguesa.setVisible(false);
+			vista.BTNBebidas.setVisible(false);
+			vista.BTNComponentes.setVisible(false);
+			vista.BTNPostres.setVisible(false);
+			vista.BTNPromociones.setVisible(false);
+			vista.btnRegIni.setVisible(false);
+		}
+		
+		if(e.getSource() == vista.BTNPostres) {
+			vista.PanelPostres.setVisible(true);
+			vista.BTNMenu.setVisible(false);
+			vista.BTNHamburguesa.setVisible(false);
+			vista.BTNBebidas.setVisible(false);
+			vista.BTNComponentes.setVisible(false);
+			vista.BTNPostres.setVisible(false);
+			vista.BTNPromociones.setVisible(false);
+			vista.btnRegIni.setVisible(false);
+		}
+		
+		if(e.getSource() == vista.BTNPromociones) {
+			vista.PanelPromocion.setVisible(true);
+			vista.BTNMenu.setVisible(false);
+			vista.BTNHamburguesa.setVisible(false);
+			vista.BTNBebidas.setVisible(false);
+			vista.BTNComponentes.setVisible(false);
+			vista.BTNPostres.setVisible(false);
+			vista.BTNPromociones.setVisible(false);
+			vista.btnRegIni.setVisible(false);
+		}
+		
 	}
 
 }
 
-
-/*Contraseña : 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*/ 

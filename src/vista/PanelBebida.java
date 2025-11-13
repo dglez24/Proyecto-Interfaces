@@ -10,6 +10,7 @@ public class PanelBebida extends JPanel {
 	 * Create the panel.
 	 */
 	public PanelBebida() {
+		setLayout(null);
 
 	}
 

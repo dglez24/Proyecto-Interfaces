@@ -72,6 +72,12 @@ public class VistaPrincipal extends JFrame {
 	public JPanel PLogo;
 	public JLabel FotoLogo;
 	public JLabel LblSaludo;
+	public PanelMenu PanelMenu;
+	public PanelHamburguesa PanelHamburguesa;
+	public PanelComponentes PanelComponentes;
+	public PanelBebida PanelBebida;
+	public PanelPostres PanelPostres;
+	public PanelPromocion PanelPromocion;
 	/**
 	 * Launch the application.
 	 */
@@ -104,6 +110,37 @@ public class VistaPrincipal extends JFrame {
 		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		
+		PanelMenu = new PanelMenu();
+		PanelMenu.setBounds(0, 0, 859, 484);
+		contentPane.add(PanelMenu);
+		PanelMenu.setLayout(null);
+		
+		PanelHamburguesa = new PanelHamburguesa();
+		PanelHamburguesa.setBounds(0, 0, 859, 484);
+		contentPane.add(PanelHamburguesa);
+		PanelHamburguesa.setLayout(null);
+		
+		PanelComponentes = new PanelComponentes();
+		PanelComponentes.setBounds(0, 0, 859, 484);
+		contentPane.add(PanelComponentes);
+		PanelComponentes.setLayout(null);
+		
+		PanelBebida = new PanelBebida();
+		PanelBebida.setBounds(0, 0, 859, 484);
+		contentPane.add(PanelBebida);
+		PanelBebida.setLayout(null);
+		
+		PanelPostres = new PanelPostres();
+		PanelPostres.setBounds(0, 0, 859, 484);
+		contentPane.add(PanelPostres);
+		PanelPostres.setLayout(null);
+		
+		PanelPromocion = new PanelPromocion();
+		PanelPromocion.setBounds(0, 0, 859, 484);
+		contentPane.add(PanelPromocion);
+		PanelPromocion.setLayout(null);
 		
 		
 		PanelRegistro = new JPanel();
@@ -214,6 +251,8 @@ public class VistaPrincipal extends JFrame {
 		LblSaludo.setHorizontalAlignment(SwingConstants.CENTER);
 		LblSaludo.setBounds(235, 10, 429, 37);
 		panel_1.add(LblSaludo);
+		
+
 		
 		btnRegistrar = new JButton("Registrar");
 		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 10));

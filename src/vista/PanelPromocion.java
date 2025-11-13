@@ -10,6 +10,7 @@ public class PanelPromocion extends JPanel {
 	 * Create the panel.
 	 */
 	public PanelPromocion() {
+		setLayout(null);
 
 	}
 

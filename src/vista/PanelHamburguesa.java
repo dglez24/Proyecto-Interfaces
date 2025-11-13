@@ -10,6 +10,7 @@ public class PanelHamburguesa extends JPanel {
 	 * Create the panel.
 	 */
 	public PanelHamburguesa() {
+		setLayout(null);
 
 	}
 

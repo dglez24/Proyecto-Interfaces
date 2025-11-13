@@ -10,6 +10,7 @@ public class PanelPostres extends JPanel {
 	 * Create the panel.
 	 */
 	public PanelPostres() {
+		setLayout(null);
 
 	}
 

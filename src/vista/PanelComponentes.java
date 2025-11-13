@@ -10,6 +10,7 @@ public class PanelComponentes extends JPanel {
 	 * Create the panel.
 	 */
 	public PanelComponentes() {
+		setLayout(null);
 
 	}
 
