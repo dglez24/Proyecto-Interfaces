@@ -79,6 +79,7 @@ public class VistaPrincipal extends JFrame {
 	public PanelPostres PanelPostres;
 	public PanelPromocion PanelPromocion;
 	public Ruleta Ruleta;
+	public JButton BTNRuleta;
 	/**
 	 * Launch the application.
 	 */
@@ -122,6 +123,8 @@ public class VistaPrincipal extends JFrame {
 		PanelMenu.setBounds(0, 0, 859, 484);
 		contentPane.add(PanelMenu);
 		PanelMenu.setLayout(null);
+		
+
 		
 		PanelHamburguesa = new PanelHamburguesa();
 		PanelHamburguesa.setBounds(0, 0, 859, 484);
@@ -178,6 +181,11 @@ public class VistaPrincipal extends JFrame {
 		btnRegIni.setBackground(new Color(178, 34, 34));
 		btnRegIni.setBounds(753, 10, 96, 19);
 		contentPane.add(btnRegIni);
+		
+		BTNRuleta = new JButton("Ruleta");
+		BTNRuleta.setBackground(new Color(178, 34, 34));
+		BTNRuleta.setBounds(652, 10, 84, 20);
+		contentPane.add(BTNRuleta);
 		
 
 		
@@ -317,6 +325,8 @@ public class VistaPrincipal extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(0, 0, 293, 53);
 		PanelTituloReg.add(lblNewLabel);
+		
+
 		
 		PNombre = new JPanel();
 		PNombre.setBackground(new Color(255, 255, 255));

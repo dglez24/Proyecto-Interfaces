@@ -27,7 +27,8 @@ public class Funcionalidad extends Thread implements ActionListener{
 		vista.BTNComponentes.addActionListener(this);
 		vista.BTNPostres.addActionListener(this);
 		vista.BTNPromociones.addActionListener(this);
-		
+		vista.BTNRuleta.addActionListener(this);
+		vista.Ruleta.BTNTirar.addActionListener(this);
 		
 		
 		vista.PClave.setVisible(false);
@@ -45,6 +46,7 @@ public class Funcionalidad extends Thread implements ActionListener{
 		vista.POferta.setVisible(false);
 		vista.PLogo.setVisible(false);
 		vista.btnRegIni.setVisible(false);
+		vista.BTNRuleta.setVisible(false);
 		vista.PanelMenu.setVisible(false);
 		vista.PanelHamburguesa.setVisible(false);
 		vista.PanelComponentes.setVisible(false);
@@ -183,6 +185,7 @@ public class Funcionalidad extends Thread implements ActionListener{
 							vista.POferta.setVisible(true);
 							vista.PLogo.setVisible(true);
 							vista.btnRegIni.setVisible(true);
+							vista.BTNRuleta.setVisible(true);
 							vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
 					}
 				}
@@ -259,6 +262,7 @@ public class Funcionalidad extends Thread implements ActionListener{
 							vista.POferta.setVisible(true);
 							vista.PLogo.setVisible(true);
 							vista.btnRegIni.setVisible(true);
+							vista.BTNRuleta.setVisible(true);
 							vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
 						}
 					}
@@ -316,6 +320,7 @@ public class Funcionalidad extends Thread implements ActionListener{
 			vista.BTNPostres.setVisible(false);
 			vista.BTNPromociones.setVisible(false);
 			vista.btnRegIni.setVisible(false);
+			vista.BTNRuleta.setVisible(false);
 		}
 		
 		if(e.getSource() == vista.BTNHamburguesa) {
@@ -327,6 +332,7 @@ public class Funcionalidad extends Thread implements ActionListener{
 			vista.BTNPostres.setVisible(false);
 			vista.BTNPromociones.setVisible(false);
 			vista.btnRegIni.setVisible(false);
+			vista.BTNRuleta.setVisible(false);
 		}
 		
 		if(e.getSource() == vista.BTNBebidas) {
@@ -338,6 +344,7 @@ public class Funcionalidad extends Thread implements ActionListener{
 			vista.BTNPostres.setVisible(false);
 			vista.BTNPromociones.setVisible(false);
 			vista.btnRegIni.setVisible(false);
+			vista.BTNRuleta.setVisible(false);
 		}
 		
 		if(e.getSource() == vista.BTNComponentes) {
@@ -349,6 +356,7 @@ public class Funcionalidad extends Thread implements ActionListener{
 			vista.BTNPostres.setVisible(false);
 			vista.BTNPromociones.setVisible(false);
 			vista.btnRegIni.setVisible(false);
+			vista.BTNRuleta.setVisible(false);
 		}
 		
 		if(e.getSource() == vista.BTNPostres) {
@@ -360,6 +368,7 @@ public class Funcionalidad extends Thread implements ActionListener{
 			vista.BTNPostres.setVisible(false);
 			vista.BTNPromociones.setVisible(false);
 			vista.btnRegIni.setVisible(false);
+			vista.BTNRuleta.setVisible(false);
 		}
 		
 		if(e.getSource() == vista.BTNPromociones) {
@@ -371,6 +380,7 @@ public class Funcionalidad extends Thread implements ActionListener{
 			vista.BTNPostres.setVisible(false);
 			vista.BTNPromociones.setVisible(false);
 			vista.btnRegIni.setVisible(false);
+			vista.BTNRuleta.setVisible(false);
 		}
 		
 	}
