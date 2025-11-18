@@ -51,6 +51,7 @@ public class Funcionalidad extends Thread implements ActionListener{
 		vista.PanelPostres.setVisible(false);
 		vista.PanelPromocion.setVisible(false);
 		vista.PanelBebida.setVisible(false);
+		vista.Ruleta.setVisible(false);
 		
 	}
 

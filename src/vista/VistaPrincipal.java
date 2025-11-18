@@ -78,6 +78,7 @@ public class VistaPrincipal extends JFrame {
 	public PanelBebida PanelBebida;
 	public PanelPostres PanelPostres;
 	public PanelPromocion PanelPromocion;
+	public Ruleta Ruleta;
 	/**
 	 * Launch the application.
 	 */
@@ -110,6 +111,11 @@ public class VistaPrincipal extends JFrame {
 		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		Ruleta = new Ruleta();
+		Ruleta.setBounds(150, 100, 600, 300);
+		contentPane.add(Ruleta);
+		Ruleta.setLayout(null);
 		
 		
 		PanelMenu = new PanelMenu();
