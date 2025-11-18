@@ -30,6 +30,7 @@ public class Funcionalidad implements ActionListener{
 		vista.BTNPromociones.addActionListener(this);
 		vista.BTNRuleta.addActionListener(this);
 		vista.Ruleta.BTNTirar.addActionListener(this);
+		vista.Ruleta.BTNSalir.addActionListener(this);
 		
 		
 		vista.PClave.setVisible(false);
@@ -164,7 +165,7 @@ public class Funcionalidad implements ActionListener{
 						if(!vista.TFClave.getText().isEmpty()) {
 							if(vista.TFClave.getText().equals("5202")) {
 								usuarios.add(new Administrador(nombre, apellidos, correo, contra));
-								Administrador a1 = new Administrador(nombre, apellidos, correo, contra);
+								Administrador c1 = new Administrador(nombre, apellidos, correo, contra);
 								
 								vista.PanelRegistro.setVisible(false);
 							} else {
@@ -260,7 +261,7 @@ public class Funcionalidad implements ActionListener{
 				if (vista.TFCorreo.getText().equals(correo) && vista.TFContra.getText().equals(contra)) {
 					for(int i = 0; i < usuarios.size(); i++) {
 						if(usuarios.get(i).getContra() == contra && usuarios.get(i).getCorreo() == correo && usuarios.get(i).isAdmin()) {
-							Administrador a1 = new Administrador(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
+							Administrador c1 = new Administrador(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
 							this.vista.PanelRegistro.setVisible(false);
 						} else {
 							Cliente c1 = new Cliente(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
@@ -319,6 +320,19 @@ public class Funcionalidad implements ActionListener{
 				
 			}
 			
+		}
+		
+		if(e.getSource() == vista.BTNRuleta) {
+			this.vista.Ruleta.setVisible(true);
+			this.vista.Ruleta.LblInfoTiros.setText("Tiros: "  );
+		}
+		
+		if(e.getSource() == vista.Ruleta.BTNTirar) {
+			
+		}
+		
+		if(e.getSource() == vista.Ruleta.BTNSalir) {
+			this.vista.Ruleta.setVisible(true);
 		}
 		
 		

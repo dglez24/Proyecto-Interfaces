@@ -10,7 +10,7 @@ public class HiloRuleta extends Thread{
 	
 	public void run() {
 		
-
+		
 
 	}
 }

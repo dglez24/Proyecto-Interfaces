@@ -19,6 +19,10 @@ public class Ruleta extends JPanel {
 	public JLabel Foto3;
 	public JButton BTNTirar;
 	public JLabel LblInfoTiros;
+	public JLabel Foto1_hilo;
+	public JLabel Foto2_hilo;
+	public JLabel Foto3_hilo;
+	public JButton BTNSalir;
 
 
 
@@ -50,6 +54,21 @@ public class Ruleta extends JPanel {
 		Foto3.setIcon(new ImageIcon("Imagenes/imagenP.png"));
 		panel.add(Foto3);
 		
+		Foto1_hilo = new JLabel("");
+		Foto1_hilo.setIcon(new ImageIcon("Imagenes/imagenB.png"));
+		Foto1_hilo.setBounds(10, 10, 165, 165);
+		panel.add(Foto1_hilo);
+		
+		Foto2_hilo = new JLabel("");
+		Foto2_hilo.setIcon(new ImageIcon("Imagenes/imagenH.png"));
+		Foto2_hilo.setBounds(205, 10, 165, 165);
+		panel.add(Foto2_hilo);
+		
+		Foto3_hilo = new JLabel("");
+		Foto3_hilo.setIcon(new ImageIcon("Imagenes/imagenP.png"));
+		Foto3_hilo.setBounds(405, 10, 165, 165);
+		panel.add(Foto3_hilo);
+		
 		BTNTirar = new JButton("Tirar");
 		BTNTirar.setFont(new Font("Segoe UI Variable", Font.BOLD, 20));
 		BTNTirar.setBackground(new Color(255, 255, 0));
@@ -60,6 +79,12 @@ public class Ruleta extends JPanel {
 		LblInfoTiros.setFont(new Font("Verdana", Font.PLAIN, 25));
 		LblInfoTiros.setBounds(20, 225, 116, 52);
 		add(LblInfoTiros);
+		
+		BTNSalir = new JButton("Salir");
+		BTNSalir.setBackground(new Color(185, 0, 0));
+		BTNSalir.setFont(new Font("Tahoma", Font.BOLD, 10));
+		BTNSalir.setBounds(506, 270, 84, 20);
+		add(BTNSalir);
 		
 
 
