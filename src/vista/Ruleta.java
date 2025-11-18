@@ -5,6 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
 
@@ -12,9 +14,9 @@ public class Ruleta extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	public JPanel panel;
-	public JLabel Lblfoto1;
-	public JLabel lblfoto1;
-	public JLabel lblfoto1_1;
+	public JLabel Foto1;
+	public JLabel Foto2;
+	public JLabel Foto3;
 	public JButton BTNTirar;
 	public JLabel LblInfoTiros;
 
@@ -33,17 +35,20 @@ public class Ruleta extends JPanel {
 		add(panel);
 		panel.setLayout(null);
 		
-		Lblfoto1 = new JLabel("");
-		Lblfoto1.setBounds(10, 10, 165, 165);
-		panel.add(Lblfoto1);
+		Foto1 = new JLabel("");
+		Foto1.setBounds(10, 10, 165, 165);
+		Foto1.setIcon(new ImageIcon("Imagenes/imagenB.png"));
+		panel.add(Foto1);
 		
-		lblfoto1 = new JLabel("");
-		lblfoto1.setBounds(205, 10, 165, 165);
-		panel.add(lblfoto1);
+		Foto2 = new JLabel("");
+		Foto2.setBounds(205, 10, 165, 165);
+		Foto2.setIcon(new ImageIcon("Imagenes/imagenH.png"));
+		panel.add(Foto2);
 		
-		lblfoto1_1 = new JLabel("");
-		lblfoto1_1.setBounds(405, 10, 165, 165);
-		panel.add(lblfoto1_1);
+		Foto3 = new JLabel("");
+		Foto3.setBounds(405, 10, 165, 165);
+		Foto3.setIcon(new ImageIcon("Imagenes/imagenP.png"));
+		panel.add(Foto3);
 		
 		BTNTirar = new JButton("Tirar");
 		BTNTirar.setFont(new Font("Segoe UI Variable", Font.BOLD, 20));
