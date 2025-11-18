@@ -28,7 +28,7 @@ public class Cliente extends Usuario{
 		this.tirada = tirada;
 	}
 
-	
+	 
 	
 
 }
