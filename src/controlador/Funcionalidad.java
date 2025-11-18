@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
 
+import javax.swing.ImageIcon;
+
 import modelo.Administrador;
 import modelo.Cliente;
 import modelo.Usuario;
@@ -16,6 +18,7 @@ public class Funcionalidad implements ActionListener{
 	
 	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
 	ArrayList<Comida> comidas=new ArrayList<Comida>();
+	Usuario c1 = null;
 	public Funcionalidad (VistaPrincipal frame) {
 		vista = frame;
 		vista.btnRegIni.addActionListener(this);
@@ -56,6 +59,19 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelPromocion.setVisible(false);
 		vista.PanelBebida.setVisible(false);
 		vista.Ruleta.setVisible(false);
+		
+		this.vista.Ruleta.Foto1_B.setVisible(false);
+		this.vista.Ruleta.Foto1_H.setVisible(false);
+		this.vista.Ruleta.Foto1_P.setVisible(false);
+	
+		this.vista.Ruleta.Foto2_B.setVisible(false);
+		this.vista.Ruleta.Foto2_H.setVisible(false);
+		this.vista.Ruleta.Foto2_P.setVisible(false);
+	
+		this.vista.Ruleta.Foto3_B.setVisible(false);
+		this.vista.Ruleta.Foto3_H.setVisible(false);
+		this.vista.Ruleta.Foto3_P.setVisible(false);
+		
 		comidas.add(new Comida("Hamburguesa BBQ la cerda","sdad",12.99,1,10));
 		comidas.add(new Comida("Hamburguesa simple cerdita","q231",10.99,1,10));
 		comidas.add(new Comida("Hamburguesa con todo el puerco","q231",14.99,1,10));
@@ -165,7 +181,7 @@ public class Funcionalidad implements ActionListener{
 						if(!vista.TFClave.getText().isEmpty()) {
 							if(vista.TFClave.getText().equals("5202")) {
 								usuarios.add(new Administrador(nombre, apellidos, correo, contra));
-								Administrador c1 = new Administrador(nombre, apellidos, correo, contra);
+								c1 = new Administrador(nombre, apellidos, correo, contra);
 								
 								vista.PanelRegistro.setVisible(false);
 							} else {
@@ -186,7 +202,7 @@ public class Funcionalidad implements ActionListener{
 						
 						} else {
 							usuarios.add(new Cliente(nombre, apellidos, correo, contra));
-							Cliente c1 = new Cliente(nombre, apellidos, correo, contra);
+							c1 = new Cliente(nombre, apellidos, correo, contra);
 
 							vista.PanelRegistro.setVisible(false);
 							vista.BTNMenu.setVisible(true);
@@ -261,10 +277,10 @@ public class Funcionalidad implements ActionListener{
 				if (vista.TFCorreo.getText().equals(correo) && vista.TFContra.getText().equals(contra)) {
 					for(int i = 0; i < usuarios.size(); i++) {
 						if(usuarios.get(i).getContra() == contra && usuarios.get(i).getCorreo() == correo && usuarios.get(i).isAdmin()) {
-							Administrador c1 = new Administrador(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
+							c1 = new Administrador(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
 							this.vista.PanelRegistro.setVisible(false);
 						} else {
-							Cliente c1 = new Cliente(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
+							c1 = new Cliente(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
 							this.vista.PanelRegistro.setVisible(false);
 							vista.BTNMenu.setVisible(true);
 							vista.BTNHamburguesa.setVisible(true);
@@ -324,15 +340,77 @@ public class Funcionalidad implements ActionListener{
 		
 		if(e.getSource() == vista.BTNRuleta) {
 			this.vista.Ruleta.setVisible(true);
-			this.vista.Ruleta.LblInfoTiros.setText("Tiros: "  );
+			this.vista.Ruleta.LblInfoTiros.setText("Tiros: " + c1.getTirada());
+			vista.BTNMenu.setEnabled(false);
+			vista.BTNHamburguesa.setEnabled(false);
+			vista.BTNBebidas.setEnabled(false);
+			vista.BTNComponentes.setEnabled(false);
+			vista.BTNPostres.setEnabled(false);
+			vista.BTNPromociones.setEnabled(false);
+			vista.btnRegIni.setEnabled(false);
+			vista.BTNRuleta.setEnabled(false);
+
 		}
 		
 		if(e.getSource() == vista.Ruleta.BTNTirar) {
 			
+
+			if(c1.getTirada() > 0) {
+			HiloRuleta hr = new HiloRuleta(vista);
+			
+			hr.start();
+			
+			
+			
+			int a = (int)(1 + Math.random() * 3);
+			int b = (int)(1 + Math.random() * 3);
+			int c = (int)(1 + Math.random() * 3);
+			
+			System.out.println(a);
+			if (a == 1) {
+				this.vista.Ruleta.Foto1.setIcon(new ImageIcon("Imagenes/imagenB.png"));
+			} else if (a == 2) {
+				this.vista.Ruleta.Foto1.setIcon(new ImageIcon("Imagenes/imagenH.png"));
+			} else if (a == 3) {
+				this.vista.Ruleta.Foto1.setIcon(new ImageIcon("Imagenes/imagenP.png"));
+			}
+			
+			if (b == 1) {
+				this.vista.Ruleta.Foto2.setIcon(new ImageIcon("Imagenes/imagenB.png"));
+			} else if (b == 2) {
+				this.vista.Ruleta.Foto2.setIcon(new ImageIcon("Imagenes/imagenH.png"));
+			} else if (b == 3) {
+				this.vista.Ruleta.Foto2.setIcon(new ImageIcon("Imagenes/imagenP.png"));
+			}
+			
+			if (c == 1) {
+				this.vista.Ruleta.Foto3.setIcon(new ImageIcon("Imagenes/imagenB.png"));
+			} else if (c == 2) {
+				this.vista.Ruleta.Foto3.setIcon(new ImageIcon("Imagenes/imagenH.png"));
+			} else if (c == 3) {
+				this.vista.Ruleta.Foto3.setIcon(new ImageIcon("Imagenes/imagenP.png"));
+			}
+			
+			c1.setTirada(c1.getTirada() - 1);
+			this.vista.Ruleta.LblInfoTiros.setText("Tiros: " + c1.getTirada());
+
+			} else {
+				//sonido
+			}
+			
+			
 		}
 		
 		if(e.getSource() == vista.Ruleta.BTNSalir) {
-			this.vista.Ruleta.setVisible(true);
+			this.vista.Ruleta.setVisible(false);
+			vista.BTNMenu.setEnabled(true);
+			vista.BTNHamburguesa.setEnabled(true);
+			vista.BTNBebidas.setEnabled(true);
+			vista.BTNComponentes.setEnabled(true);
+			vista.BTNPostres.setEnabled(true);
+			vista.BTNPromociones.setEnabled(true);
+			vista.btnRegIni.setEnabled(true);
+			vista.BTNRuleta.setEnabled(true);
 		}
 		
 		

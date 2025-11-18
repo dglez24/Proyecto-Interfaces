@@ -6,6 +6,8 @@ public abstract class Usuario {
 	protected String Apellidos;
 	protected String Correo;
 	protected String Contra;
+	protected int pedido;
+	protected int tirada;
 	protected boolean admin;
 	
 	public Usuario(String nombre, String apellidos, String correo, String contra) {
@@ -13,6 +15,8 @@ public abstract class Usuario {
 		this.Apellidos = apellidos;
 		this.Correo = correo;
 		this.Contra = contra;
+		this.pedido = 0;
+		this.tirada = 1;
 	}
 
 	public String getNombre() {
@@ -54,7 +58,21 @@ public abstract class Usuario {
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
-	
+	public int getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(int pedido) {
+		this.pedido = pedido;
+	}
+
+	public int getTirada() {
+		return tirada;
+	}
+
+	public void setTirada(int tirada) {
+		this.tirada = tirada;
+	}
 	
 
 }

@@ -19,10 +19,18 @@ public class Ruleta extends JPanel {
 	public JLabel Foto3;
 	public JButton BTNTirar;
 	public JLabel LblInfoTiros;
-	public JLabel Foto1_hilo;
-	public JLabel Foto2_hilo;
-	public JLabel Foto3_hilo;
 	public JButton BTNSalir;
+
+	public JLabel Foto1_H;
+	public JLabel Foto2_H;
+	public JLabel Foto3_H;
+
+	public JLabel Foto1_B;
+	public JLabel Foto2_B;
+	public JLabel Foto3_B;
+	public JLabel Foto1_P;
+	public JLabel Foto2_P;
+	public JLabel Foto3_P;
 
 
 
@@ -37,7 +45,52 @@ public class Ruleta extends JPanel {
 		panel.setBackground(new Color(255, 255, 128));
 		panel.setBounds(10, 30, 580, 185);
 		add(panel);
-		panel.setLayout(null);
+		panel.setLayout(null);		
+
+		Foto1_H = new JLabel("");
+		Foto1_H.setIcon(new ImageIcon("Imagenes/imagenH.png"));
+		Foto1_H.setBounds(10, 10, 165, 165);
+		panel.add(Foto1_H);
+		
+		Foto2_H = new JLabel("");
+		Foto2_H.setIcon(new ImageIcon("Imagenes/imagenH.png"));
+		Foto2_H.setBounds(205, 10, 165, 165);
+		panel.add(Foto2_H);
+		
+		Foto3_H = new JLabel("");
+		Foto3_H.setIcon(new ImageIcon("Imagenes/imagenH.png"));
+		Foto3_H.setBounds(405, 10, 165, 165);
+		panel.add(Foto3_H);
+		
+		Foto1_B = new JLabel("");
+		Foto1_B.setIcon(new ImageIcon("Imagenes/imagenB.png"));
+		Foto1_B.setBounds(10, 10, 165, 165);
+		panel.add(Foto1_B);
+		
+		Foto2_B = new JLabel("");
+		Foto2_B.setIcon(new ImageIcon("Imagenes/imagenB.png"));
+		Foto2_B.setBounds(205, 10, 165, 165);
+		panel.add(Foto2_B);
+		
+		Foto3_B = new JLabel("");
+		Foto3_B.setIcon(new ImageIcon("Imagenes/imagenB.png"));
+		Foto3_B.setBounds(405, 10, 165, 165);
+		panel.add(Foto3_B);
+		
+		Foto1_P = new JLabel("");
+		Foto1_P.setIcon(new ImageIcon("Imagenes/imagenP.png"));
+		Foto1_P.setBounds(10, 10, 165, 165);
+		panel.add(Foto1_P);
+		
+		Foto2_P = new JLabel("");
+		Foto2_P.setIcon(new ImageIcon("Imagenes/imagenP.png"));
+		Foto2_P.setBounds(205, 10, 165, 165);
+		panel.add(Foto2_P);
+		
+		Foto3_P = new JLabel("");
+		Foto3_P.setIcon(new ImageIcon("Imagenes/imagenP.png"));
+		Foto3_P.setBounds(405, 10, 165, 165);
+		panel.add(Foto3_P);
 		
 		Foto1 = new JLabel("");
 		Foto1.setBounds(10, 10, 165, 165);
@@ -53,21 +106,6 @@ public class Ruleta extends JPanel {
 		Foto3.setBounds(405, 10, 165, 165);
 		Foto3.setIcon(new ImageIcon("Imagenes/imagenP.png"));
 		panel.add(Foto3);
-		
-		Foto1_hilo = new JLabel("");
-		Foto1_hilo.setIcon(new ImageIcon("Imagenes/imagenB.png"));
-		Foto1_hilo.setBounds(10, 10, 165, 165);
-		panel.add(Foto1_hilo);
-		
-		Foto2_hilo = new JLabel("");
-		Foto2_hilo.setIcon(new ImageIcon("Imagenes/imagenH.png"));
-		Foto2_hilo.setBounds(205, 10, 165, 165);
-		panel.add(Foto2_hilo);
-		
-		Foto3_hilo = new JLabel("");
-		Foto3_hilo.setIcon(new ImageIcon("Imagenes/imagenP.png"));
-		Foto3_hilo.setBounds(405, 10, 165, 165);
-		panel.add(Foto3_hilo);
 		
 		BTNTirar = new JButton("Tirar");
 		BTNTirar.setFont(new Font("Segoe UI Variable", Font.BOLD, 20));
