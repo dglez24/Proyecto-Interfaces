@@ -183,7 +183,7 @@ public class VistaPrincipal extends JFrame {
 		contentPane.add(btnRegIni);
 		
 		BTNRuleta = new JButton("Ruleta");
-		BTNRuleta.setBackground(new Color(178, 34, 34));
+		BTNRuleta.setBackground(new Color(217, 179, 26));
 		BTNRuleta.setBounds(652, 10, 84, 20);
 		contentPane.add(BTNRuleta);
 		
