@@ -2,19 +2,20 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.util.*;
 
 import modelo.Administrador;
 import modelo.Cliente;
 import modelo.Usuario;
+import modelo.Comida;
 import vista.VistaPrincipal;
 
-public class Funcionalidad extends Thread implements ActionListener{
+public class Funcionalidad implements ActionListener{
 	
 	VistaPrincipal vista = new VistaPrincipal();
 	
 	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
-	
+	ArrayList<Comida> comidas=new ArrayList<Comida>();
 	public Funcionalidad (VistaPrincipal frame) {
 		vista = frame;
 		vista.btnRegIni.addActionListener(this);
@@ -54,7 +55,18 @@ public class Funcionalidad extends Thread implements ActionListener{
 		vista.PanelPromocion.setVisible(false);
 		vista.PanelBebida.setVisible(false);
 		vista.Ruleta.setVisible(false);
-		
+		comidas.add(new Comida("Hamburguesa BBQ la cerda","sdad",12.99,1,10));
+		comidas.add(new Comida("Hamburguesa simple cerdita","q231",10.99,1,10));
+		comidas.add(new Comida("Hamburguesa con todo el puerco","q231",14.99,1,10));
+		comidas.add(new Comida("Ensalada","q231",2.99,1,10));
+		comidas.add(new Comida("Patatas fritas","q231",3.99,1,10));
+		comidas.add(new Comida("Aros de cebolla","q231",4.99,1,10));
+		comidas.add(new Comida("Agua","q231",1.99,1,20));
+		comidas.add(new Comida("CocaCola","q231",2.50,1,20));
+		comidas.add(new Comida("Cerveza","q231",2.99,1,20));
+		comidas.add(new Comida("Helado de chocolate","q231",3.99,1,5));
+		comidas.add(new Comida("Batido de vainilla","q231",5.99,1,13));
+		comidas.add(new Comida("Natillas","q231",1.99,1,17));
 	}
 
 
@@ -76,7 +88,7 @@ public class Funcionalidad extends Thread implements ActionListener{
 			} else {
 				vista.PClave.setVisible(true);
 				vista.TFClave.setVisible(true);
-				vista.btnAdmin.setText("Iniciar como no Administrador");
+				vista.btnAdmin.setText("Iniciar como Usuario");
 			}
 		}
 		

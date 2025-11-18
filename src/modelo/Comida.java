@@ -2,40 +2,34 @@ package modelo;
 
 public class Comida {
 	private String Nombre;
-	private int Tipo;
 	private String Foto;
 	private double Precio;
 	private int Cantidad;
+	private int Stock;
 	
-	
-	public Comida(String Nombre, int Tipo, String Foto, double Precio, int Cantidad) {
+	public Comida(String Nombre, String Foto, double Precio, int Cantidad,int Stock) {
 		this.Nombre = Nombre;
-		this.Tipo = Tipo;
 		this.Foto = Foto;
 		this.Precio = Precio;
 		this.Cantidad = Cantidad;
+		this.Stock=Stock;
 	}
-
 
 	public String getNombre() {
 		return Nombre;
 	}
 
-
 	public void setNombre(String nombre) {
 		Nombre = nombre;
 	}
 
-
-	public int getTipo() {
-		return Tipo;
+	public int getStock() {
+		return Stock;
 	}
 
-
-	public void setTipo(int tipo) {
-		Tipo = tipo;
+	public void setStock(int tipo) {
+		Stock = tipo;
 	}
-
 
 	public String getFoto() {
 		return Foto;
