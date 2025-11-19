@@ -260,19 +260,19 @@ public class VistaPrincipal extends JFrame {
 		btnRegistrar = new JButton("Registrar");
 		btnRegistrar.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnRegistrar.setBackground(new Color(255, 128, 64));
-		btnRegistrar.setBounds(49, 364, 126, 26);
+		btnRegistrar.setBounds(79, 400, 206, 33);
 		PanelRegistro.add(btnRegistrar);
 		
 		btnIniciar = new JButton("Iniciar Sesion");
 		btnIniciar.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnIniciar.setBackground(new Color(255, 128, 64));
-		btnIniciar.setBounds(217, 364, 126, 26);
+		btnIniciar.setBounds(79, 400, 206, 33);
 		PanelRegistro.add(btnIniciar);
 		
 		btnAdmin = new JButton("Iniciar como Administrador");
 		btnAdmin.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnAdmin.setBackground(new Color(255, 128, 64));
-		btnAdmin.setBounds(89, 400, 206, 33);
+		btnAdmin.setBounds(49, 364, 285, 26);
 		PanelRegistro.add(btnAdmin);
 		
 	
@@ -417,10 +417,10 @@ public class VistaPrincipal extends JFrame {
 		LblAvisoClave.setBounds(2, 2, 102, 14);
 		PanelAvisoClave.add(LblAvisoClave);
 		
-		BTNSalirRegi = new JButton("Salir");
+		BTNSalirRegi = new JButton("Atras");
 		BTNSalirRegi.setBackground(new Color(185, 0, 0));
 		BTNSalirRegi.setFont(new Font("Tempus Sans ITC", Font.BOLD, 15));
-		BTNSalirRegi.setBounds(300, 420, 70, 20);
+		BTNSalirRegi.setBounds(290, 400, 75, 33);
 		PanelRegistro.add(BTNSalirRegi);
 		
 		FotoFondoReg = new JLabel("");

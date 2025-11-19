@@ -34,14 +34,16 @@ public class Funcionalidad implements ActionListener{
 		vista.BTNRuleta.addActionListener(this);
 		vista.Ruleta.BTNTirar.addActionListener(this);
 		vista.Ruleta.BTNSalir.addActionListener(this);
-		
+		vista.OpcionRegistrar.BTNInicioIno.addActionListener(this);
+		vista.OpcionRegistrar.BTNRegistroIni.addActionListener(this);
+		vista.BTNSalirRegi.addActionListener(this);
 		
 		vista.PClave.setVisible(false);
 		vista.TFClave.setVisible(false);
 		vista.PanelAvisoCorreo.setVisible(false);
 		vista.PanelAvisoContra.setVisible(false);
 		vista.PanelAvisoClave.setVisible(false);
-		
+		vista.PanelRegistro.setVisible(false);
 		vista.BTNMenu.setVisible(false);
 		vista.BTNHamburguesa.setVisible(false);
 		vista.BTNBebidas.setVisible(false);
@@ -54,7 +56,6 @@ public class Funcionalidad implements ActionListener{
 		vista.BTNRuleta.setVisible(false);
 		vista.PanelMenu.setVisible(false);
 		vista.PanelHamburguesa.setVisible(false);
-		
 		vista.PanelPromocion.setVisible(false);
 		
 		vista.Ruleta.setVisible(false);
@@ -91,9 +92,111 @@ public class Funcionalidad implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
+		if(e.getSource() == vista.OpcionRegistrar.BTNRegistroIni) {
+			
+			vista.TFNombre.setVisible(true);
+			vista.TFApellidos.setVisible(true);
+			vista.btnAdmin.setVisible(true);
+			vista.PNombre.setVisible(true);
+			vista.PApellidos.setVisible(true);
+			
+			vista.TFNombre.setText("");
+			vista.TFApellidos.setText("");
+			vista.TFCorreo.setText("");
+			vista.TFContra.setText("");
+			vista.TFClave.setText("");
+			
+			vista.PCorreo.setBounds(49, 207, 105, 17);
+			vista.TFCorreo.setBounds(172, 207, 170, 18);
+			vista.PContra.setBounds(49, 262, 105, 17);
+			vista.TFContra.setBounds(172, 262, 170, 18);
+			vista.PanelAvisoCorreo.setBounds(35, 234, 107, 18);
+			vista.PanelAvisoContra.setBounds(35, 287, 137, 18);
+			vista.PanelRegistro.setVisible(true);
+			
+			vista.OpcionRegistrar.setVisible(false);
+			vista.PanelRegistro.setVisible(true);
+
+			vista.btnRegistrar.setVisible(true);
+			vista.btnIniciar.setVisible(false);
+			
+			vista.BTNSalirRegi.setText("Atras");
+		}
+		
+		if(e.getSource() == vista.OpcionRegistrar.BTNInicioIno) {
+			vista.OpcionRegistrar.setVisible(false);
+			vista.PanelRegistro.setVisible(true);
+			
+			vista.btnRegistrar.setVisible(false);
+			vista.btnIniciar.setVisible(true);
+			
+			vista.TFNombre.setVisible(false);
+			vista.TFApellidos.setVisible(false);
+			vista.btnAdmin.setVisible(false);
+			vista.PNombre.setVisible(false);
+			vista.PApellidos.setVisible(false);
+			vista.PClave.setVisible(false);
+			vista.TFClave.setVisible(false);
+			
+			vista.TFNombre.setText("");
+			vista.TFApellidos.setText("");
+			vista.TFCorreo.setText("");
+			vista.TFContra.setText("");
+			vista.TFClave.setText("");
+			
+			vista.PanelAvisoCorreo.setBounds(35, 180, 107, 18);
+			vista.PanelAvisoContra.setBounds(35, 234, 137, 18);
+			vista.PCorreo.setBounds(49, 154, 105, 17);
+			vista.TFCorreo.setBounds(172, 154, 170, 18);
+			vista.PContra.setBounds(49, 207, 105, 17);
+			vista.TFContra.setBounds(172, 207, 170, 18);
+			
+			vista.BTNSalirRegi.setText("Atras");
+			
+		}
+		
+		if(e.getSource() == vista.BTNSalirRegi) {
+			if(vista.BTNSalirRegi.getText().equals("Atras")) {
+				vista.PanelRegistro.setVisible(false);
+				vista.OpcionRegistrar.setVisible(true);
+			} else {
+				vista.PanelRegistro.setVisible(false);
+			}
+
+		}
+		
+		
+		
 		if(e.getSource() == vista.btnRegIni) {
 			if(!vista.PanelRegistro.isVisible()) {
+				vista.TFNombre.setVisible(true);
+				vista.TFApellidos.setVisible(true);
+				vista.btnAdmin.setVisible(true);
+				vista.PNombre.setVisible(true);
+				vista.PApellidos.setVisible(true);
+				
+				vista.TFNombre.setText("");
+				vista.TFApellidos.setText("");
+				vista.TFCorreo.setText("");
+				vista.TFContra.setText("");
+				vista.TFClave.setText("");
+				
+				vista.PCorreo.setBounds(49, 207, 105, 17);
+				vista.TFCorreo.setBounds(172, 207, 170, 18);
+				vista.PContra.setBounds(49, 262, 105, 17);
+				vista.TFContra.setBounds(172, 262, 170, 18);
+				vista.PanelAvisoCorreo.setBounds(35, 234, 107, 18);
+				vista.PanelAvisoContra.setBounds(35, 287, 137, 18);
 				vista.PanelRegistro.setVisible(true);
+				
+				vista.btnRegistrar.setVisible(true);
+				vista.btnIniciar.setVisible(true);
+				
+				vista.btnRegistrar.setBounds(30,400,120,33);
+				vista.btnIniciar.setBounds(160,400,120,33);
+				
+				vista.BTNSalirRegi.setText("Salir");
 			} else {
 				vista.PanelRegistro.setVisible(false);
 			}
