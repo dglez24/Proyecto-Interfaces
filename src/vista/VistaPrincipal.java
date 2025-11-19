@@ -37,7 +37,7 @@ public class VistaPrincipal extends JFrame {
 	public JButton btnRegistrar;
 	public JButton btnIniciar;
 	public JButton btnAdmin;
-	public JButton btnRegIni;
+	public JButton BTNCerrarSesion;
 	public JLabel FotoFondoReg;
 	public JPanel PanelTituloReg;
 	public JLabel lblNewLabel;
@@ -166,14 +166,14 @@ public class VistaPrincipal extends JFrame {
 		
 
 		
-		btnRegIni = new JButton("Registrar");
-		btnRegIni.setBackground(new Color(178, 34, 34));
-		btnRegIni.setBounds(753, 10, 96, 19);
-		contentPane.add(btnRegIni);
+		BTNCerrarSesion = new JButton("Cerrar Sesión");
+		BTNCerrarSesion.setBackground(new Color(178, 34, 34));
+		BTNCerrarSesion.setBounds(735, 10, 120, 19);
+		contentPane.add(BTNCerrarSesion);
 		
 		BTNRuleta = new JButton("Ruleta");
 		BTNRuleta.setBackground(new Color(217, 179, 26));
-		BTNRuleta.setBounds(652, 10, 84, 20);
+		BTNRuleta.setBounds(635, 10, 84, 20);
 		contentPane.add(BTNRuleta);
 		
 

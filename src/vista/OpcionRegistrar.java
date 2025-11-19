@@ -19,6 +19,7 @@ public class OpcionRegistrar extends JPanel {
 	public JButton BTNInicioIno;
 	public JPanel PLogo;
 	public JLabel FotoLogo;
+	public JButton BTNSalir;
 
 	/**
 	 * Create the panel.
@@ -51,6 +52,12 @@ public class OpcionRegistrar extends JPanel {
 		FotoLogo.setBounds(10, 10, 150, 150);
 		PLogo.add(FotoLogo);
 		FotoLogo.setIcon(new ImageIcon("Imagenes/LogoTrabajo_i.png"));
+		
+		BTNSalir = new JButton("Salir");
+		BTNSalir.setFont(new Font("Tempus Sans ITC", Font.BOLD, 20));
+		BTNSalir.setBackground(new Color(185, 0, 0));
+		BTNSalir.setBounds(497, 10, 93, 36);
+		add(BTNSalir);
 
 	}
 }
