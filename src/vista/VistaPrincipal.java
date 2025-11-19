@@ -80,6 +80,8 @@ public class VistaPrincipal extends JFrame {
 	public PanelPromocion PanelPromocion;
 	public Ruleta Ruleta;
 	public JButton BTNRuleta;
+	public OpcionRegistrar OpcionRegistrar;
+	public JButton BTNSalirRegi;
 	/**
 	 * Launch the application.
 	 */
@@ -113,8 +115,13 @@ public class VistaPrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		OpcionRegistrar = new OpcionRegistrar();
+		OpcionRegistrar.setBounds(130, 100, 600, 300);
+		contentPane.add(OpcionRegistrar);
+		OpcionRegistrar.setLayout(null);
+		
 		Ruleta = new Ruleta();
-		Ruleta.setBounds(150, 100, 600, 300);
+		Ruleta.setBounds(130, 100, 600, 300);
 		contentPane.add(Ruleta);
 		Ruleta.setLayout(null);
 		
@@ -428,10 +435,18 @@ public class VistaPrincipal extends JFrame {
 		LblAvisoClave.setBounds(2, 2, 102, 14);
 		PanelAvisoClave.add(LblAvisoClave);
 		
+		BTNSalirRegi = new JButton("Salir");
+		BTNSalirRegi.setBackground(new Color(185, 0, 0));
+		BTNSalirRegi.setFont(new Font("Tempus Sans ITC", Font.BOLD, 15));
+		BTNSalirRegi.setBounds(300, 420, 70, 20);
+		PanelRegistro.add(BTNSalirRegi);
+		
 		FotoFondoReg = new JLabel("");
 		FotoFondoReg.setBounds(10, 10, 360, 430);
 		PanelRegistro.add(FotoFondoReg);
 		FotoFondoReg.setIcon(new ImageIcon("Imagenes/FondoRegistro.png"));
+		
+
 
 	}
 }
