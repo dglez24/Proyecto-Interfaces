@@ -74,9 +74,6 @@ public class VistaPrincipal extends JFrame {
 	public JLabel LblSaludo;
 	public PanelMenu PanelMenu;
 	public PanelHamburguesa PanelHamburguesa;
-	public PanelComponentes PanelComponentes;
-	public PanelBebida PanelBebida;
-	public PanelPostres PanelPostres;
 	public PanelPromocion PanelPromocion;
 	public Ruleta Ruleta;
 	public JButton BTNRuleta;
@@ -130,7 +127,6 @@ public class VistaPrincipal extends JFrame {
 		PanelMenu.setBounds(0, 0, 859, 484);
 		contentPane.add(PanelMenu);
 		PanelMenu.setLayout(null);
-		
 
 		
 		PanelHamburguesa = new PanelHamburguesa();
@@ -138,20 +134,6 @@ public class VistaPrincipal extends JFrame {
 		contentPane.add(PanelHamburguesa);
 		PanelHamburguesa.setLayout(null);
 		
-		PanelComponentes = new PanelComponentes();
-		PanelComponentes.setBounds(0, 0, 859, 484);
-		contentPane.add(PanelComponentes);
-		PanelComponentes.setLayout(null);
-		
-		PanelBebida = new PanelBebida();
-		PanelBebida.setBounds(0, 0, 859, 484);
-		contentPane.add(PanelBebida);
-		PanelBebida.setLayout(null);
-		
-		PanelPostres = new PanelPostres();
-		PanelPostres.setBounds(0, 0, 859, 484);
-		contentPane.add(PanelPostres);
-		PanelPostres.setLayout(null);
 		
 		PanelPromocion = new PanelPromocion();
 		PanelPromocion.setBounds(0, 0, 859, 484);

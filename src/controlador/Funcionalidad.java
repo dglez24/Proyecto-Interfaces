@@ -54,10 +54,9 @@ public class Funcionalidad implements ActionListener{
 		vista.BTNRuleta.setVisible(false);
 		vista.PanelMenu.setVisible(false);
 		vista.PanelHamburguesa.setVisible(false);
-		vista.PanelComponentes.setVisible(false);
-		vista.PanelPostres.setVisible(false);
+		
 		vista.PanelPromocion.setVisible(false);
-		vista.PanelBebida.setVisible(false);
+		
 		vista.Ruleta.setVisible(false);
 		
 		this.vista.Ruleta.Foto1_B.setVisible(false);
@@ -72,19 +71,22 @@ public class Funcionalidad implements ActionListener{
 		this.vista.Ruleta.Foto3_H.setVisible(false);
 		this.vista.Ruleta.Foto3_P.setVisible(false);
 		
-		comidas.add(new Comida("Hamburguesa BBQ la cerda","sdad",12.99,1,10));
-		comidas.add(new Comida("Hamburguesa simple cerdita","q231",10.99,1,10));
-		comidas.add(new Comida("Hamburguesa con todo el puerco","q231",14.99,1,10));
-		comidas.add(new Comida("Ensalada","q231",2.99,1,10));
-		comidas.add(new Comida("Patatas fritas","q231",3.99,1,10));
-		comidas.add(new Comida("Aros de cebolla","q231",4.99,1,10));
-		comidas.add(new Comida("Agua","q231",1.99,1,20));
-		comidas.add(new Comida("CocaCola","q231",2.50,1,20));
-		comidas.add(new Comida("Cerveza","q231",2.99,1,20));
-		comidas.add(new Comida("Helado de chocolate","q231",3.99,1,5));
-		comidas.add(new Comida("Batido de vainilla","q231",5.99,1,13));
-		comidas.add(new Comida("Natillas","q231",1.99,1,17));
-	}
+	
+		comidas.add(new Comida("Hamburguesa BBQ la puerca","sdad",12.99,1,10,1));
+		comidas.add(new Comida("Hamburguesa cerdita","q231",10.99,1,10,1));
+		comidas.add(new Comida("Hamburguesa deluxe","q231",14.99,1,10,1));
+		comidas.add(new Comida("Ensalada","q231",2.99,1,10,2));
+		comidas.add(new Comida("Patatas fritas","q231",3.99,1,10,2));
+		comidas.add(new Comida("Aros de cebolla","q231",4.99,1,10,2));
+		comidas.add(new Comida("Agua","q231",1.99,1,20,3));
+		comidas.add(new Comida("CocaCola","q231",2.50,1,20,3));
+		comidas.add(new Comida("Cerveza","q231",2.99,1,20,3));
+		comidas.add(new Comida("Helado de chocolate","q231",3.99,1,5,4));
+		comidas.add(new Comida("Batido de vainilla","q231",5.99,1,13,4));
+		comidas.add(new Comida("Natillas","q231",1.99,1,17,4));
+		usuarios.add(new Cliente("Juan", "Perez", "a", "a"));
+		usuarios.add(new Administrador("Manolo", "Montes", "b", "b"));
+		}
 
 
 	@Override
@@ -429,7 +431,6 @@ public class Funcionalidad implements ActionListener{
 		
 		if(e.getSource() == vista.BTNHamburguesa) {
 			vista.PanelHamburguesa.setVisible(true);
-			vista.BTNMenu.setVisible(false);
 			vista.BTNHamburguesa.setVisible(false);
 			vista.BTNBebidas.setVisible(false);
 			vista.BTNComponentes.setVisible(false);
@@ -437,43 +438,9 @@ public class Funcionalidad implements ActionListener{
 			vista.BTNPromociones.setVisible(false);
 			vista.btnRegIni.setVisible(false);
 			vista.BTNRuleta.setVisible(false);
-		}
-		
-		if(e.getSource() == vista.BTNBebidas) {
-			vista.PanelBebida.setVisible(true);
 			vista.BTNMenu.setVisible(false);
-			vista.BTNHamburguesa.setVisible(false);
-			vista.BTNBebidas.setVisible(false);
-			vista.BTNComponentes.setVisible(false);
-			vista.BTNPostres.setVisible(false);
-			vista.BTNPromociones.setVisible(false);
-			vista.btnRegIni.setVisible(false);
-			vista.BTNRuleta.setVisible(false);
 		}
-		
-		if(e.getSource() == vista.BTNComponentes) {
-			vista.PanelComponentes.setVisible(true);
-			vista.BTNMenu.setVisible(false);
-			vista.BTNHamburguesa.setVisible(false);
-			vista.BTNBebidas.setVisible(false);
-			vista.BTNComponentes.setVisible(false);
-			vista.BTNPostres.setVisible(false);
-			vista.BTNPromociones.setVisible(false);
-			vista.btnRegIni.setVisible(false);
-			vista.BTNRuleta.setVisible(false);
-		}
-		
-		if(e.getSource() == vista.BTNPostres) {
-			vista.PanelPostres.setVisible(true);
-			vista.BTNMenu.setVisible(false);
-			vista.BTNHamburguesa.setVisible(false);
-			vista.BTNBebidas.setVisible(false);
-			vista.BTNComponentes.setVisible(false);
-			vista.BTNPostres.setVisible(false);
-			vista.BTNPromociones.setVisible(false);
-			vista.btnRegIni.setVisible(false);
-			vista.BTNRuleta.setVisible(false);
-		}
+				
 		
 		if(e.getSource() == vista.BTNPromociones) {
 			vista.PanelPromocion.setVisible(true);

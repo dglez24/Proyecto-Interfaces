@@ -17,6 +17,7 @@ public abstract class Usuario {
 		this.Contra = contra;
 		this.pedido = 0;
 		this.tirada = 1;
+		this.admin=false;
 	}
 
 	public String getNombre() {
