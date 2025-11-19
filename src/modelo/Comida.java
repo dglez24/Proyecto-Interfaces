@@ -4,15 +4,16 @@ public class Comida {
 	private String Nombre;
 	private String Foto;
 	private double Precio;
-	private int Cantidad;
-	private int Stock;
+	private int Cantidad,Stock,tipo;
 	
-	public Comida(String Nombre, String Foto, double Precio, int Cantidad,int Stock) {
+	
+	public Comida(String Nombre, String Foto, double Precio, int Cantidad,int Stock,int tipo) {
 		this.Nombre = Nombre;
 		this.Foto = Foto;
 		this.Precio = Precio;
 		this.Cantidad = Cantidad;
 		this.Stock=Stock;
+		this.tipo=tipo;
 	}
 
 	public String getNombre() {

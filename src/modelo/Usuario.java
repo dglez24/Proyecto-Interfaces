@@ -13,6 +13,7 @@ public abstract class Usuario {
 		this.Apellidos = apellidos;
 		this.Correo = correo;
 		this.Contra = contra;
+		this.admin=false;
 	}
 
 	public String getNombre() {
