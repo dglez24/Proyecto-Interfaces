@@ -8,55 +8,61 @@ import javax.swing.JSlider;
 import javax.swing.JScrollBar;
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class PanelHamburguesa extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	public JLabel lblNewLabel;
+	public JLabel Img1;
 	public JSeparator separator;
-	public JLabel lblNewLabel_1;
-	public JLabel lblNewLabel_2;
-	public JLabel lblNewLabel_3;
-	public JLabel lblNewLabel_4;
-	public JLabel lblNewLabel_5;
+	public JLabel img3;
+	public JLabel img2;
+	public JLabel nom1;
+	public JLabel nom2;
+	public JLabel nom3;
 
 	/**
 	 * Create the panel.
 	 */
 	public PanelHamburguesa() {
+		setBackground(new Color(255, 128, 0));
 		setLayout(null);
 		
-		lblNewLabel = new JLabel("New label");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(58, 61, 121, 120);
-		add(lblNewLabel);
+		Img1 = new JLabel("imagen");
+		Img1.setHorizontalAlignment(SwingConstants.CENTER);
+		Img1.setBounds(30, 31, 181, 181);
+		add(Img1);
 		
 		separator = new JSeparator();
 		separator.setBounds(10, 250, 840, 8);
 		add(separator);
 		
-		lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(683, 61, 121, 120);
-		add(lblNewLabel_1);
+		img3 = new JLabel("imagen");
+		img3.setHorizontalAlignment(SwingConstants.CENTER);
+		img3.setBounds(623, 31, 181, 181);
+		add(img3);
 		
-		lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(339, 322, 121, 120);
-		add(lblNewLabel_2);
+		img2 = new JLabel("imagen");
+		img2.setHorizontalAlignment(SwingConstants.CENTER);
+		img2.setBounds(289, 278, 181, 174);
+		add(img2);
 		
-		lblNewLabel_3 = new JLabel("Texto prod 1");
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_3.setBounds(58, 322, 121, 120);
-		add(lblNewLabel_3);
+		nom1 = new JLabel("Texto prod 1");
+		nom1.setForeground(new Color(255, 255, 255));
+		nom1.setHorizontalAlignment(SwingConstants.LEFT);
+		nom1.setBounds(30, 268, 181, 120);
+		add(nom1);
 		
-		lblNewLabel_4 = new JLabel("Texto prod 2");
-		lblNewLabel_4.setBounds(339, 61, 121, 120);
-		add(lblNewLabel_4);
+		nom2 = new JLabel("Texto prod 2");
+		nom2.setForeground(new Color(255, 255, 255));
+		nom2.setBounds(339, 114, 121, 120);
+		add(nom2);
 		
-		lblNewLabel_5 = new JLabel("Texto prod 3");
-		lblNewLabel_5.setBounds(683, 322, 121, 120);
-		add(lblNewLabel_5);
+		nom3 = new JLabel("Texto prod 3");
+		nom3.setForeground(new Color(255, 255, 255));
+		nom3.setBounds(683, 268, 121, 120);
+		add(nom3);
 
 	}
 }
