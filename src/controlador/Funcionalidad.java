@@ -345,75 +345,31 @@ public class Funcionalidad implements ActionListener{
 		
 		if(e.getSource() == vista.btnIniciar) {
 			
-			
-				String correo = null;
-				String contra = null;
-
-				
-				for(int i = 0; i< usuarios.size(); i++) {
+			for(int i = 0; i< usuarios.size(); i++) {
+				if(vista.TFCorreo.getText().equals(usuarios.get(i).getCorreo())&&vista.TFContra.getText().equals(usuarios.get(i).getContra())) {
+						if(usuarios.get(i).getClass()==Administrador.class) {
+							ponerVisible();
+							vista.BTNModificacion.setVisible(true);
+							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");
+						}else {
+							ponerVisible();
+							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");
+						}
 					
-					if(vista.TFCorreo.getText().equals(usuarios.get(i).getCorreo())) {
-						correo = usuarios.get(i).getCorreo();
-					}
-					if (vista.TFContra.getText().equals(usuarios.get(i).getContra())) {
-						contra = usuarios.get(i).getContra();
-					}
+				}else{
+				
+					this.vista.LblAvisoContra.setText("Contraseña incorrecta");
+					this.vista.LblAvisoCorreo.setText("Correo incorrecto");
+
+					HiloCorreo h = new HiloCorreo(vista);
+					HiloContra h2 = new HiloContra(vista);
+					
+					h.start();
+					h2.start();
 				}
 				
 				
-				if (vista.TFCorreo.getText().equals(correo) && vista.TFContra.getText().equals(contra)) {
-					for(int i = 0; i < usuarios.size(); i++) {
-						if(usuarios.get(i).getContra() == contra && usuarios.get(i).getCorreo() == correo && usuarios.get(i).isAdmin()) {
-							c1 = new Administrador(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
-							vista.BTNMenu.setEnabled(true);
-							vista.BTNHamburguesa.setEnabled(true);
-							vista.BTNBebidas.setEnabled(true);
-							vista.BTNComponentes.setEnabled(true);
-							vista.BTNPostres.setEnabled(true);
-							vista.BTNPromociones.setEnabled(true);
-							vista.BTNCerrarSesion.setEnabled(true);
-							vista.BTNRuleta.setEnabled(true);
-
-							vista.PanelRegistro.setVisible(false);
-							vista.BTNMenu.setVisible(true);
-							vista.BTNHamburguesa.setVisible(true);
-							vista.BTNBebidas.setVisible(true);
-							vista.BTNComponentes.setVisible(true);
-							vista.BTNPostres.setVisible(true);
-							vista.BTNPromociones.setVisible(true);
-							vista.POferta.setVisible(true);
-							vista.PLogo.setVisible(true);
-							vista.BTNCerrarSesion.setVisible(true);
-							vista.BTNRuleta.setVisible(true);
-							vista.BTNModificacion.setVisible(true);
-							vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
-						} else {
-							c1 = new Cliente(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
-							vista.BTNMenu.setEnabled(true);
-							vista.BTNHamburguesa.setEnabled(true);
-							vista.BTNBebidas.setEnabled(true);
-							vista.BTNComponentes.setEnabled(true);
-							vista.BTNPostres.setEnabled(true);
-							vista.BTNPromociones.setEnabled(true);
-							vista.BTNCerrarSesion.setEnabled(true);
-							vista.BTNRuleta.setEnabled(true);
-
-							vista.PanelRegistro.setVisible(false);
-							vista.BTNMenu.setVisible(true);
-							vista.BTNHamburguesa.setVisible(true);
-							vista.BTNBebidas.setVisible(true);
-							vista.BTNComponentes.setVisible(true);
-							vista.BTNPostres.setVisible(true);
-							vista.BTNPromociones.setVisible(true);
-							vista.POferta.setVisible(true);
-							vista.PLogo.setVisible(true);
-							vista.BTNCerrarSesion.setVisible(true);
-							vista.BTNRuleta.setVisible(true);
-							vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
-						}
-					}
-					
-					
+			/**		
 				}else if(vista.TFCorreo.getText().isEmpty() || vista.TFContra.getText().isEmpty()) {
 					
 					//sonido
@@ -444,10 +400,9 @@ public class Funcionalidad implements ActionListener{
 					h.start();
 					
 				} 
+			 	**/	
 
-
-				vista.TFCorreo.setText("");
-				vista.TFContra.setText("");
+				
 
 				
 				
@@ -573,7 +528,31 @@ public class Funcionalidad implements ActionListener{
 		if(e.getSource() == vista.BTNModificacion) {
 			
 		}
+		}
 		
+	}
+	public void ponerVisible() {
+		vista.BTNMenu.setEnabled(true);
+		vista.BTNHamburguesa.setEnabled(true);
+		vista.BTNBebidas.setEnabled(true);
+		vista.BTNComponentes.setEnabled(true);
+		vista.BTNPostres.setEnabled(true);
+		vista.BTNPromociones.setEnabled(true);
+		vista.BTNCerrarSesion.setEnabled(true);
+		vista.BTNRuleta.setEnabled(true);
+
+		vista.PanelRegistro.setVisible(false);
+		vista.BTNMenu.setVisible(true);
+		vista.BTNHamburguesa.setVisible(true);
+		vista.BTNBebidas.setVisible(true);
+		vista.BTNComponentes.setVisible(true);
+		vista.BTNPostres.setVisible(true);
+		vista.BTNPromociones.setVisible(true);
+		vista.POferta.setVisible(true);
+		vista.PLogo.setVisible(true);
+		vista.BTNCerrarSesion.setVisible(true);
+		vista.BTNRuleta.setVisible(true);
+		vista.BTNModificacion.setVisible(true);
 	}
 
 }
