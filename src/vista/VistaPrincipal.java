@@ -79,6 +79,7 @@ public class VistaPrincipal extends JFrame {
 	public JButton BTNRuleta;
 	public OpcionRegistrar OpcionRegistrar;
 	public JButton BTNSalirRegi;
+	public JButton BTNModificacion;
 	/**
 	 * Launch the application.
 	 */
@@ -427,6 +428,11 @@ public class VistaPrincipal extends JFrame {
 		FotoFondoReg.setBounds(10, 10, 360, 430);
 		PanelRegistro.add(FotoFondoReg);
 		FotoFondoReg.setIcon(new ImageIcon("Imagenes/FondoRegistro.png"));
+		
+		BTNModificacion = new JButton("Administrar");
+		BTNModificacion.setBackground(new Color(255, 255, 128));
+		BTNModificacion.setBounds(10, 10, 150, 20);
+		contentPane.add(BTNModificacion);
 		
 
 

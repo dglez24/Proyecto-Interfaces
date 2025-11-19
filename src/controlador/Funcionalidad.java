@@ -38,6 +38,7 @@ public class Funcionalidad implements ActionListener{
 		vista.OpcionRegistrar.BTNRegistroIni.addActionListener(this);
 		vista.OpcionRegistrar.BTNSalir.addActionListener(this);
 		vista.BTNSalirRegi.addActionListener(this);
+		vista.BTNModificacion.addActionListener(this);
 		
 		
 		vista.PClave.setVisible(false);
@@ -60,6 +61,7 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelHamburguesa.setVisible(false);
 		vista.PanelPromocion.setVisible(false);
 		vista.OpcionRegistrar.BTNSalir.setVisible(false);
+		vista.BTNModificacion.setVisible(false);
 		
 		vista.Ruleta.setVisible(false);
 		
@@ -283,6 +285,7 @@ public class Funcionalidad implements ActionListener{
 								vista.PLogo.setVisible(true);
 								vista.BTNCerrarSesion.setVisible(true);
 								vista.BTNRuleta.setVisible(true);
+								vista.BTNModificacion.setVisible(true);
 								vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
 							} else {
 								vista.LblAvisoClave.setText("Clave Incorrecta");
@@ -382,6 +385,7 @@ public class Funcionalidad implements ActionListener{
 							vista.PLogo.setVisible(true);
 							vista.BTNCerrarSesion.setVisible(true);
 							vista.BTNRuleta.setVisible(true);
+							vista.BTNModificacion.setVisible(true);
 							vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
 						} else {
 							c1 = new Cliente(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), correo, contra);
@@ -563,6 +567,11 @@ public class Funcionalidad implements ActionListener{
 			vista.BTNPromociones.setVisible(false);
 			vista.BTNCerrarSesion.setVisible(false);
 			vista.BTNRuleta.setVisible(false);
+			
+		}
+		
+		if(e.getSource() == vista.BTNModificacion) {
+			
 		}
 		
 	}
