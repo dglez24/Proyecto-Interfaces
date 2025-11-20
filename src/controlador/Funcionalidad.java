@@ -19,6 +19,7 @@ public class Funcionalidad implements ActionListener{
 	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
 	ArrayList<Comida> comidas=new ArrayList<Comida>();
 	Usuario c1 = null;
+	
 	public Funcionalidad (VistaPrincipal frame) {
 		vista = frame;
 		vista.BTNCerrarSesion.addActionListener(this);
@@ -345,15 +346,18 @@ public class Funcionalidad implements ActionListener{
 		
 		if(e.getSource() == vista.btnIniciar) {
 			
+			
 			for(int i = 0; i< usuarios.size(); i++) {
 				if(vista.TFCorreo.getText().equals(usuarios.get(i).getCorreo())&&vista.TFContra.getText().equals(usuarios.get(i).getContra())) {
 						if(usuarios.get(i).getClass()==Administrador.class) {
 							ponerVisible();
+							c1 = new Administrador(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), usuarios.get(i).getCorreo(), usuarios.get(i).getContra());
 							vista.BTNModificacion.setVisible(true);
-							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");
+							vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
 						}else {
 							ponerVisible();
-							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");
+							c1 = new Cliente(usuarios.get(i).getNombre(), usuarios.get(i).getApellidos(), usuarios.get(i).getCorreo(), usuarios.get(i).getContra());
+							vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
 						}
 					
 				}else{
@@ -369,50 +373,13 @@ public class Funcionalidad implements ActionListener{
 				}
 				
 				
-			/**		
-				}else if(vista.TFCorreo.getText().isEmpty() || vista.TFContra.getText().isEmpty()) {
-					
-					//sonido
-					
-				}else if (!vista.TFCorreo.getText().equals(correo) && !vista.TFContra.getText().equals(contra)) {
-					
-					this.vista.LblAvisoContra.setText("Contraseña incorrecta");
-					this.vista.LblAvisoCorreo.setText("Correo incorrecto");
-
-					HiloCorreo h = new HiloCorreo(vista);
-					HiloContra h2 = new HiloContra(vista);
-					
-					h.start();
-					h2.start();
-					
-				} else if (!vista.TFCorreo.getText().equals(correo)) {
-					this.vista.LblAvisoCorreo.setText("Correo incorrecto");
-					
-					HiloCorreo h = new HiloCorreo(vista);
-					
-					h.start();
-					
-				} else if (!vista.TFContra.getText().equals(contra)) {
-					this.vista.LblAvisoContra.setText("Contraseña incorrecta");
-					
-					HiloContra h = new HiloContra(vista);
-					
-					h.start();
-					
-				} 
-			 	**/	
-
 				
-
-				
-				
-			
-			
+			}
 		}
 		
 		if(e.getSource() == vista.BTNRuleta) {
-			this.vista.Ruleta.setVisible(true);
-			this.vista.Ruleta.LblInfoTiros.setText("Tiros: " + c1.getTirada());
+			vista.Ruleta.setVisible(true);
+			vista.Ruleta.LblInfoTiros.setText("Tiros: " + c1.getTirada());
 			vista.BTNMenu.setEnabled(false);
 			vista.BTNHamburguesa.setEnabled(false);
 			vista.BTNBebidas.setEnabled(false);
@@ -528,9 +495,10 @@ public class Funcionalidad implements ActionListener{
 		if(e.getSource() == vista.BTNModificacion) {
 			
 		}
-		}
-		
+	
 	}
+		
+	
 	public void ponerVisible() {
 		vista.BTNMenu.setEnabled(true);
 		vista.BTNHamburguesa.setEnabled(true);
