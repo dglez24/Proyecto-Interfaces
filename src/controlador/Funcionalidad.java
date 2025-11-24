@@ -18,8 +18,6 @@ public class Funcionalidad implements ActionListener{
 	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
 	ArrayList<Comida> comidas=new ArrayList<Comida>();
 	int posicion;
-
-	Usuario c1 = null;
 	
 	public Funcionalidad (VistaPrincipal frame) {
 		vista = frame;
@@ -43,6 +41,7 @@ public class Funcionalidad implements ActionListener{
 		vista.BTNModificacion.addActionListener(this);
 		
 		//-------------------------------------------------------------------
+		
 		vista.PClave.setVisible(false);
 		vista.TFClave.setVisible(false);
 		vista.PanelAvisoCorreo.setVisible(false);
@@ -240,6 +239,7 @@ public class Funcionalidad implements ActionListener{
 					h.start();
 					existe=false;
 				}
+			}
 				if (existe){
 					if (vista.TFClave.isVisible()) {
 						if(!vista.TFClave.getText().isEmpty()) {
@@ -248,7 +248,8 @@ public class Funcionalidad implements ActionListener{
 								usuarios.add(new Usuario(vista.TFNombre.getText(),vista.TFApellidos.getText(), vista.TFCorreo.getText(),vista.TFContra.getText(),true));
 								ponerVisible();
 								vista.BTNModificacion.setVisible(true);
-								vista.LblSaludo.setText("Bienvenido " + usuarios.getLast().getNombre() + "!!!");
+								posicion=usuarios.size();
+								vista.LblSaludo.setText("Bienvenido " + usuarios.get(posicion).getNombre() + "!!!");
 							} else {
 								vista.LblAvisoClave.setText("Clave Incorrecta");
 								HiloClave h = new HiloClave(vista);
@@ -260,10 +261,11 @@ public class Funcionalidad implements ActionListener{
 						usuarios.add(new Usuario(vista.TFNombre.getText(),vista.TFApellidos.getText(), vista.TFCorreo.getText(),vista.TFContra.getText(),false));
 						ponerVisible();
 						vista.BTNModificacion.setVisible(false);
-						vista.LblSaludo.setText("Bienvenido " + usuarios.getLast().getNombre() + "!!!");
+						posicion=usuarios.size();
+						vista.LblSaludo.setText("Bienvenido " + usuarios.get(posicion).getNombre() + "!!!");
 					}
 				}	
-			}	
+				
 		}
 	}
 	
@@ -401,6 +403,7 @@ public class Funcionalidad implements ActionListener{
 			vista.BTNCerrarSesion.setVisible(false);
 			vista.BTNRuleta.setVisible(false);
 			vista.BTNMenu.setVisible(false);
+			//aqui se le pone una imagen a los labels img1,img2 y img3
 		}
 				
 		
