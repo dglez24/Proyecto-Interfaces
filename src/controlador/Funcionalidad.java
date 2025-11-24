@@ -248,7 +248,7 @@ public class Funcionalidad implements ActionListener{
 								usuarios.add(new Usuario(vista.TFNombre.getText(),vista.TFApellidos.getText(), vista.TFCorreo.getText(),vista.TFContra.getText(),true));
 								ponerVisible();
 								vista.BTNModificacion.setVisible(true);
-								posicion=usuarios.size();
+								posicion=usuarios.size()-1;
 								vista.LblSaludo.setText("Bienvenido " + usuarios.get(posicion).getNombre() + "!!!");
 							} else {
 								vista.LblAvisoClave.setText("Clave Incorrecta");
@@ -261,7 +261,7 @@ public class Funcionalidad implements ActionListener{
 						usuarios.add(new Usuario(vista.TFNombre.getText(),vista.TFApellidos.getText(), vista.TFCorreo.getText(),vista.TFContra.getText(),false));
 						ponerVisible();
 						vista.BTNModificacion.setVisible(false);
-						posicion=usuarios.size();
+						posicion=usuarios.size()-1;
 						vista.LblSaludo.setText("Bienvenido " + usuarios.get(posicion).getNombre() + "!!!");
 					}
 				}	
@@ -270,7 +270,6 @@ public class Funcionalidad implements ActionListener{
 	}
 	
 		if(e.getSource() == vista.btnIniciar) {
-			
 			
 			for(int i = 0; i< usuarios.size(); i++) {
 				if(vista.TFCorreo.getText().equals(usuarios.get(i).getCorreo())&&vista.TFContra.getText().equals(usuarios.get(i).getContra())) {
