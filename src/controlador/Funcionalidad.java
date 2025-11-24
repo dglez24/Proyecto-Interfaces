@@ -79,18 +79,18 @@ public class Funcionalidad implements ActionListener{
 		this.vista.Ruleta.Foto3_P.setVisible(false);
 		
 		//-------------------------------------------------------------------------
-		comidas.add(new Comida("Hamburguesa BBQ la puerca","imagenes//Hbbq.png",12.99,1,10,1));
-		comidas.add(new Comida("Hamburguesa cerdita","imagenes//Hsimple.png",10.99,1,10,1));
-		comidas.add(new Comida("Hamburguesa deluxe","imagenes//Hdeluxe.png",14.99,1,10,1));
-		comidas.add(new Comida("Ensalada","imagenes//Salada.png",2.99,1,10,2));
-		comidas.add(new Comida("Patatas fritas","imagenes//Pfritas.png",3.99,1,10,2));
-		comidas.add(new Comida("Aros de cebolla","imagenes//Aros.png",4.99,1,10,2));
-		comidas.add(new Comida("Agua","imagenes//Agua.png",1.99,1,20,3));
-		comidas.add(new Comida("CocaCola","imagenes//Coca.png",2.50,1,20,3));
-		comidas.add(new Comida("Cerveza","imagenes//cerveza.png",2.99,1,20,3));
-		comidas.add(new Comida("Helado de chocolate","imagenes//Elado.png",3.99,1,5,4));
-		comidas.add(new Comida("Batido de vainilla","imagenes//vanila.png",5.99,1,13,4));
-		comidas.add(new Comida("Natillas","imagenes//tillas.png",1.99,1,17,4));
+		comidas.add(new Comida("Hamburguesa BBQ la puerca","imagenes/Hbbq.png",12.99,1,10,1));
+		comidas.add(new Comida("Hamburguesa cerdita","imagenes/Hsimple.png",10.99,1,10,1));
+		comidas.add(new Comida("Hamburguesa deluxe","imagenes/Hdeluxe.png",14.99,1,10,1));
+		comidas.add(new Comida("Ensalada","imagenes/Salada.png",2.99,1,10,2));
+		comidas.add(new Comida("Patatas fritas","imagenes/Pfritas.png",3.99,1,10,2));
+		comidas.add(new Comida("Aros de cebolla","imagenes/Aros.png",4.99,1,10,2));
+		comidas.add(new Comida("Agua","imagenes/Agua.png",1.99,1,20,3));
+		comidas.add(new Comida("CocaCola","imagenes/Coca.png",2.50,1,20,3));
+		comidas.add(new Comida("Cerveza","imagenes/cerveza.png",2.99,1,20,3));
+		comidas.add(new Comida("Helado de chocolate","imagenes/Elado.png",3.99,1,5,4));
+		comidas.add(new Comida("Batido de vainilla","imagenes/vanila.png",5.99,1,13,4));
+		comidas.add(new Comida("Natillas","imagenes/tillas.png",1.99,1,17,4));
 		usuarios.add(new Usuario("Juan", "Perez", "a", "a",false));
 		usuarios.add(new Usuario("Manolo", "Montes", "b", "b",true));
 		
@@ -393,18 +393,42 @@ public class Funcionalidad implements ActionListener{
 		}
 		
 		if(e.getSource() == vista.BTNHamburguesa) {
-			vista.PanelHamburguesa.setVisible(true);
-			vista.BTNHamburguesa.setVisible(false);
-			vista.BTNBebidas.setVisible(false);
-			vista.BTNComponentes.setVisible(false);
-			vista.BTNPostres.setVisible(false);
-			vista.BTNPromociones.setVisible(false);
-			vista.BTNCerrarSesion.setVisible(false);
-			vista.BTNRuleta.setVisible(false);
-			vista.BTNMenu.setVisible(false);
+			panelComidas();
+			vista.PanelHamburguesa.img1.setIcon(new ImageIcon(comidas.get(0).getFoto()));
+			vista.PanelHamburguesa.img2.setIcon(new ImageIcon(comidas.get(1).getFoto()));
+			vista.PanelHamburguesa.img3.setIcon(new ImageIcon(comidas.get(2).getFoto()));
+			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			//aqui se le pone una imagen a los labels img1,img2 y img3
 		}
-				
+		if(e.getSource()==vista.BTNComponentes) {
+			panelComidas();
+			vista.PanelHamburguesa.img1.setIcon(new ImageIcon(comidas.get(3).getFoto()));
+			vista.PanelHamburguesa.img2.setIcon(new ImageIcon(comidas.get(4).getFoto()));
+			vista.PanelHamburguesa.img3.setIcon(new ImageIcon(comidas.get(5).getFoto()));
+			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+		}
+		if(e.getSource()==vista.BTNBebidas) {
+			panelComidas();
+			vista.PanelHamburguesa.img1.setIcon(new ImageIcon(comidas.get(6).getFoto()));
+			vista.PanelHamburguesa.img2.setIcon(new ImageIcon(comidas.get(7).getFoto()));
+			vista.PanelHamburguesa.img3.setIcon(new ImageIcon(comidas.get(8).getFoto()));
+			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+		}
+		if(e.getSource()==vista.BTNPostres) {
+			panelComidas();
+			vista.PanelHamburguesa.img1.setIcon(new ImageIcon(comidas.get(9).getFoto()));
+			vista.PanelHamburguesa.img2.setIcon(new ImageIcon(comidas.get(10).getFoto()));
+			vista.PanelHamburguesa.img3.setIcon(new ImageIcon(comidas.get(11).getFoto()));
+			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+		}
 		
 		if(e.getSource() == vista.BTNPromociones) {
 			vista.PanelPromocion.setVisible(true);
@@ -419,13 +443,26 @@ public class Funcionalidad implements ActionListener{
 			
 		}
 		
+		if(e.getSource()==vista.PanelHamburguesa.BtnAtras) {
+			ponerVisible();
+		}
 		if(e.getSource() == vista.BTNModificacion) {
 			
 		}
 
 		}
 	
-		
+	public void panelComidas() {
+		vista.PanelHamburguesa.setVisible(true);
+		vista.BTNHamburguesa.setVisible(false);
+		vista.BTNBebidas.setVisible(false);
+		vista.BTNComponentes.setVisible(false);
+		vista.BTNPostres.setVisible(false);
+		vista.BTNPromociones.setVisible(false);
+		vista.BTNCerrarSesion.setVisible(false);
+		vista.BTNRuleta.setVisible(false);
+		vista.BTNMenu.setVisible(false);
+	}
 	
 	public void ponerVisible() {
 		vista.BTNMenu.setEnabled(true);
