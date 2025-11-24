@@ -432,7 +432,6 @@ public class VistaPrincipal extends JFrame {
 		BTNModificacion = new JButton("Administrar");
 		BTNModificacion.setBackground(new Color(255, 255, 128));
 		BTNModificacion.setBounds(10, 10, 150, 20);
-		BTNModificacion.setVisible(false);
 		contentPane.add(BTNModificacion);
 		
 

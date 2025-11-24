@@ -13,12 +13,12 @@ import modelo.Comida;
 import vista.VistaPrincipal;
 
 public class Funcionalidad implements ActionListener{
-	
+	private boolean permiso;
 	VistaPrincipal vista = new VistaPrincipal();
 	
 	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
 	ArrayList<Comida> comidas=new ArrayList<Comida>();
-	Usuario c1 = null;
+	int posicion;
 	public Funcionalidad (VistaPrincipal frame) {
 		vista = frame;
 		vista.BTNCerrarSesion.addActionListener(this);
@@ -40,7 +40,7 @@ public class Funcionalidad implements ActionListener{
 		vista.BTNSalirRegi.addActionListener(this);
 		vista.BTNModificacion.addActionListener(this);
 		
-		
+		//-------------------------------------------------------------------
 		vista.PClave.setVisible(false);
 		vista.TFClave.setVisible(false);
 		vista.PanelAvisoCorreo.setVisible(false);
@@ -62,7 +62,7 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelPromocion.setVisible(false);
 		vista.OpcionRegistrar.BTNSalir.setVisible(false);
 		vista.BTNModificacion.setVisible(false);
-		
+		//-------------------------------------------------------------------
 		vista.Ruleta.setVisible(false);
 		
 		this.vista.Ruleta.Foto1_B.setVisible(false);
@@ -77,7 +77,7 @@ public class Funcionalidad implements ActionListener{
 		this.vista.Ruleta.Foto3_H.setVisible(false);
 		this.vista.Ruleta.Foto3_P.setVisible(false);
 		
-	
+		//-------------------------------------------------------------------------
 		comidas.add(new Comida("Hamburguesa BBQ la puerca","sdad",12.99,1,10,1));
 		comidas.add(new Comida("Hamburguesa cerdita","q231",10.99,1,10,1));
 		comidas.add(new Comida("Hamburguesa deluxe","q231",14.99,1,10,1));
@@ -205,35 +205,67 @@ public class Funcionalidad implements ActionListener{
 			if(vista.TFClave.isVisible()) {
 				vista.PClave.setVisible(false);
 				vista.TFClave.setVisible(false);
-				vista.btnAdmin.setText("Iniciar como Administrador");
+				permiso=false;
+				vista.btnAdmin.setText("Registrar como Administrador");
 			} else {
 				vista.PClave.setVisible(true);
 				vista.TFClave.setVisible(true);
-				vista.btnAdmin.setText("Iniciar como Usuario");
+				permiso=true;
+				vista.btnAdmin.setText("Registrar como Usuario");
 			}
 		}
 		
-		if(e.getSource() == vista.btnRegistrar) {
+	if(e.getSource() == vista.btnRegistrar) {
 			
-			if(!vista.TFNombre.getText().isEmpty() && !vista.TFApellidos.getText().isEmpty() && !vista.TFCorreo.getText().isEmpty() && !vista.TFContra.getText().isEmpty()) {
-				
-				String nombre = vista.TFNombre.getText();
-				String apellidos = vista.TFApellidos.getText();
-				String correo = vista.TFCorreo.getText();
-				String contra = vista.TFContra.getText();
-				String contra2 = null;
-				String correo2 = null;
-				
-				for (int i = 0; i < usuarios.size(); i++) {
-					if(usuarios.get(i).getContra().equals(contra)) {
-						contra2 = contra;
-					} 
-					if(usuarios.get(i).getCorreo().equals(correo)) {
-						correo2 = correo;
-					} 
+		if(vista.TFNombre.getText().isEmpty() || vista.TFApellidos.getText().isEmpty() || vista.TFCorreo.getText().isEmpty() || vista.TFContra.getText().isEmpty()) {
+			
+			this.vista.LblAvisoContra.setText("hay campos vacios");
+			this.vista.LblAvisoCorreo.setText("hay campos vacios");
+
+			//HiloCorreo h = new HiloCorreo(vista);
+			HiloContra h2 = new HiloContra(vista);
+			//h.start();
+			h2.start();
+			
+			
+		}else {
+			boolean existe=true;
+			for(int i=0;i<usuarios.size();i++) {
+				if(vista.TFCorreo.getText().equals(usuarios.get(i).getCorreo())) {
+					vista.LblAvisoCorreo.setText("Ya existe");
+					HiloCorreo h = new HiloCorreo(vista);
+					h.start();
+					existe=false;
 				}
-				
-				if (contra2 == contra && correo2 == correo) {
+				if (existe){
+					if (vista.TFClave.isVisible()) {
+						if(!vista.TFClave.getText().isEmpty()) {
+							if(vista.TFClave.getText().equals("5202")) {
+								
+								usuarios.add(new Administrador(vista.TFNombre.getText(),vista.TFApellidos.getText(), vista.TFCorreo.getText(),vista.TFContra.getText()));
+								ponerVisible();
+								vista.BTNModificacion.setVisible(true);
+								vista.LblSaludo.setText("Bienvenido " + usuarios.getLast().getNombre() + "!!!");
+							} else {
+								vista.LblAvisoClave.setText("Clave Incorrecta");
+								HiloClave h = new HiloClave(vista);
+								h.start();		
+							}
+						}	
+							
+					}else {
+						usuarios.add(new Cliente(vista.TFNombre.getText(),vista.TFApellidos.getText(), vista.TFCorreo.getText(),vista.TFContra.getText()));
+						ponerVisible();
+						vista.BTNModificacion.setVisible(false);
+						vista.LblSaludo.setText("Bienvenido " + usuarios.getLast().getNombre() + "!!!");
+					}
+				}	
+			}	
+		}
+	}
+	
+		
+				/**if (contra2 == contra && correo2 == correo) {
 					
 					this.vista.LblAvisoContra.setText("La Contraseña ya existe");
 					this.vista.LblAvisoCorreo.setText("El correo ya existe");
@@ -265,34 +297,13 @@ public class Funcionalidad implements ActionListener{
 							if(vista.TFClave.getText().equals("5202")) {
 								usuarios.add(new Administrador(nombre, apellidos, correo, contra));
 								c1 = new Administrador(nombre, apellidos, correo, contra);
-								vista.BTNMenu.setEnabled(true);
-								vista.BTNHamburguesa.setEnabled(true);
-								vista.BTNBebidas.setEnabled(true);
-								vista.BTNComponentes.setEnabled(true);
-								vista.BTNPostres.setEnabled(true);
-								vista.BTNPromociones.setEnabled(true);
-								vista.BTNCerrarSesion.setEnabled(true);
-								vista.BTNRuleta.setEnabled(true);
-
-								vista.PanelRegistro.setVisible(false);
-								vista.BTNMenu.setVisible(true);
-								vista.BTNHamburguesa.setVisible(true);
-								vista.BTNBebidas.setVisible(true);
-								vista.BTNComponentes.setVisible(true);
-								vista.BTNPostres.setVisible(true);
-								vista.BTNPromociones.setVisible(true);
-								vista.POferta.setVisible(true);
-								vista.PLogo.setVisible(true);
-								vista.BTNCerrarSesion.setVisible(true);
-								vista.BTNRuleta.setVisible(true);
-								vista.BTNModificacion.setVisible(true);
+								ponerVisible();
 								vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
 							} else {
 								vista.LblAvisoClave.setText("Clave Incorrecta");
 								HiloClave h = new HiloClave(vista);
 								
-								h.start();
-								
+								h.start();		
 							}
 						}else {
 							vista.LblAvisoClave.setText("Clave vacia");
@@ -300,45 +311,18 @@ public class Funcionalidad implements ActionListener{
 							HiloClave h = new HiloClave(vista);
 							
 							h.start();
-						}
-						
-						
+						}		
 						} else {
 							usuarios.add(new Cliente(nombre, apellidos, correo, contra));
 							c1 = new Cliente(nombre, apellidos, correo, contra);
-							vista.BTNMenu.setEnabled(true);
-							vista.BTNHamburguesa.setEnabled(true);
-							vista.BTNBebidas.setEnabled(true);
-							vista.BTNComponentes.setEnabled(true);
-							vista.BTNPostres.setEnabled(true);
-							vista.BTNPromociones.setEnabled(true);
-							vista.BTNCerrarSesion.setEnabled(true);
-							vista.BTNRuleta.setEnabled(true);
-
-							vista.PanelRegistro.setVisible(false);
-							vista.BTNMenu.setVisible(true);
-							vista.BTNHamburguesa.setVisible(true);
-							vista.BTNBebidas.setVisible(true);
-							vista.BTNComponentes.setVisible(true);
-							vista.BTNPostres.setVisible(true);
-							vista.BTNPromociones.setVisible(true);
-							vista.POferta.setVisible(true);
-							vista.PLogo.setVisible(true);
-							vista.BTNCerrarSesion.setVisible(true);
-							vista.BTNRuleta.setVisible(true);
+							ponerVisible();
 							vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
 					}
 				}
-				
-				vista.TFNombre.setText("");
-				vista.TFApellidos.setText("");
-				vista.TFCorreo.setText("");
-				vista.TFContra.setText("");
-				vista.TFClave.setText("");
 			} else {
 				//sonido
-			}
-		}
+			}**/
+		
 		
 		
 		
@@ -349,15 +333,17 @@ public class Funcionalidad implements ActionListener{
 				if(vista.TFCorreo.getText().equals(usuarios.get(i).getCorreo())&&vista.TFContra.getText().equals(usuarios.get(i).getContra())) {
 						if(usuarios.get(i).getClass()==Administrador.class) {
 							ponerVisible();
+							posicion=i;
 							vista.BTNModificacion.setVisible(true);
 							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");
+							
 						}else {
 							ponerVisible();
+							posicion=i;
+							vista.BTNModificacion.setVisible(false);
 							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");
 						}
-					
 				}else{
-				
 					this.vista.LblAvisoContra.setText("Contraseña incorrecta");
 					this.vista.LblAvisoCorreo.setText("Correo incorrecto");
 
@@ -369,50 +355,12 @@ public class Funcionalidad implements ActionListener{
 				}
 				
 				
-			/**		
-				}else if(vista.TFCorreo.getText().isEmpty() || vista.TFContra.getText().isEmpty()) {
-					
-					//sonido
-					
-				}else if (!vista.TFCorreo.getText().equals(correo) && !vista.TFContra.getText().equals(contra)) {
-					
-					this.vista.LblAvisoContra.setText("Contraseña incorrecta");
-					this.vista.LblAvisoCorreo.setText("Correo incorrecto");
-
-					HiloCorreo h = new HiloCorreo(vista);
-					HiloContra h2 = new HiloContra(vista);
-					
-					h.start();
-					h2.start();
-					
-				} else if (!vista.TFCorreo.getText().equals(correo)) {
-					this.vista.LblAvisoCorreo.setText("Correo incorrecto");
-					
-					HiloCorreo h = new HiloCorreo(vista);
-					
-					h.start();
-					
-				} else if (!vista.TFContra.getText().equals(contra)) {
-					this.vista.LblAvisoContra.setText("Contraseña incorrecta");
-					
-					HiloContra h = new HiloContra(vista);
-					
-					h.start();
-					
-				} 
-			 	**/	
-
-				
-
-				
-				
-			
-			
+			}
 		}
 		
 		if(e.getSource() == vista.BTNRuleta) {
 			this.vista.Ruleta.setVisible(true);
-			this.vista.Ruleta.LblInfoTiros.setText("Tiros: " + c1.getTirada());
+			this.vista.Ruleta.LblInfoTiros.setText("Tiros: " + usuarios.get(posicion).getTirada());
 			vista.BTNMenu.setEnabled(false);
 			vista.BTNHamburguesa.setEnabled(false);
 			vista.BTNBebidas.setEnabled(false);
@@ -427,7 +375,7 @@ public class Funcionalidad implements ActionListener{
 		if(e.getSource() == vista.Ruleta.BTNTirar) {
 			
 
-			if(c1.getTirada() > 0) {
+			if(usuarios.get(posicion).getTirada() > 0) {
 			HiloRuleta hr = new HiloRuleta(vista);
 			
 			hr.start();
@@ -463,8 +411,8 @@ public class Funcionalidad implements ActionListener{
 				this.vista.Ruleta.Foto3.setIcon(new ImageIcon("Imagenes/imagenP.png"));
 			}
 			
-			c1.setTirada(c1.getTirada() - 1);
-			this.vista.Ruleta.LblInfoTiros.setText("Tiros: " + c1.getTirada());
+			usuarios.get(posicion).setTirada(usuarios.get(posicion).getTirada()-1);
+			this.vista.Ruleta.LblInfoTiros.setText("Tiros: " +usuarios.get(posicion).getTirada());
 
 			} else {
 				//sonido
@@ -529,8 +477,10 @@ public class Funcionalidad implements ActionListener{
 			
 		}
 		}
+	
 		
-	}
+		
+	
 	public void ponerVisible() {
 		vista.BTNMenu.setEnabled(true);
 		vista.BTNHamburguesa.setEnabled(true);
