@@ -79,18 +79,18 @@ public class Funcionalidad implements ActionListener{
 		this.vista.Ruleta.Foto3_P.setVisible(false);
 		
 		//-------------------------------------------------------------------------
-		comidas.add(new Comida("Hamburguesa BBQ la puerca","sdad",12.99,1,10,1));
-		comidas.add(new Comida("Hamburguesa cerdita","q231",10.99,1,10,1));
-		comidas.add(new Comida("Hamburguesa deluxe","q231",14.99,1,10,1));
-		comidas.add(new Comida("Ensalada","q231",2.99,1,10,2));
-		comidas.add(new Comida("Patatas fritas","q231",3.99,1,10,2));
-		comidas.add(new Comida("Aros de cebolla","q231",4.99,1,10,2));
-		comidas.add(new Comida("Agua","q231",1.99,1,20,3));
-		comidas.add(new Comida("CocaCola","q231",2.50,1,20,3));
-		comidas.add(new Comida("Cerveza","q231",2.99,1,20,3));
-		comidas.add(new Comida("Helado de chocolate","q231",3.99,1,5,4));
-		comidas.add(new Comida("Batido de vainilla","q231",5.99,1,13,4));
-		comidas.add(new Comida("Natillas","q231",1.99,1,17,4));
+		comidas.add(new Comida("Hamburguesa BBQ la puerca","imagenes//Hbbq.png",12.99,1,10,1));
+		comidas.add(new Comida("Hamburguesa cerdita","imagenes//Hsimple.png",10.99,1,10,1));
+		comidas.add(new Comida("Hamburguesa deluxe","imagenes//Hdeluxe.png",14.99,1,10,1));
+		comidas.add(new Comida("Ensalada","imagenes//Salada.png",2.99,1,10,2));
+		comidas.add(new Comida("Patatas fritas","imagenes//Pfritas.png",3.99,1,10,2));
+		comidas.add(new Comida("Aros de cebolla","imagenes//Aros.png",4.99,1,10,2));
+		comidas.add(new Comida("Agua","imagenes//Agua.png",1.99,1,20,3));
+		comidas.add(new Comida("CocaCola","imagenes//Coca.png",2.50,1,20,3));
+		comidas.add(new Comida("Cerveza","imagenes//cerveza.png",2.99,1,20,3));
+		comidas.add(new Comida("Helado de chocolate","imagenes//Elado.png",3.99,1,5,4));
+		comidas.add(new Comida("Batido de vainilla","imagenes//vanila.png",5.99,1,13,4));
+		comidas.add(new Comida("Natillas","imagenes//tillas.png",1.99,1,17,4));
 		usuarios.add(new Usuario("Juan", "Perez", "a", "a",false));
 		usuarios.add(new Usuario("Manolo", "Montes", "b", "b",true));
 		
