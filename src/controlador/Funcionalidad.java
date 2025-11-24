@@ -6,8 +6,7 @@ import java.util.*;
 
 import javax.swing.ImageIcon;
 
-import modelo.Administrador;
-import modelo.Cliente;
+
 import modelo.Usuario;
 import modelo.Comida;
 import vista.VistaPrincipal;
@@ -19,6 +18,9 @@ public class Funcionalidad implements ActionListener{
 	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
 	ArrayList<Comida> comidas=new ArrayList<Comida>();
 	int posicion;
+
+	Usuario c1 = null;
+	
 	public Funcionalidad (VistaPrincipal frame) {
 		vista = frame;
 		vista.BTNCerrarSesion.addActionListener(this);
@@ -90,9 +92,10 @@ public class Funcionalidad implements ActionListener{
 		comidas.add(new Comida("Helado de chocolate","q231",3.99,1,5,4));
 		comidas.add(new Comida("Batido de vainilla","q231",5.99,1,13,4));
 		comidas.add(new Comida("Natillas","q231",1.99,1,17,4));
-		usuarios.add(new Cliente("Juan", "Perez", "a", "a"));
-		usuarios.add(new Administrador("Manolo", "Montes", "b", "b"));
-		}
+		usuarios.add(new Usuario("Juan", "Perez", "a", "a",false));
+		usuarios.add(new Usuario("Manolo", "Montes", "b", "b",true));
+		
+	}
 
 
 	@Override
@@ -242,7 +245,7 @@ public class Funcionalidad implements ActionListener{
 						if(!vista.TFClave.getText().isEmpty()) {
 							if(vista.TFClave.getText().equals("5202")) {
 								
-								usuarios.add(new Administrador(vista.TFNombre.getText(),vista.TFApellidos.getText(), vista.TFCorreo.getText(),vista.TFContra.getText()));
+								usuarios.add(new Usuario(vista.TFNombre.getText(),vista.TFApellidos.getText(), vista.TFCorreo.getText(),vista.TFContra.getText(),true));
 								ponerVisible();
 								vista.BTNModificacion.setVisible(true);
 								vista.LblSaludo.setText("Bienvenido " + usuarios.getLast().getNombre() + "!!!");
@@ -254,7 +257,7 @@ public class Funcionalidad implements ActionListener{
 						}	
 							
 					}else {
-						usuarios.add(new Cliente(vista.TFNombre.getText(),vista.TFApellidos.getText(), vista.TFCorreo.getText(),vista.TFContra.getText()));
+						usuarios.add(new Usuario(vista.TFNombre.getText(),vista.TFApellidos.getText(), vista.TFCorreo.getText(),vista.TFContra.getText(),false));
 						ponerVisible();
 						vista.BTNModificacion.setVisible(false);
 						vista.LblSaludo.setText("Bienvenido " + usuarios.getLast().getNombre() + "!!!");
@@ -264,79 +267,16 @@ public class Funcionalidad implements ActionListener{
 		}
 	}
 	
-		
-				/**if (contra2 == contra && correo2 == correo) {
-					
-					this.vista.LblAvisoContra.setText("La Contraseña ya existe");
-					this.vista.LblAvisoCorreo.setText("El correo ya existe");
-
-					HiloCorreo h = new HiloCorreo(vista);
-					HiloContra h2 = new HiloContra(vista);
-					
-					h.start();
-					h2.start();
-					
-				} else if (correo2 == correo) {
-					this.vista.LblAvisoCorreo.setText("El correo ya existe");
-					
-					HiloCorreo h = new HiloCorreo(vista);
-					
-					h.start();
-					
-				} else if (contra2 == contra ) {
-					this.vista.LblAvisoContra.setText("La Contraseña ya existe");
-					
-					HiloContra h = new HiloContra(vista);
-					
-					h.start();
-					
-				} else {
-					
-					if (vista.TFClave.isVisible()) {
-						if(!vista.TFClave.getText().isEmpty()) {
-							if(vista.TFClave.getText().equals("5202")) {
-								usuarios.add(new Administrador(nombre, apellidos, correo, contra));
-								c1 = new Administrador(nombre, apellidos, correo, contra);
-								ponerVisible();
-								vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
-							} else {
-								vista.LblAvisoClave.setText("Clave Incorrecta");
-								HiloClave h = new HiloClave(vista);
-								
-								h.start();		
-							}
-						}else {
-							vista.LblAvisoClave.setText("Clave vacia");
-							
-							HiloClave h = new HiloClave(vista);
-							
-							h.start();
-						}		
-						} else {
-							usuarios.add(new Cliente(nombre, apellidos, correo, contra));
-							c1 = new Cliente(nombre, apellidos, correo, contra);
-							ponerVisible();
-							vista.LblSaludo.setText("Bienvenido " + c1.getNombre() + "!!!");
-					}
-				}
-			} else {
-				//sonido
-			}**/
-		
-		
-		
-		
-		
 		if(e.getSource() == vista.btnIniciar) {
+			
 			
 			for(int i = 0; i< usuarios.size(); i++) {
 				if(vista.TFCorreo.getText().equals(usuarios.get(i).getCorreo())&&vista.TFContra.getText().equals(usuarios.get(i).getContra())) {
-						if(usuarios.get(i).getClass()==Administrador.class) {
+						if(usuarios.get(i).isAdmin()==true) {
 							ponerVisible();
 							posicion=i;
 							vista.BTNModificacion.setVisible(true);
-							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");
-							
+							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");							
 						}else {
 							ponerVisible();
 							posicion=i;
@@ -354,13 +294,17 @@ public class Funcionalidad implements ActionListener{
 					h2.start();
 				}
 				
-				
 			}
 		}
 		
 		if(e.getSource() == vista.BTNRuleta) {
+
 			this.vista.Ruleta.setVisible(true);
 			this.vista.Ruleta.LblInfoTiros.setText("Tiros: " + usuarios.get(posicion).getTirada());
+
+			vista.Ruleta.setVisible(true);
+			vista.Ruleta.LblInfoTiros.setText("Tiros: " + usuarios.get(posicion).getTirada());
+
 			vista.BTNMenu.setEnabled(false);
 			vista.BTNHamburguesa.setEnabled(false);
 			vista.BTNBebidas.setEnabled(false);
@@ -476,9 +420,9 @@ public class Funcionalidad implements ActionListener{
 		if(e.getSource() == vista.BTNModificacion) {
 			
 		}
+
 		}
 	
-		
 		
 	
 	public void ponerVisible() {

@@ -1,23 +1,22 @@
 package modelo;
 
-public abstract class Usuario {
+public class Usuario {
 	
-	protected String Nombre;
-	protected String Apellidos;
-	protected String Correo;
-	protected String Contra;
-	protected int pedido;
-	protected int tirada;
-	protected boolean admin;
+	private  String Nombre;
+	private String Apellidos;
+	private String Correo;
+	private String Contra;
+	private int pedido,tirada;
+	private boolean admin;
 	
-	public Usuario(String nombre, String apellidos, String correo, String contra) {
+	public Usuario(String nombre, String apellidos, String correo, String contra,boolean admin) {
 		this.Nombre = nombre;
 		this.Apellidos = apellidos;
 		this.Correo = correo;
 		this.Contra = contra;
 		this.pedido = 0;
 		this.tirada = 1;
-		this.admin=false;
+		this.admin=admin;
 	}
 
 	public String getNombre() {
