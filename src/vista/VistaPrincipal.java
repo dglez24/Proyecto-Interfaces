@@ -237,7 +237,7 @@ public class VistaPrincipal extends JFrame {
 		LblMenu.setOpaque(false);
 		LblMenu.setFont(new Font("Vivaldi", Font.BOLD, 30));
 		LblMenu.setHorizontalAlignment(SwingConstants.LEFT);
-		LblMenu.setBounds(25, 27, 95, 37);
+		LblMenu.setBounds(22, 27, 95, 37);
 		panel_1.add(LblMenu);
 		
 		POferta = new JPanel();
