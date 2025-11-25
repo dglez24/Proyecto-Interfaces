@@ -485,7 +485,7 @@ public class Funcionalidad implements ActionListener{
 	    try {
 	        Image originalImage = new ImageIcon(path).getImage();
 	        // Usamos SCALE_SMOOTH para mejor calidad
-	        Image scaledImage = originalImage.getScaledInstance(height, height, Image.SCALE_SMOOTH); 
+	        Image scaledImage = originalImage.getScaledInstance(height+15, height, Image.SCALE_SMOOTH); 
 	        return new ImageIcon(scaledImage);
 	    } catch (Exception e) {
 	        System.err.println("Error al cargar o escalar la imagen: " + path);
