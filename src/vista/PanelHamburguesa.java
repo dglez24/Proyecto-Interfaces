@@ -11,6 +11,7 @@ import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.JButton;
+import java.awt.Font;
 
 public class PanelHamburguesa extends JPanel {
 
@@ -35,6 +36,8 @@ public class PanelHamburguesa extends JPanel {
 		
 		
 		BtnAtras = new JButton("Atras");
+		BtnAtras.setFont(new Font("Tahoma", Font.BOLD, 10));
+		BtnAtras.setBackground(new Color(187, 0, 0));
 		BtnAtras.setBounds(766, 10, 84, 20);
 		add(BtnAtras);
 		
