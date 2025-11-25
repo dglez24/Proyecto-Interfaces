@@ -40,6 +40,13 @@ public class Funcionalidad implements ActionListener{
 		vista.OpcionRegistrar.BTNSalir.addActionListener(this);
 		vista.BTNSalirRegi.addActionListener(this);
 		vista.BTNModificacion.addActionListener(this);
+		vista.PanelHamburguesa.BtnAtras.addActionListener(this);
+		vista.PanelHamburguesa.img1.addActionListener(this);
+		vista.PanelHamburguesa.img2.addActionListener(this);
+		vista.PanelHamburguesa.img3.addActionListener(this);		
+		vista.PanelLista.btnAtras.addActionListener(this);
+		vista.PanelPromocion.btnAtras.addActionListener(this);
+		
 		
 		//-------------------------------------------------------------------
 		
@@ -62,6 +69,7 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelLista.setVisible(false);
 		vista.PanelHamburguesa.setVisible(false);
 		vista.PanelPromocion.setVisible(false);
+		vista.PanelAdmin.setVisible(false);
 		vista.OpcionRegistrar.BTNSalir.setVisible(false);
 		vista.BTNModificacion.setVisible(false);
 		//-------------------------------------------------------------------
@@ -426,6 +434,7 @@ public class Funcionalidad implements ActionListener{
 		
 		if(e.getSource() == vista.BTNPromociones) {
 			vista.PanelPromocion.setVisible(true);
+			vista.PanelAdmin.setVisible(false);
 			vista.BTNMenu.setVisible(false);
 			vista.BTNHamburguesa.setVisible(false);
 			vista.BTNBebidas.setVisible(false);
@@ -440,6 +449,16 @@ public class Funcionalidad implements ActionListener{
 		if(e.getSource()==vista.PanelHamburguesa.BtnAtras) {
 			ponerVisible();
 		}
+		
+		if(e.getSource() == vista.PanelPromocion.btnAtras) {
+			ponerVisible();
+		}
+		
+		if(e.getSource() == vista.PanelLista.btnAtras) {
+			ponerVisible();
+		}
+		
+		
 		if(e.getSource() == vista.BTNModificacion) {
 			
 		}
@@ -459,6 +478,9 @@ public class Funcionalidad implements ActionListener{
 	}
 	
 	public void ponerVisible() {
+		vista.PanelHamburguesa.setVisible(false);
+		vista.PanelPromocion.setVisible(false);
+		vista.PanelLista.setVisible(false);
 		vista.BTNMenu.setEnabled(true);
 		vista.BTNHamburguesa.setEnabled(true);
 		vista.BTNBebidas.setEnabled(true);

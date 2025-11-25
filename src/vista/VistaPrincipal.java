@@ -75,6 +75,7 @@ public class VistaPrincipal extends JFrame {
 	public PanelLista PanelLista;
 	public PanelHamburguesa PanelHamburguesa;
 	public PanelPromocion PanelPromocion;
+	public PanelAdmin PanelAdmin;
 	public Ruleta Ruleta;
 	public JButton BTNRuleta;
 	public OpcionRegistrar OpcionRegistrar;
@@ -141,6 +142,10 @@ public class VistaPrincipal extends JFrame {
 		contentPane.add(PanelPromocion);
 		PanelPromocion.setLayout(null);
 		
+		PanelAdmin = new PanelAdmin();
+		PanelAdmin.setBounds(0, 0, 859, 484);
+		contentPane.add(PanelAdmin);
+		PanelAdmin.setLayout(null);
 		
 		PanelRegistro = new JPanel();
 		PanelRegistro.setBounds(235, 12, 380, 450);
