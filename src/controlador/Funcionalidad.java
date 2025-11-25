@@ -188,8 +188,9 @@ public class Funcionalidad implements ActionListener{
 				vista.BTNPromociones.setEnabled(false);
 				vista.BTNCerrarSesion.setEnabled(false);
 				vista.BTNRuleta.setEnabled(false);
-				
-				
+				if(usuarios.get(posicion).isAdmin()) {
+					vista.BTNModificacion.setEnabled(false);
+				}
 				vista.OpcionRegistrar.BTNSalir.setVisible(true);
 				vista.OpcionRegistrar.setVisible(true);
 				
@@ -207,7 +208,9 @@ public class Funcionalidad implements ActionListener{
 			vista.BTNPromociones.setEnabled(true);
 			vista.BTNCerrarSesion.setEnabled(true);
 			vista.BTNRuleta.setEnabled(true);
-			
+			if(usuarios.get(posicion).isAdmin()) {
+				vista.BTNModificacion.setEnabled(true);
+			}
 			
 			vista.OpcionRegistrar.setVisible(false);
 		}
@@ -323,6 +326,9 @@ public class Funcionalidad implements ActionListener{
 			vista.BTNPromociones.setEnabled(false);
 			vista.BTNCerrarSesion.setEnabled(false);
 			vista.BTNRuleta.setEnabled(false);
+			if(usuarios.get(posicion).isAdmin()) {
+				vista.BTNModificacion.setEnabled(false);
+			}
 
 		}
 		
@@ -385,6 +391,9 @@ public class Funcionalidad implements ActionListener{
 			vista.BTNPromociones.setEnabled(true);
 			vista.BTNCerrarSesion.setEnabled(true);
 			vista.BTNRuleta.setEnabled(true);
+			if(usuarios.get(posicion).isAdmin()) {
+				vista.BTNModificacion.setEnabled(true);
+			}
 		}
 		
 		
@@ -447,6 +456,9 @@ public class Funcionalidad implements ActionListener{
 			vista.BTNPromociones.setVisible(false);
 			vista.BTNCerrarSesion.setVisible(false);
 			vista.BTNRuleta.setVisible(false);
+			if(usuarios.get(posicion).isAdmin()) {
+				vista.BTNModificacion.setVisible(false);
+			}
 			
 		}
 		
@@ -476,6 +488,9 @@ public class Funcionalidad implements ActionListener{
 		vista.BTNCerrarSesion.setVisible(false);
 		vista.BTNRuleta.setVisible(false);
 		vista.BTNMenu.setVisible(false);
+		if(usuarios.get(posicion).isAdmin()) {
+			vista.BTNModificacion.setVisible(false);
+		}
 	}
 	
 	public void ponerVisible() {
@@ -490,6 +505,9 @@ public class Funcionalidad implements ActionListener{
 		vista.BTNPromociones.setEnabled(true);
 		vista.BTNCerrarSesion.setEnabled(true);
 		vista.BTNRuleta.setEnabled(true);
+		if(usuarios.get(posicion).isAdmin()) {
+			vista.BTNModificacion.setEnabled(true);
+		}
 
 		vista.PanelRegistro.setVisible(false);
 		vista.BTNMenu.setVisible(true);
@@ -503,6 +521,10 @@ public class Funcionalidad implements ActionListener{
 		vista.BTNCerrarSesion.setVisible(true);
 		vista.BTNRuleta.setVisible(true);
 		vista.BTNModificacion.setVisible(true);
+		if(usuarios.get(posicion).isAdmin()) {
+			vista.BTNModificacion.setVisible(true);
+		}
+
 	}
 	private ImageIcon getScaledIcon(String path,  int height) {
 	    try {
