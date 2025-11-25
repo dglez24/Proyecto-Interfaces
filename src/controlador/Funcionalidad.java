@@ -192,6 +192,7 @@ public class Funcionalidad implements ActionListener{
 				vista.BTNPromociones.setEnabled(false);
 				vista.BTNCerrarSesion.setEnabled(false);
 				vista.BTNRuleta.setEnabled(false);
+				vista.BTNCarrito.setEnabled(false);
 				if(usuarios.get(posicion).isAdmin()) {
 					vista.BTNModificacion.setEnabled(false);
 				}
@@ -212,6 +213,7 @@ public class Funcionalidad implements ActionListener{
 			vista.BTNPromociones.setEnabled(true);
 			vista.BTNCerrarSesion.setEnabled(true);
 			vista.BTNRuleta.setEnabled(true);
+			vista.BTNCarrito.setEnabled(true);
 			if(usuarios.get(posicion).isAdmin()) {
 				vista.BTNModificacion.setEnabled(true);
 			}
@@ -330,6 +332,7 @@ public class Funcionalidad implements ActionListener{
 			vista.BTNPromociones.setEnabled(false);
 			vista.BTNCerrarSesion.setEnabled(false);
 			vista.BTNRuleta.setEnabled(false);
+			vista.BTNCarrito.setEnabled(false);
 			if(usuarios.get(posicion).isAdmin()) {
 				vista.BTNModificacion.setEnabled(false);
 			}
@@ -395,6 +398,7 @@ public class Funcionalidad implements ActionListener{
 			vista.BTNPromociones.setEnabled(true);
 			vista.BTNCerrarSesion.setEnabled(true);
 			vista.BTNRuleta.setEnabled(true);
+			vista.BTNCarrito.setEnabled(true);
 			if(usuarios.get(posicion).isAdmin()) {
 				vista.BTNModificacion.setEnabled(true);
 			}
@@ -458,6 +462,7 @@ public class Funcionalidad implements ActionListener{
 			vista.BTNPromociones.setVisible(false);
 			vista.BTNCerrarSesion.setVisible(false);
 			vista.BTNRuleta.setVisible(false);
+			vista.BTNCarrito.setVisible(false);
 			if(usuarios.get(posicion).isAdmin()) {
 				vista.BTNModificacion.setVisible(false);
 			}
@@ -489,6 +494,7 @@ public class Funcionalidad implements ActionListener{
 		vista.BTNPromociones.setVisible(false);
 		vista.BTNCerrarSesion.setVisible(false);
 		vista.BTNRuleta.setVisible(false);
+		vista.BTNCarrito.setVisible(false);
 		vista.LblMenu.setVisible(false);
 		if(usuarios.get(posicion).isAdmin()) {
 			vista.BTNModificacion.setVisible(false);
@@ -507,6 +513,7 @@ public class Funcionalidad implements ActionListener{
 		vista.BTNPromociones.setEnabled(true);
 		vista.BTNCerrarSesion.setEnabled(true);
 		vista.BTNRuleta.setEnabled(true);
+		vista.BTNCarrito.setEnabled(true);
 		if(usuarios.get(posicion).isAdmin()) {
 			vista.BTNModificacion.setEnabled(true);
 		}
@@ -522,6 +529,7 @@ public class Funcionalidad implements ActionListener{
 		vista.PLogo.setVisible(true);
 		vista.BTNCerrarSesion.setVisible(true);
 		vista.BTNRuleta.setVisible(true);
+		vista.BTNCarrito.setVisible(true);
 		if(usuarios.get(posicion).isAdmin()) {
 			vista.BTNModificacion.setVisible(true);
 		}
