@@ -516,6 +516,10 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelHamburguesa.nom1.setText(comidas.get(i).getNombre());
 		vista.PanelHamburguesa.nom2.setText(comidas.get(i+1).getNombre());
 		vista.PanelHamburguesa.nom3.setText(comidas.get(i+2).getNombre());
+		vista.PanelHamburguesa.precio1.setText(String.valueOf(comidas.get(i).getNombre()));
+		vista.PanelHamburguesa.precio2.setText(String.valueOf(comidas.get(i+1).getPrecio()));
+		vista.PanelHamburguesa.precio3.setText(String.valueOf(comidas.get(i+2).getPrecio()));
+
 	}
 	
 

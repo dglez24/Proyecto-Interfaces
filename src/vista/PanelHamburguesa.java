@@ -25,6 +25,9 @@ public class PanelHamburguesa extends JPanel {
 	public JButton img1;
 	public JButton img2;
 	public JButton img3;
+	public JLabel precio1;
+	public JLabel precio2;
+	public JLabel precio3;
 
 	/**
 	 * Create the panel.
@@ -55,18 +58,20 @@ public class PanelHamburguesa extends JPanel {
 		
 		nom1 = new JLabel("Texto prod 1");
 		nom1.setForeground(new Color(255, 255, 255));
-		nom1.setHorizontalAlignment(SwingConstants.LEFT);
-		nom1.setBounds(93, 198, 58, 13);
+		nom1.setHorizontalAlignment(SwingConstants.CENTER);
+		nom1.setBounds(61, 198, 156, 13);
 		panel_1.add(nom1);
 		
 		nom2 = new JLabel("Texto prod 2");
+		nom2.setHorizontalAlignment(SwingConstants.CENTER);
 		nom2.setForeground(new Color(255, 255, 255));
-		nom2.setBounds(364, 198, 58, 13);
+		nom2.setBounds(343, 198, 156, 13);
 		panel_1.add(nom2);
 		
 		nom3 = new JLabel("Texto prod 3");
+		nom3.setHorizontalAlignment(SwingConstants.CENTER);
 		nom3.setForeground(new Color(255, 255, 255));
-		nom3.setBounds(674, 198, 58, 13);
+		nom3.setBounds(638, 198, 156, 13);
 		panel_1.add(nom3);
 		
 		img1 = new JButton("New button");
@@ -80,6 +85,18 @@ public class PanelHamburguesa extends JPanel {
 		img3 = new JButton("New button");
 		img3.setBounds(638, 10, 156, 156);
 		panel_1.add(img3);
+		
+		precio1 = new JLabel("Precio 1");
+		precio1.setBounds(116, 221, 44, 12);
+		panel_1.add(precio1);
+		
+		precio2 = new JLabel("Precio 2");
+		precio2.setBounds(400, 221, 44, 12);
+		panel_1.add(precio2);
+		
+		precio3 = new JLabel("Precio 3");
+		precio3.setBounds(696, 221, 44, 12);
+		panel_1.add(precio3);
 
 	}
 }
