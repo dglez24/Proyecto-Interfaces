@@ -17,12 +17,11 @@ public class Funcionalidad implements ActionListener{
 	
 	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
 	ArrayList<Comida> comidas=new ArrayList<Comida>();
-	int posicion ;
+	int posicion;
 	
 	public Funcionalidad (VistaPrincipal frame) {
 		vista = frame;
 		vista.BTNCerrarSesion.addActionListener(this);
-		//hola
 		vista.btnAdmin.addActionListener(this);
 		vista.btnIniciar.addActionListener(this);
 		vista.btnRegistrar.addActionListener(this);
