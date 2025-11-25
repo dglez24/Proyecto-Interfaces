@@ -183,6 +183,20 @@ public class Funcionalidad implements ActionListener{
 		
 		
 		if(e.getSource() == vista.BTNCerrarSesion) {
+			
+			/*
+			long a = System.currentTimeMillis();
+			long fin = a + (3000);
+			if(System.currentTimeMillis()<fin) {
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			
+			*/
+			
 			if(!vista.PanelRegistro.isVisible()) {
 				vista.LblMenu.setEnabled(false);
 				vista.BTNHamburguesa.setEnabled(false);
