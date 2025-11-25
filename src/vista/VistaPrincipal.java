@@ -193,7 +193,7 @@ public class VistaPrincipal extends JFrame {
 		BTNHamburguesa.setBounds(37, 74, 186, 37);
 		panel_1.add(BTNHamburguesa);
 		
-		BTNComponentes = new JButton("Componentes");
+		BTNComponentes = new JButton("Complementos");
 		BTNComponentes.setBackground(new Color(255, 255, 255));
 		BTNComponentes.setOpaque(false);
 		BTNComponentes.setBorderPainted(false);

@@ -28,6 +28,10 @@ public class PanelHamburguesa extends JPanel {
 	public JLabel precio1;
 	public JLabel precio2;
 	public JLabel precio3;
+	public JButton BtnHambu;
+	public JButton BtnComple;
+	public JButton BtnBebi;
+	public JButton BtnPost;
 
 	/**
 	 * Create the panel.
@@ -59,19 +63,19 @@ public class PanelHamburguesa extends JPanel {
 		nom1 = new JLabel("Texto prod 1");
 		nom1.setForeground(new Color(255, 255, 255));
 		nom1.setHorizontalAlignment(SwingConstants.CENTER);
-		nom1.setBounds(61, 198, 156, 13);
+		nom1.setBounds(48, 198, 177, 13);
 		panel_1.add(nom1);
 		
 		nom2 = new JLabel("Texto prod 2");
 		nom2.setHorizontalAlignment(SwingConstants.CENTER);
 		nom2.setForeground(new Color(255, 255, 255));
-		nom2.setBounds(343, 198, 156, 13);
+		nom2.setBounds(334, 198, 177, 13);
 		panel_1.add(nom2);
 		
 		nom3 = new JLabel("Texto prod 3");
 		nom3.setHorizontalAlignment(SwingConstants.CENTER);
 		nom3.setForeground(new Color(255, 255, 255));
-		nom3.setBounds(638, 198, 156, 13);
+		nom3.setBounds(626, 198, 177, 13);
 		panel_1.add(nom3);
 		
 		img1 = new JButton("New button");
@@ -87,16 +91,35 @@ public class PanelHamburguesa extends JPanel {
 		panel_1.add(img3);
 		
 		precio1 = new JLabel("Precio 1");
-		precio1.setBounds(116, 221, 44, 12);
+		precio1.setHorizontalAlignment(SwingConstants.CENTER);
+		precio1.setBounds(111, 221, 44, 12);
 		panel_1.add(precio1);
 		
 		precio2 = new JLabel("Precio 2");
+		precio2.setHorizontalAlignment(SwingConstants.CENTER);
 		precio2.setBounds(400, 221, 44, 12);
 		panel_1.add(precio2);
 		
 		precio3 = new JLabel("Precio 3");
+		precio3.setHorizontalAlignment(SwingConstants.CENTER);
 		precio3.setBounds(696, 221, 44, 12);
 		panel_1.add(precio3);
+		
+		BtnHambu = new JButton("Hamburguesas");
+		BtnHambu.setBounds(61, 327, 101, 20);
+		panel_1.add(BtnHambu);
+		
+		BtnComple = new JButton("Complementos");
+		BtnComple.setBounds(255, 327, 101, 20);
+		panel_1.add(BtnComple);
+		
+		BtnBebi = new JButton("Bebidas");
+		BtnBebi.setBounds(483, 327, 101, 20);
+		panel_1.add(BtnBebi);
+		
+		BtnPost = new JButton("Postres");
+		BtnPost.setBounds(696, 327, 107, 20);
+		panel_1.add(BtnPost);
 
 	}
 }

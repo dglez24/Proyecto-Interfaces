@@ -45,7 +45,10 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelHamburguesa.img3.addActionListener(this);		
 		vista.PanelLista.btnAtras.addActionListener(this);
 		vista.PanelPromocion.btnAtras.addActionListener(this);
-		
+		vista.PanelHamburguesa.BtnHambu.addActionListener(this);
+		vista.PanelHamburguesa.BtnComple.addActionListener(this);
+		vista.PanelHamburguesa.BtnBebi.addActionListener(this);
+		vista.PanelHamburguesa.BtnPost.addActionListener(this);
 		
 		//-------------------------------------------------------------------
 		
@@ -400,21 +403,46 @@ public class Funcionalidad implements ActionListener{
 			panelComidas();
 			rellenarMenu(0);
 			tipo=1;
+			habilitar(tipo);
 		}
 		if(e.getSource()==vista.BTNComponentes) {
 			panelComidas();
 			rellenarMenu(3);
 			tipo=2;
+			habilitar(tipo);
 		}
 		if(e.getSource()==vista.BTNBebidas) {
 			panelComidas();
 			rellenarMenu(6);
 			tipo=3;
+			habilitar(tipo);
 		}
 		if(e.getSource()==vista.BTNPostres) {
 			panelComidas();
 			rellenarMenu(9);
 			tipo=4;
+			habilitar(tipo);
+		}
+		if(e.getSource()==vista.PanelHamburguesa.BtnHambu) {
+			rellenarMenu(0);
+			tipo=1;
+			habilitar(tipo);
+		}
+		if(e.getSource()==vista.PanelHamburguesa.BtnComple) {
+			rellenarMenu(3);
+			tipo=2;
+			habilitar(tipo);
+		}
+		if(e.getSource()==vista.PanelHamburguesa.BtnBebi) {
+			rellenarMenu(6);
+			tipo=3;
+			habilitar(tipo);
+			
+		}
+		if(e.getSource()==vista.PanelHamburguesa.BtnPost) {
+			rellenarMenu(9);
+			tipo=4;
+			habilitar(tipo);
 		}
 		
 		if(e.getSource() == vista.BTNPromociones) {
@@ -516,10 +544,34 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelHamburguesa.nom1.setText(comidas.get(i).getNombre());
 		vista.PanelHamburguesa.nom2.setText(comidas.get(i+1).getNombre());
 		vista.PanelHamburguesa.nom3.setText(comidas.get(i+2).getNombre());
-		vista.PanelHamburguesa.precio1.setText(String.valueOf(comidas.get(i).getNombre()));
+		vista.PanelHamburguesa.precio1.setText(String.valueOf(comidas.get(i).getPrecio()));
 		vista.PanelHamburguesa.precio2.setText(String.valueOf(comidas.get(i+1).getPrecio()));
 		vista.PanelHamburguesa.precio3.setText(String.valueOf(comidas.get(i+2).getPrecio()));
 
+	}
+	public void habilitar(int tipo) {
+		if(tipo==1) {
+			vista.PanelHamburguesa.BtnPost.setEnabled(true);
+			vista.PanelHamburguesa.BtnComple.setEnabled(true);
+			vista.PanelHamburguesa.BtnBebi.setEnabled(true);
+			vista.PanelHamburguesa.BtnHambu.setEnabled(false);
+		}else if(tipo==2) {
+			vista.PanelHamburguesa.BtnPost.setEnabled(true);
+			vista.PanelHamburguesa.BtnComple.setEnabled(false);
+			vista.PanelHamburguesa.BtnBebi.setEnabled(true);
+			vista.PanelHamburguesa.BtnHambu.setEnabled(true);
+		}else if(tipo==3) {
+			vista.PanelHamburguesa.BtnPost.setEnabled(true);
+			vista.PanelHamburguesa.BtnComple.setEnabled(true);
+			vista.PanelHamburguesa.BtnBebi.setEnabled(false);
+			vista.PanelHamburguesa.BtnHambu.setEnabled(true);
+		}else if(tipo==4) {
+			vista.PanelHamburguesa.BtnPost.setEnabled(false);
+			vista.PanelHamburguesa.BtnComple.setEnabled(true);
+			vista.PanelHamburguesa.BtnBebi.setEnabled(true);
+			vista.PanelHamburguesa.BtnHambu.setEnabled(true);
+		}
+		
 	}
 	
 
