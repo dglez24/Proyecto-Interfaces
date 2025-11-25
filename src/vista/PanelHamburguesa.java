@@ -70,15 +70,15 @@ public class PanelHamburguesa extends JPanel {
 		panel_1.add(nom3);
 		
 		img1 = new JButton("New button");
-		img1.setBounds(61, 46, 122, 120);
+		img1.setBounds(61, 10, 156, 156);
 		panel_1.add(img1);
 		
 		img2 = new JButton("New button");
-		img2.setBounds(329, 46, 122, 120);
+		img2.setBounds(343, 10, 156, 156);
 		panel_1.add(img2);
 		
 		img3 = new JButton("New button");
-		img3.setBounds(638, 46, 122, 120);
+		img3.setBounds(638, 10, 156, 156);
 		panel_1.add(img3);
 
 	}
