@@ -18,7 +18,7 @@ public class Funcionalidad implements ActionListener{
 	
 	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
 	ArrayList<Comida> comidas=new ArrayList<Comida>();
-	int posicion;
+	int posicion,tipo;
 	
 	public Funcionalidad (VistaPrincipal frame) {
 		vista = frame;
@@ -401,6 +401,7 @@ public class Funcionalidad implements ActionListener{
 			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			tipo=1;
 			
 		}
 		if(e.getSource()==vista.BTNComponentes) {
@@ -412,6 +413,7 @@ public class Funcionalidad implements ActionListener{
 			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			tipo=2;
 		}
 		if(e.getSource()==vista.BTNBebidas) {
 			panelComidas();
@@ -421,6 +423,7 @@ public class Funcionalidad implements ActionListener{
 			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			tipo=3;
 		}
 		if(e.getSource()==vista.BTNPostres) {
 			panelComidas();
@@ -430,6 +433,7 @@ public class Funcionalidad implements ActionListener{
 			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			tipo=4;
 		}
 		
 		if(e.getSource() == vista.BTNPromociones) {
@@ -449,15 +453,12 @@ public class Funcionalidad implements ActionListener{
 		if(e.getSource()==vista.PanelHamburguesa.BtnAtras) {
 			ponerVisible();
 		}
-		
 		if(e.getSource() == vista.PanelPromocion.btnAtras) {
 			ponerVisible();
 		}
-		
 		if(e.getSource() == vista.PanelLista.btnAtras) {
 			ponerVisible();
 		}
-		
 		
 		if(e.getSource() == vista.BTNModificacion) {
 			
