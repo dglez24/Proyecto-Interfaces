@@ -191,7 +191,7 @@ public class VistaPrincipal extends JFrame {
 		BTNHamburguesa.setBackground(new Color(255, 255, 255));
 		BTNHamburguesa.setOpaque(false);
 		BTNHamburguesa.setBorderPainted(false);
-		BTNHamburguesa.setFont(new Font("Tahoma", Font.BOLD, 18));
+		BTNHamburguesa.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 18));
 		BTNHamburguesa.setHorizontalAlignment(SwingConstants.LEFT);
 		BTNHamburguesa.setBounds(37, 74, 186, 37);
 		panel_1.add(BTNHamburguesa);
@@ -200,7 +200,7 @@ public class VistaPrincipal extends JFrame {
 		BTNComponentes.setBackground(new Color(255, 255, 255));
 		BTNComponentes.setOpaque(false);
 		BTNComponentes.setBorderPainted(false);
-		BTNComponentes.setFont(new Font("Tahoma", Font.BOLD, 18));
+		BTNComponentes.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 18));
 		BTNComponentes.setHorizontalAlignment(SwingConstants.LEFT);
 		BTNComponentes.setBounds(37, 121, 173, 37);
 		panel_1.add(BTNComponentes);
@@ -209,7 +209,7 @@ public class VistaPrincipal extends JFrame {
 		BTNBebidas.setBackground(new Color(255, 255, 255));
 		BTNBebidas.setOpaque(false);
 		BTNBebidas.setBorderPainted(false);
-		BTNBebidas.setFont(new Font("Tahoma", Font.BOLD, 18));
+		BTNBebidas.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 18));
 		BTNBebidas.setHorizontalAlignment(SwingConstants.LEFT);
 		BTNBebidas.setBounds(37, 168, 119, 37);
 		panel_1.add(BTNBebidas);
@@ -218,7 +218,7 @@ public class VistaPrincipal extends JFrame {
 		BTNPostres.setBackground(new Color(255, 255, 255));
 		BTNPostres.setOpaque(false);
 		BTNPostres.setBorderPainted(false);
-		BTNPostres.setFont(new Font("Tahoma", Font.BOLD, 18));
+		BTNPostres.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 18));
 		BTNPostres.setHorizontalAlignment(SwingConstants.LEFT);
 		BTNPostres.setBounds(37, 215, 107, 37);
 		panel_1.add(BTNPostres);
@@ -227,7 +227,7 @@ public class VistaPrincipal extends JFrame {
 		BTNPromociones.setBackground(new Color(255, 255, 255));
 		BTNPromociones.setOpaque(false);
 		BTNPromociones.setBorderPainted(false);
-		BTNPromociones.setFont(new Font("Tahoma", Font.BOLD, 18));
+		BTNPromociones.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 18));
 		BTNPromociones.setHorizontalAlignment(SwingConstants.LEFT);
 		BTNPromociones.setBounds(37, 262, 157, 37);
 		panel_1.add(BTNPromociones);
@@ -235,9 +235,9 @@ public class VistaPrincipal extends JFrame {
 		LblMenu = new JLabel("Menu");
 		LblMenu.setBackground(new Color(255, 255, 255));
 		LblMenu.setOpaque(false);
-		LblMenu.setFont(new Font("Vivaldi", Font.BOLD, 30));
+		LblMenu.setFont(new Font("Vivaldi", Font.BOLD | Font.ITALIC, 30));
 		LblMenu.setHorizontalAlignment(SwingConstants.LEFT);
-		LblMenu.setBounds(22, 27, 95, 37);
+		LblMenu.setBounds(22, 27, 220, 37);
 		panel_1.add(LblMenu);
 		
 		POferta = new JPanel();
@@ -443,7 +443,7 @@ public class VistaPrincipal extends JFrame {
 		
 		BTNCarrito = new JButton("\n\n🛒");
 		BTNCarrito.setBackground(new Color(128, 255, 0));
-		BTNCarrito.setBounds(534, 10, 84, 20);
+		BTNCarrito.setBounds(559, 10, 59, 20);
 		contentPane.add(BTNCarrito);
 
 

@@ -12,6 +12,8 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PanelHamburguesa extends JPanel {
 
@@ -106,19 +108,27 @@ public class PanelHamburguesa extends JPanel {
 		panel_1.add(precio3);
 		
 		BtnHambu = new JButton("Hamburguesas");
-		BtnHambu.setBounds(61, 327, 101, 20);
+		BtnHambu.setFont(new Font("Tahoma", Font.BOLD, 10));
+		BtnHambu.setBackground(new Color(255, 255, 128));
+		BtnHambu.setBounds(42, 327, 141, 20);
 		panel_1.add(BtnHambu);
 		
 		BtnComple = new JButton("Complementos");
-		BtnComple.setBounds(255, 327, 101, 20);
+		BtnComple.setFont(new Font("Tahoma", Font.BOLD, 10));
+		BtnComple.setBackground(new Color(255, 255, 128));
+		BtnComple.setBounds(245, 327, 141, 20);
 		panel_1.add(BtnComple);
 		
 		BtnBebi = new JButton("Bebidas");
-		BtnBebi.setBounds(483, 327, 101, 20);
+		BtnBebi.setFont(new Font("Tahoma", Font.BOLD, 10));
+		BtnBebi.setBackground(new Color(255, 255, 128));
+		BtnBebi.setBounds(458, 327, 141, 20);
 		panel_1.add(BtnBebi);
 		
 		BtnPost = new JButton("Postres");
-		BtnPost.setBounds(696, 327, 107, 20);
+		BtnPost.setFont(new Font("Tahoma", Font.BOLD, 10));
+		BtnPost.setBackground(new Color(255, 255, 128));
+		BtnPost.setBounds(675, 327, 141, 20);
 		panel_1.add(BtnPost);
 
 	}
