@@ -398,44 +398,22 @@ public class Funcionalidad implements ActionListener{
 		
 		if(e.getSource() == vista.BTNHamburguesa) {
 			panelComidas();
-			vista.PanelHamburguesa.img1.setIcon(getScaledIcon(comidas.get(0).getFoto(), vista.PanelHamburguesa.img1.getHeight()));
-			vista.PanelHamburguesa.img2.setIcon(getScaledIcon(comidas.get(1).getFoto(), vista.PanelHamburguesa.img2.getHeight()));
-			vista.PanelHamburguesa.img3.setIcon(getScaledIcon(comidas.get(2).getFoto(), vista.PanelHamburguesa.img1.getHeight()));
-			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
-			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
-			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			rellenarMenu(0);
 			tipo=1;
-			
 		}
 		if(e.getSource()==vista.BTNComponentes) {
 			panelComidas();
-			
-			vista.PanelHamburguesa.img1.setIcon(getScaledIcon(comidas.get(3).getFoto(), vista.PanelHamburguesa.img1.getHeight()));
-			vista.PanelHamburguesa.img2.setIcon(getScaledIcon(comidas.get(4).getFoto(),  vista.PanelHamburguesa.img2.getHeight()));
-			vista.PanelHamburguesa.img3.setIcon(getScaledIcon(comidas.get(5).getFoto(), vista.PanelHamburguesa.img1.getHeight()));
-			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
-			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
-			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			rellenarMenu(3);
 			tipo=2;
 		}
 		if(e.getSource()==vista.BTNBebidas) {
 			panelComidas();
-			vista.PanelHamburguesa.img1.setIcon(getScaledIcon(comidas.get(6).getFoto(), vista.PanelHamburguesa.img1.getHeight()));
-			vista.PanelHamburguesa.img2.setIcon(getScaledIcon(comidas.get(7).getFoto(), vista.PanelHamburguesa.img2.getHeight()));
-			vista.PanelHamburguesa.img3.setIcon(getScaledIcon(comidas.get(8).getFoto(), vista.PanelHamburguesa.img1.getHeight()));
-			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
-			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
-			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			rellenarMenu(6);
 			tipo=3;
 		}
 		if(e.getSource()==vista.BTNPostres) {
 			panelComidas();
-			vista.PanelHamburguesa.img1.setIcon(getScaledIcon(comidas.get(9).getFoto(), vista.PanelHamburguesa.img1.getHeight()));
-			vista.PanelHamburguesa.img2.setIcon(getScaledIcon(comidas.get(10).getFoto(), vista.PanelHamburguesa.img2.getHeight()));
-			vista.PanelHamburguesa.img3.setIcon(getScaledIcon(comidas.get(11).getFoto(), vista.PanelHamburguesa.img1.getHeight()));
-			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
-			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
-			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
+			rellenarMenu(9);
 			tipo=4;
 		}
 		
@@ -520,7 +498,7 @@ public class Funcionalidad implements ActionListener{
 		}
 
 	}
-	private ImageIcon getScaledIcon(String path,  int height) {
+	public ImageIcon getScaledIcon(String path,  int height) {
 	    try {
 	        Image originalImage = new ImageIcon(path).getImage();
 	        // Usamos SCALE_SMOOTH para mejor calidad
@@ -531,5 +509,14 @@ public class Funcionalidad implements ActionListener{
 	        return null;
 	    }
 	}
+	public void rellenarMenu(int i) {
+		vista.PanelHamburguesa.img1.setIcon(getScaledIcon(comidas.get(i).getFoto(), vista.PanelHamburguesa.img1.getHeight()));
+		vista.PanelHamburguesa.img2.setIcon(getScaledIcon(comidas.get(i+1).getFoto(), vista.PanelHamburguesa.img2.getHeight()));
+		vista.PanelHamburguesa.img3.setIcon(getScaledIcon(comidas.get(i+2).getFoto(), vista.PanelHamburguesa.img1.getHeight()));
+		vista.PanelHamburguesa.nom1.setText(comidas.get(i).getNombre());
+		vista.PanelHamburguesa.nom2.setText(comidas.get(i+1).getNombre());
+		vista.PanelHamburguesa.nom3.setText(comidas.get(i+2).getNombre());
+	}
+	
 
 }
