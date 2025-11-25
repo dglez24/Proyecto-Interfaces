@@ -67,7 +67,7 @@ public class VistaPrincipal extends JFrame {
 	public JButton BTNBebidas;
 	public JButton BTNPostres;
 	public JButton BTNPromociones;
-	public JButton BTNMenu;
+	public JLabel LblMenu;
 	public JPanel POferta;
 	public JPanel PLogo;
 	public JLabel FotoLogo;
@@ -229,14 +229,13 @@ public class VistaPrincipal extends JFrame {
 		BTNPromociones.setBounds(37, 262, 157, 37);
 		panel_1.add(BTNPromociones);
 		
-		BTNMenu = new JButton("Menu");
-		BTNMenu.setBackground(new Color(255, 255, 255));
-		BTNMenu.setOpaque(false);
-		BTNMenu.setBorderPainted(false);
-		BTNMenu.setFont(new Font("Tahoma", Font.BOLD, 18));
-		BTNMenu.setHorizontalAlignment(SwingConstants.LEFT);
-		BTNMenu.setBounds(37, 27, 95, 37);
-		panel_1.add(BTNMenu);
+		LblMenu = new JLabel("Menu");
+		LblMenu.setBackground(new Color(255, 255, 255));
+		LblMenu.setOpaque(false);
+		LblMenu.setFont(new Font("Tahoma", Font.BOLD, 18));
+		LblMenu.setHorizontalAlignment(SwingConstants.LEFT);
+		LblMenu.setBounds(37, 27, 95, 37);
+		panel_1.add(LblMenu);
 		
 		POferta = new JPanel();
 		POferta.setBackground(new Color(255, 115, 47));

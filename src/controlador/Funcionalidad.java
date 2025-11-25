@@ -26,7 +26,6 @@ public class Funcionalidad implements ActionListener{
 		vista.btnAdmin.addActionListener(this);
 		vista.btnIniciar.addActionListener(this);
 		vista.btnRegistrar.addActionListener(this);
-		vista.BTNMenu.addActionListener(this);
 		vista.BTNHamburguesa.addActionListener(this);
 		vista.BTNBebidas.addActionListener(this);
 		vista.BTNComponentes.addActionListener(this);
@@ -56,7 +55,7 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelAvisoContra.setVisible(false);
 		vista.PanelAvisoClave.setVisible(false);
 		vista.PanelRegistro.setVisible(false);
-		vista.BTNMenu.setVisible(false);
+		vista.LblMenu.setVisible(false);
 		vista.BTNHamburguesa.setVisible(false);
 		vista.BTNBebidas.setVisible(false);
 		vista.BTNComponentes.setVisible(false);
@@ -180,7 +179,7 @@ public class Funcionalidad implements ActionListener{
 		
 		if(e.getSource() == vista.BTNCerrarSesion) {
 			if(!vista.PanelRegistro.isVisible()) {
-				vista.BTNMenu.setEnabled(false);
+				vista.LblMenu.setEnabled(false);
 				vista.BTNHamburguesa.setEnabled(false);
 				vista.BTNBebidas.setEnabled(false);
 				vista.BTNComponentes.setEnabled(false);
@@ -200,7 +199,7 @@ public class Funcionalidad implements ActionListener{
 		}
 		
 		if(e.getSource() == vista.OpcionRegistrar.BTNSalir) {
-			vista.BTNMenu.setEnabled(true);
+			vista.LblMenu.setEnabled(true);
 			vista.BTNHamburguesa.setEnabled(true);
 			vista.BTNBebidas.setEnabled(true);
 			vista.BTNComponentes.setEnabled(true);
@@ -318,7 +317,7 @@ public class Funcionalidad implements ActionListener{
 			vista.Ruleta.setVisible(true);
 			vista.Ruleta.LblInfoTiros.setText("Tiros: " + usuarios.get(posicion).getTirada());
 
-			vista.BTNMenu.setEnabled(false);
+			vista.LblMenu.setEnabled(false);
 			vista.BTNHamburguesa.setEnabled(false);
 			vista.BTNBebidas.setEnabled(false);
 			vista.BTNComponentes.setEnabled(false);
@@ -383,7 +382,7 @@ public class Funcionalidad implements ActionListener{
 		
 		if(e.getSource() == vista.Ruleta.BTNSalir) {
 			this.vista.Ruleta.setVisible(false);
-			vista.BTNMenu.setEnabled(true);
+			vista.LblMenu.setEnabled(true);
 			vista.BTNHamburguesa.setEnabled(true);
 			vista.BTNBebidas.setEnabled(true);
 			vista.BTNComponentes.setEnabled(true);
@@ -396,11 +395,6 @@ public class Funcionalidad implements ActionListener{
 			}
 		}
 		
-		
-		
-		if(e.getSource() == vista.BTNMenu) {
-			panelComidas();
-		}
 		
 		if(e.getSource() == vista.BTNHamburguesa) {
 			panelComidas();
@@ -448,7 +442,7 @@ public class Funcionalidad implements ActionListener{
 		if(e.getSource() == vista.BTNPromociones) {
 			vista.PanelPromocion.setVisible(true);
 			vista.PanelAdmin.setVisible(false);
-			vista.BTNMenu.setVisible(false);
+			vista.LblMenu.setVisible(false);
 			vista.BTNHamburguesa.setVisible(false);
 			vista.BTNBebidas.setVisible(false);
 			vista.BTNComponentes.setVisible(false);
@@ -487,7 +481,7 @@ public class Funcionalidad implements ActionListener{
 		vista.BTNPromociones.setVisible(false);
 		vista.BTNCerrarSesion.setVisible(false);
 		vista.BTNRuleta.setVisible(false);
-		vista.BTNMenu.setVisible(false);
+		vista.LblMenu.setVisible(false);
 		if(usuarios.get(posicion).isAdmin()) {
 			vista.BTNModificacion.setVisible(false);
 		}
@@ -497,7 +491,7 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelHamburguesa.setVisible(false);
 		vista.PanelPromocion.setVisible(false);
 		vista.PanelLista.setVisible(false);
-		vista.BTNMenu.setEnabled(true);
+		vista.LblMenu.setEnabled(true);
 		vista.BTNHamburguesa.setEnabled(true);
 		vista.BTNBebidas.setEnabled(true);
 		vista.BTNComponentes.setEnabled(true);
@@ -510,7 +504,7 @@ public class Funcionalidad implements ActionListener{
 		}
 
 		vista.PanelRegistro.setVisible(false);
-		vista.BTNMenu.setVisible(true);
+		vista.LblMenu.setVisible(true);
 		vista.BTNHamburguesa.setVisible(true);
 		vista.BTNBebidas.setVisible(true);
 		vista.BTNComponentes.setVisible(true);
