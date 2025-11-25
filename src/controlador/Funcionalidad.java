@@ -22,6 +22,7 @@ public class Funcionalidad implements ActionListener{
 	public Funcionalidad (VistaPrincipal frame) {
 		vista = frame;
 		vista.BTNCerrarSesion.addActionListener(this);
+		//hola
 		vista.btnAdmin.addActionListener(this);
 		vista.btnIniciar.addActionListener(this);
 		vista.btnRegistrar.addActionListener(this);
