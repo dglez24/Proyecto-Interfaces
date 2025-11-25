@@ -441,7 +441,7 @@ public class VistaPrincipal extends JFrame {
 		BTNModificacion.setBounds(10, 10, 150, 20);
 		contentPane.add(BTNModificacion);
 		
-		BTNCarrito = new JButton("Carrito");
+		BTNCarrito = new JButton("\n\n🛒");
 		BTNCarrito.setBackground(new Color(128, 255, 0));
 		BTNCarrito.setBounds(534, 10, 84, 20);
 		contentPane.add(BTNCarrito);
