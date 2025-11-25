@@ -72,7 +72,7 @@ public class VistaPrincipal extends JFrame {
 	public JPanel PLogo;
 	public JLabel FotoLogo;
 	public JLabel LblSaludo;
-	public PanelMenu PanelMenu;
+	public PanelLista PanelLista;
 	public PanelHamburguesa PanelHamburguesa;
 	public PanelPromocion PanelPromocion;
 	public Ruleta Ruleta;
@@ -124,10 +124,10 @@ public class VistaPrincipal extends JFrame {
 		Ruleta.setLayout(null);
 		
 		
-		PanelMenu = new PanelMenu();
-		PanelMenu.setBounds(0, 0, 859, 484);
-		contentPane.add(PanelMenu);
-		PanelMenu.setLayout(null);
+		PanelLista = new PanelLista();
+		PanelLista.setBounds(0, 0, 859, 484);
+		contentPane.add(PanelLista);
+		PanelLista.setLayout(null);
 
 		
 		PanelHamburguesa = new PanelHamburguesa();

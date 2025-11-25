@@ -58,7 +58,7 @@ public class Funcionalidad implements ActionListener{
 		vista.PLogo.setVisible(false);
 		vista.BTNCerrarSesion.setVisible(false);
 		vista.BTNRuleta.setVisible(false);
-		vista.PanelMenu.setVisible(false);
+		vista.PanelLista.setVisible(false);
 		vista.PanelHamburguesa.setVisible(false);
 		vista.PanelPromocion.setVisible(false);
 		vista.OpcionRegistrar.BTNSalir.setVisible(false);
@@ -381,15 +381,7 @@ public class Funcionalidad implements ActionListener{
 		
 		
 		if(e.getSource() == vista.BTNMenu) {
-			vista.PanelMenu.setVisible(true);
-			vista.BTNMenu.setVisible(false);
-			vista.BTNHamburguesa.setVisible(false);
-			vista.BTNBebidas.setVisible(false);
-			vista.BTNComponentes.setVisible(false);
-			vista.BTNPostres.setVisible(false);
-			vista.BTNPromociones.setVisible(false);
-			vista.BTNCerrarSesion.setVisible(false);
-			vista.BTNRuleta.setVisible(false);
+			panelComidas();
 		}
 		
 		if(e.getSource() == vista.BTNHamburguesa) {
