@@ -49,6 +49,7 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelHamburguesa.BtnComple.addActionListener(this);
 		vista.PanelHamburguesa.BtnBebi.addActionListener(this);
 		vista.PanelHamburguesa.BtnPost.addActionListener(this);
+		vista.BTNCarrito.addActionListener(this);
 		
 		//-------------------------------------------------------------------
 		
@@ -68,6 +69,7 @@ public class Funcionalidad implements ActionListener{
 		vista.PLogo.setVisible(false);
 		vista.BTNCerrarSesion.setVisible(false);
 		vista.BTNRuleta.setVisible(false);
+		vista.BTNCarrito.setVisible(false);
 		vista.PanelLista.setVisible(false);
 		vista.PanelHamburguesa.setVisible(false);
 		vista.PanelPromocion.setVisible(false);
