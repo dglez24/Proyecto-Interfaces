@@ -108,25 +108,25 @@ public class PanelHamburguesa extends JPanel {
 		panel_1.add(precio3);
 		
 		BtnHambu = new JButton("Hamburguesas");
-		BtnHambu.setFont(new Font("Tahoma", Font.BOLD, 10));
+		BtnHambu.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 10));
 		BtnHambu.setBackground(new Color(255, 255, 128));
 		BtnHambu.setBounds(42, 327, 141, 20);
 		panel_1.add(BtnHambu);
 		
 		BtnComple = new JButton("Complementos");
-		BtnComple.setFont(new Font("Tahoma", Font.BOLD, 10));
+		BtnComple.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 10));
 		BtnComple.setBackground(new Color(255, 255, 128));
 		BtnComple.setBounds(245, 327, 141, 20);
 		panel_1.add(BtnComple);
 		
 		BtnBebi = new JButton("Bebidas");
-		BtnBebi.setFont(new Font("Tahoma", Font.BOLD, 10));
+		BtnBebi.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 10));
 		BtnBebi.setBackground(new Color(255, 255, 128));
 		BtnBebi.setBounds(458, 327, 141, 20);
 		panel_1.add(BtnBebi);
 		
 		BtnPost = new JButton("Postres");
-		BtnPost.setFont(new Font("Tahoma", Font.BOLD, 10));
+		BtnPost.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 10));
 		BtnPost.setBackground(new Color(255, 255, 128));
 		BtnPost.setBounds(675, 327, 141, 20);
 		panel_1.add(BtnPost);
