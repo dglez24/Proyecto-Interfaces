@@ -17,7 +17,7 @@ public class Funcionalidad implements ActionListener{
 	
 	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
 	ArrayList<Comida> comidas=new ArrayList<Comida>();
-	int posicion;
+	int posicion ;
 	
 	public Funcionalidad (VistaPrincipal frame) {
 		vista = frame;
