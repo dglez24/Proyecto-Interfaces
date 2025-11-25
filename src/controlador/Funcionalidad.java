@@ -1,5 +1,6 @@
 package controlador;
 
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
@@ -386,37 +387,38 @@ public class Funcionalidad implements ActionListener{
 		
 		if(e.getSource() == vista.BTNHamburguesa) {
 			panelComidas();
-			vista.PanelHamburguesa.img1.setIcon(new ImageIcon(comidas.get(0).getFoto()));
-			vista.PanelHamburguesa.img2.setIcon(new ImageIcon(comidas.get(1).getFoto()));
-			vista.PanelHamburguesa.img3.setIcon(new ImageIcon(comidas.get(2).getFoto()));
+			vista.PanelHamburguesa.img1.setIcon(getScaledIcon(comidas.get(0).getFoto(),vista.PanelHamburguesa.img1.getWidth() , vista.PanelHamburguesa.img1.getHeight()));
+			vista.PanelHamburguesa.img2.setIcon(getScaledIcon(comidas.get(1).getFoto(),vista.PanelHamburguesa.img2.getWidth() , vista.PanelHamburguesa.img2.getHeight()));
+			vista.PanelHamburguesa.img3.setIcon(getScaledIcon(comidas.get(2).getFoto(),vista.PanelHamburguesa.img1.getWidth() , vista.PanelHamburguesa.img1.getHeight()));
 			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
-			//aqui se le pone una imagen a los labels img1,img2 y img3
+			
 		}
 		if(e.getSource()==vista.BTNComponentes) {
 			panelComidas();
-			vista.PanelHamburguesa.img1.setIcon(new ImageIcon(comidas.get(3).getFoto()));
-			vista.PanelHamburguesa.img2.setIcon(new ImageIcon(comidas.get(4).getFoto()));
-			vista.PanelHamburguesa.img3.setIcon(new ImageIcon(comidas.get(5).getFoto()));
+			
+			vista.PanelHamburguesa.img1.setIcon(getScaledIcon(comidas.get(3).getFoto(),vista.PanelHamburguesa.img1.getWidth() , vista.PanelHamburguesa.img1.getHeight()));
+			vista.PanelHamburguesa.img2.setIcon(getScaledIcon(comidas.get(4).getFoto(),vista.PanelHamburguesa.img2.getWidth() , vista.PanelHamburguesa.img2.getHeight()));
+			vista.PanelHamburguesa.img3.setIcon(getScaledIcon(comidas.get(5).getFoto(),vista.PanelHamburguesa.img1.getWidth() , vista.PanelHamburguesa.img1.getHeight()));
 			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 		}
 		if(e.getSource()==vista.BTNBebidas) {
 			panelComidas();
-			vista.PanelHamburguesa.img1.setIcon(new ImageIcon(comidas.get(6).getFoto()));
-			vista.PanelHamburguesa.img2.setIcon(new ImageIcon(comidas.get(7).getFoto()));
-			vista.PanelHamburguesa.img3.setIcon(new ImageIcon(comidas.get(8).getFoto()));
+			vista.PanelHamburguesa.img1.setIcon(getScaledIcon(comidas.get(6).getFoto(),vista.PanelHamburguesa.img1.getWidth() , vista.PanelHamburguesa.img1.getHeight()));
+			vista.PanelHamburguesa.img2.setIcon(getScaledIcon(comidas.get(7).getFoto(),vista.PanelHamburguesa.img2.getWidth() , vista.PanelHamburguesa.img2.getHeight()));
+			vista.PanelHamburguesa.img3.setIcon(getScaledIcon(comidas.get(8).getFoto(),vista.PanelHamburguesa.img1.getWidth() , vista.PanelHamburguesa.img1.getHeight()));
 			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 		}
 		if(e.getSource()==vista.BTNPostres) {
 			panelComidas();
-			vista.PanelHamburguesa.img1.setIcon(new ImageIcon(comidas.get(9).getFoto()));
-			vista.PanelHamburguesa.img2.setIcon(new ImageIcon(comidas.get(10).getFoto()));
-			vista.PanelHamburguesa.img3.setIcon(new ImageIcon(comidas.get(11).getFoto()));
+			vista.PanelHamburguesa.img1.setIcon(getScaledIcon(comidas.get(9).getFoto(),vista.PanelHamburguesa.img1.getWidth() , vista.PanelHamburguesa.img1.getHeight()));
+			vista.PanelHamburguesa.img2.setIcon(getScaledIcon(comidas.get(10).getFoto(),vista.PanelHamburguesa.img2.getWidth() , vista.PanelHamburguesa.img2.getHeight()));
+			vista.PanelHamburguesa.img3.setIcon(getScaledIcon(comidas.get(11).getFoto(),vista.PanelHamburguesa.img1.getWidth() , vista.PanelHamburguesa.img1.getHeight()));
 			vista.PanelHamburguesa.nom1.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom2.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
 			vista.PanelHamburguesa.nom3.setText("Hamburguesa con carne de cerdo desmechada con nuestra salsa barbacoa");
@@ -478,6 +480,17 @@ public class Funcionalidad implements ActionListener{
 		vista.BTNCerrarSesion.setVisible(true);
 		vista.BTNRuleta.setVisible(true);
 		vista.BTNModificacion.setVisible(true);
+	}
+	private ImageIcon getScaledIcon(String path, int width, int height) {
+	    try {
+	        Image originalImage = new ImageIcon(path).getImage();
+	        // Usamos SCALE_SMOOTH para mejor calidad
+	        Image scaledImage = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH); 
+	        return new ImageIcon(scaledImage);
+	    } catch (Exception e) {
+	        System.err.println("Error al cargar o escalar la imagen: " + path);
+	        return null;
+	    }
 	}
 
 }
