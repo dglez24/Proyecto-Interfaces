@@ -15,16 +15,15 @@ import javax.swing.JButton;
 public class PanelHamburguesa extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	public JLabel img1;
-	public JSeparator separator;
-	public JLabel img3;
-	public JLabel img2;
 	public JLabel nom1;
 	public JLabel nom2;
 	public JLabel nom3;
 	public JButton BtnAtras;
 	public JPanel panel;
 	public JPanel panel_1;
+	public JButton img1;
+	public JButton img2;
+	public JButton img3;
 
 	/**
 	 * Create the panel.
@@ -51,40 +50,33 @@ public class PanelHamburguesa extends JPanel {
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
-		img1 = new JLabel("imagen");
-		img1.setHorizontalAlignment(SwingConstants.CENTER);
-		img1.setBounds(119, 98, 34, 13);
-		panel_1.add(img1);
-		
-		separator = new JSeparator();
-		separator.setBounds(315, 10, 0, 2);
-		panel_1.add(separator);
-		
-		img3 = new JLabel("imagen");
-		img3.setHorizontalAlignment(SwingConstants.CENTER);
-		img3.setBounds(315, 115, 34, 13);
-		panel_1.add(img3);
-		
-		img2 = new JLabel("imagen");
-		img2.setHorizontalAlignment(SwingConstants.CENTER);
-		img2.setBounds(465, 115, 34, 13);
-		panel_1.add(img2);
-		
 		nom1 = new JLabel("Texto prod 1");
 		nom1.setForeground(new Color(255, 255, 255));
 		nom1.setHorizontalAlignment(SwingConstants.LEFT);
-		nom1.setBounds(106, 147, 58, 13);
+		nom1.setBounds(93, 198, 58, 13);
 		panel_1.add(nom1);
 		
 		nom2 = new JLabel("Texto prod 2");
 		nom2.setForeground(new Color(255, 255, 255));
-		nom2.setBounds(446, 68, 58, 13);
+		nom2.setBounds(364, 198, 58, 13);
 		panel_1.add(nom2);
 		
 		nom3 = new JLabel("Texto prod 3");
 		nom3.setForeground(new Color(255, 255, 255));
-		nom3.setBounds(551, 98, 58, 13);
+		nom3.setBounds(674, 198, 58, 13);
 		panel_1.add(nom3);
+		
+		img1 = new JButton("New button");
+		img1.setBounds(61, 46, 122, 120);
+		panel_1.add(img1);
+		
+		img2 = new JButton("New button");
+		img2.setBounds(329, 46, 122, 120);
+		panel_1.add(img2);
+		
+		img3 = new JButton("New button");
+		img3.setBounds(638, 46, 122, 120);
+		panel_1.add(img3);
 
 	}
 }
