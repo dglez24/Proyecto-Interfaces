@@ -520,7 +520,6 @@ public class Funcionalidad implements ActionListener{
 		vista.PLogo.setVisible(true);
 		vista.BTNCerrarSesion.setVisible(true);
 		vista.BTNRuleta.setVisible(true);
-		vista.BTNModificacion.setVisible(true);
 		if(usuarios.get(posicion).isAdmin()) {
 			vista.BTNModificacion.setVisible(true);
 		}
