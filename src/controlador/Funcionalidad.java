@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.util.*;
 
 import javax.swing.ImageIcon;
-
+import javax.swing.JButton;
 
 import modelo.Usuario;
 import modelo.Comida;
@@ -18,7 +18,7 @@ public class Funcionalidad implements ActionListener{
 	
 	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
 	ArrayList<Comida> comidas=new ArrayList<Comida>();
-	int posicion,tipo;
+	int posicion,tipo, compras = 0;
 	
 	public Funcionalidad (VistaPrincipal frame) {
 		vista = frame;
@@ -77,6 +77,7 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelAdmin.setVisible(false);
 		vista.OpcionRegistrar.BTNSalir.setVisible(false);
 		vista.BTNModificacion.setVisible(false);
+
 		//-------------------------------------------------------------------
 		vista.Ruleta.setVisible(false);
 		
@@ -283,6 +284,10 @@ public class Funcionalidad implements ActionListener{
 								vista.BTNModificacion.setVisible(true);
 								posicion=usuarios.size()-1;
 								vista.LblSaludo.setText("Bienvenido " + usuarios.get(posicion).getNombre() + "!!!");
+								vista.BTNCarrito.setText("\n\n🛒" + compras);
+								if(compras == 0) {
+									vista.BTNCarrito.setEnabled(false);
+								}
 							} else {
 								vista.LblAvisoClave.setText("Clave Incorrecta");
 								HiloClave h = new HiloClave(vista);
@@ -296,6 +301,10 @@ public class Funcionalidad implements ActionListener{
 						vista.BTNModificacion.setVisible(false);
 						posicion=usuarios.size()-1;
 						vista.LblSaludo.setText("Bienvenido " + usuarios.get(posicion).getNombre() + "!!!");
+						vista.BTNCarrito.setText("\n\n🛒" + compras);
+						if(compras == 0) {
+							vista.BTNCarrito.setEnabled(false);
+						}
 					}
 				}	
 				
@@ -310,12 +319,21 @@ public class Funcionalidad implements ActionListener{
 							ponerVisible();
 							posicion=i;
 							vista.BTNModificacion.setVisible(true);
-							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");							
+							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");	
+							vista.BTNCarrito.setText("\n\n🛒" + compras);
+							if(compras == 0) {
+								vista.BTNCarrito.setEnabled(false);
+							}
 						}else {
 							ponerVisible();
 							posicion=i;
 							vista.BTNModificacion.setVisible(false);
 							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");
+							vista.BTNCarrito.setText("\n\n🛒" + compras);
+							if(compras == 0) {
+								vista.BTNCarrito.setEnabled(false);
+							}
+
 						}
 				}else{
 					this.vista.LblAvisoContra.setText("Contraseña incorrecta");
@@ -523,6 +541,19 @@ public class Funcionalidad implements ActionListener{
 			if(usuarios.get(posicion).isAdmin()) {
 				vista.BTNModificacion.setVisible(false);
 			}
+		}
+		
+		
+		if(e.getSource() == vista.PanelHamburguesa.img1) {
+			
+		}
+		
+		if(e.getSource() == vista.PanelHamburguesa.img2) {
+			
+		}
+		
+		if(e.getSource() == vista.PanelHamburguesa.img3) {
+			
 		}
 		
 		
