@@ -15,7 +15,7 @@ import vista.VistaPrincipal;
 public class Funcionalidad implements ActionListener{
 	private boolean permiso;
 	VistaPrincipal vista = new VistaPrincipal();
-	
+	HashMap<String, Integer> recibo = new HashMap<String, Integer>();
 	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
 	ArrayList<Comida> comidas=new ArrayList<Comida>();
 	int posicion,tipo, compras = 0;
@@ -285,9 +285,7 @@ public class Funcionalidad implements ActionListener{
 								posicion=usuarios.size()-1;
 								vista.LblSaludo.setText("Bienvenido " + usuarios.get(posicion).getNombre() + "!!!");
 								vista.BTNCarrito.setText("\n\n🛒" + compras);
-								if(compras == 0) {
-									vista.BTNCarrito.setEnabled(false);
-								}
+								comprobarcarrito();
 							} else {
 								vista.LblAvisoClave.setText("Clave Incorrecta");
 								HiloClave h = new HiloClave(vista);
@@ -302,9 +300,7 @@ public class Funcionalidad implements ActionListener{
 						posicion=usuarios.size()-1;
 						vista.LblSaludo.setText("Bienvenido " + usuarios.get(posicion).getNombre() + "!!!");
 						vista.BTNCarrito.setText("\n\n🛒" + compras);
-						if(compras == 0) {
-							vista.BTNCarrito.setEnabled(false);
-						}
+						comprobarcarrito();
 					}
 				}	
 				
@@ -321,18 +317,14 @@ public class Funcionalidad implements ActionListener{
 							vista.BTNModificacion.setVisible(true);
 							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");	
 							vista.BTNCarrito.setText("\n\n🛒" + compras);
-							if(compras == 0) {
-								vista.BTNCarrito.setEnabled(false);
-							}
+							comprobarcarrito();
 						}else {
 							ponerVisible();
 							posicion=i;
 							vista.BTNModificacion.setVisible(false);
 							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");
 							vista.BTNCarrito.setText("\n\n🛒" + compras);
-							if(compras == 0) {
-								vista.BTNCarrito.setEnabled(false);
-							}
+							comprobarcarrito();
 
 						}
 				}else{
@@ -528,19 +520,35 @@ public class Funcionalidad implements ActionListener{
 		}
 		
 		if(e.getSource() == vista.BTNCarrito) {
-			vista.PanelCarrito.setVisible(true);
-			vista.BTNHamburguesa.setVisible(false);
-			vista.BTNBebidas.setVisible(false);
-			vista.BTNComponentes.setVisible(false);
-			vista.BTNPostres.setVisible(false);
-			vista.BTNPromociones.setVisible(false);
-			vista.BTNCerrarSesion.setVisible(false);
-			vista.BTNRuleta.setVisible(false);
-			vista.BTNCarrito.setVisible(false);
-			vista.LblMenu.setVisible(false);
-			if(usuarios.get(posicion).isAdmin()) {
-				vista.BTNModificacion.setVisible(false);
+			if(vista.PanelCarrito.isVisible()) {
+				vista.PanelCarrito.setVisible(false);
+				vista.BTNHamburguesa.setEnabled(true);
+				vista.BTNBebidas.setEnabled(true);
+				vista.BTNComponentes.setEnabled(true);
+				vista.BTNPostres.setEnabled(true);
+				vista.BTNPromociones.setEnabled(true);
+				vista.BTNCerrarSesion.setEnabled(true);
+				vista.BTNRuleta.setEnabled(true);
+				if(usuarios.get(posicion).isAdmin()) {
+					vista.BTNModificacion.setEnabled(true);
+				}
+				comprobarcarrito();
+				
+			} else {
+				vista.PanelCarrito.setVisible(true);
+				vista.BTNHamburguesa.setEnabled(false);
+				vista.BTNBebidas.setEnabled(false);
+				vista.BTNComponentes.setEnabled(false);
+				vista.BTNPostres.setEnabled(false);
+				vista.BTNPromociones.setEnabled(false);
+				vista.BTNCerrarSesion.setEnabled(false);
+				vista.BTNRuleta.setEnabled(false);
+				if(usuarios.get(posicion).isAdmin()) {
+					vista.BTNModificacion.setEnabled(false);
+				}
 			}
+			
+
 		}
 		
 		
@@ -656,6 +664,12 @@ public class Funcionalidad implements ActionListener{
 			vista.PanelHamburguesa.BtnHambu.setEnabled(true);
 		}
 		
+	}
+	
+	public void comprobarcarrito() {
+		if(compras == 0) {
+		/*	vista.BTNCarrito.setEnabled(false);*/
+		}
 	}
 	
 

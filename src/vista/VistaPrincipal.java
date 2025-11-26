@@ -26,6 +26,8 @@ import java.awt.GridBagConstraints;
 import java.awt.FlowLayout;
 import java.awt.BorderLayout;
 import javax.swing.BoxLayout;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.MatteBorder;
 
 public class VistaPrincipal extends JFrame {
 
@@ -134,10 +136,7 @@ public class VistaPrincipal extends JFrame {
 		PanelLista.setLayout(null);
 		
 
-		PanelCarrito = new PanelCarrito();
-		PanelCarrito.setBounds(0, 0, 859, 484);
-		contentPane.add(PanelCarrito);
-		PanelCarrito.setLayout(null);
+
 
 		
 		PanelHamburguesa = new PanelHamburguesa();
@@ -183,7 +182,12 @@ public class VistaPrincipal extends JFrame {
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
-
+		PanelCarrito = new PanelCarrito();
+		PanelCarrito.setBorder(new MatteBorder(0, 2, 0, 0, (Color) new Color(0, 0, 0)));
+		PanelCarrito.setBackground(new Color(238, 238, 238));
+		PanelCarrito.setBounds(526, -11, 333, 382);
+		panel_1.add(PanelCarrito);
+		PanelCarrito.setLayout(null);
 		
 		BTNCerrarSesion = new JButton("Cerrar Sesión");
 		BTNCerrarSesion.setBackground(new Color(178, 34, 34));
@@ -456,6 +460,7 @@ public class VistaPrincipal extends JFrame {
 		BTNCarrito.setBounds(559, 10, 59, 20);
 		contentPane.add(BTNCarrito);
 		
+
 
 
 	}
