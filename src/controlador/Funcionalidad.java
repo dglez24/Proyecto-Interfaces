@@ -405,12 +405,22 @@ public class Funcionalidad implements ActionListener{
 			
 			usuarios.get(posicion).setTirada(usuarios.get(posicion).getTirada()-1);
 			this.vista.Ruleta.LblInfoTiros.setText("Tiros: " +usuarios.get(posicion).getTirada());
-
+			
+			if(a == b && b == c) {
+				if(a == 1) {
+					usuarios.get(posicion).setG1(true);
+				} else if (a == 2) {
+					usuarios.get(posicion).setG2(true);
+				} else if (a == 3) {
+					usuarios.get(posicion).setG3(true);
+				}
 			} else {
-				//sonido
+				//fallo
 			}
 			
 			
+			
+			}
 		}
 		
 		if(e.getSource() == vista.Ruleta.BTNSalir) {
@@ -670,6 +680,10 @@ public class Funcionalidad implements ActionListener{
 		if(compras == 0) {
 		/*	vista.BTNCarrito.setEnabled(false);*/
 		}
+	}
+	
+	public void comprobarrule() {
+		
 	}
 	
 

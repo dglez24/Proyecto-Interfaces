@@ -8,6 +8,9 @@ public class Usuario {
 	private String Contra;
 	private int pedido,tirada;
 	private boolean admin;
+	private boolean g1;
+	private boolean g2;
+	private boolean g3;
 	
 	public Usuario(String nombre, String apellidos, String correo, String contra,boolean admin) {
 		this.Nombre = nombre;
@@ -17,6 +20,9 @@ public class Usuario {
 		this.pedido = 0;
 		this.tirada = 1;
 		this.admin=admin;
+		this.g1 = false;
+		this.g2 = false;
+		this.g3 = false;
 	}
 
 	public String getNombre() {
@@ -73,6 +79,29 @@ public class Usuario {
 	public void setTirada(int tirada) {
 		this.tirada = tirada;
 	}
-	
+
+	public boolean isG1() {
+		return g1;
+	}
+
+	public void setG1(boolean g1) {
+		this.g1 = g1;
+	}
+
+	public boolean isG2() {
+		return g2;
+	}
+
+	public void setG2(boolean g2) {
+		this.g2 = g2;
+	}
+
+	public boolean isG3() {
+		return g3;
+	}
+
+	public void setG3(boolean g3) {
+		this.g3 = g3;
+	}
 
 }

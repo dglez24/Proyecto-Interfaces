@@ -24,6 +24,7 @@ public class PanelPromocion extends JPanel {
 	public JPanel PanelPro1;
 	public JPanel PanelPro2;
 	public JLabel LblOferton1;
+	public JLabel LblOferton2;
 
 	/**
 	 * Create the panel.
@@ -82,9 +83,24 @@ public class PanelPromocion extends JPanel {
 		PanelPro2 = new JPanel();
 		PanelPro2.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(0, 0, 0)));
 		PanelPro2.setBackground(new Color(255, 0, 0));
-		PanelPro2.setBounds(454, 71, 375, 263);
+		PanelPro2.setBounds(474, 71, 375, 263);
 		panel_1.add(PanelPro2);
 		PanelPro2.setLayout(null);
+		
+		LblOferton2 = new JLabel() {
+			protected void paintComponent(Graphics g) {
+				Graphics2D g2 = (Graphics2D) g.create();
+				g2.rotate(Math.toRadians(35), getWidth() / 2, getHeight() / 2);
+				super.paintComponent(g2);
+				g2.dispose();
+			}
+		};
+		LblOferton2.setBounds(196, -25, 206, 153);
+
+		LblOferton2.setText("¡¡¡Oferton!!!");
+		LblOferton2.setHorizontalAlignment(SwingConstants.CENTER);
+		LblOferton2.setFont(new Font("Tahoma", Font.BOLD, 34));
+		PanelPro2.add(LblOferton2);
 		
 		btnAtras = new JButton("Atras");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 10));
