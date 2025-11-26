@@ -73,6 +73,7 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelLista.setVisible(false);
 		vista.PanelHamburguesa.setVisible(false);
 		vista.PanelPromocion.setVisible(false);
+		vista.PanelCarrito.setVisible(false);
 		vista.PanelAdmin.setVisible(false);
 		vista.OpcionRegistrar.BTNSalir.setVisible(false);
 		vista.BTNModificacion.setVisible(false);
@@ -467,7 +468,6 @@ public class Funcionalidad implements ActionListener{
 		
 		if(e.getSource() == vista.BTNPromociones) {
 			vista.PanelPromocion.setVisible(true);
-			vista.PanelAdmin.setVisible(false);
 			vista.LblMenu.setVisible(false);
 			vista.BTNHamburguesa.setVisible(false);
 			vista.BTNBebidas.setVisible(false);

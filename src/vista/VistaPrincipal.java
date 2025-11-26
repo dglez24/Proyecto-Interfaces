@@ -76,12 +76,14 @@ public class VistaPrincipal extends JFrame {
 	public PanelHamburguesa PanelHamburguesa;
 	public PanelPromocion PanelPromocion;
 	public PanelAdmin PanelAdmin;
+	public PanelCarrito PanelCarrito;
 	public Ruleta Ruleta;
 	public JButton BTNRuleta;
 	public OpcionRegistrar OpcionRegistrar;
 	public JButton BTNSalirRegi;
 	public JButton BTNModificacion;
 	public JButton BTNCarrito;
+
 	/**
 	 * Launch the application.
 	 */
@@ -132,6 +134,10 @@ public class VistaPrincipal extends JFrame {
 		PanelLista.setLayout(null);
 		
 
+		PanelCarrito = new PanelCarrito();
+		PanelCarrito.setBounds(0, 0, 859, 484);
+		contentPane.add(PanelCarrito);
+		PanelCarrito.setLayout(null);
 
 		
 		PanelHamburguesa = new PanelHamburguesa();
@@ -145,10 +151,14 @@ public class VistaPrincipal extends JFrame {
 		contentPane.add(PanelPromocion);
 		PanelPromocion.setLayout(null);
 		
+
+		
 		PanelAdmin = new PanelAdmin();
 		PanelAdmin.setBounds(0, 0, 859, 484);
 		contentPane.add(PanelAdmin);
 		PanelAdmin.setLayout(null);
+		
+
 		
 		PanelRegistro = new JPanel();
 		PanelRegistro.setBounds(235, 12, 380, 450);
@@ -445,6 +455,7 @@ public class VistaPrincipal extends JFrame {
 		BTNCarrito.setBackground(new Color(128, 255, 0));
 		BTNCarrito.setBounds(559, 10, 59, 20);
 		contentPane.add(BTNCarrito);
+		
 
 
 	}
