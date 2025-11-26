@@ -68,8 +68,8 @@ public class PanelPromocion extends JPanel {
 		};
 		LblOferton1.setText("¡¡¡Oferton!!!");
 		LblOferton1.setHorizontalAlignment(SwingConstants.CENTER);
-		LblOferton1.setFont(new Font("Tahoma", Font.BOLD, 40));
-		LblOferton1.setBounds(10, 10, 355, 243);
+		LblOferton1.setFont(new Font("Tahoma", Font.BOLD, 34));
+		LblOferton1.setBounds(-28, -30, 206, 153);
 		PanelPro1.add(LblOferton1);
 		
 		
