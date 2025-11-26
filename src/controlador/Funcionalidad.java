@@ -494,8 +494,38 @@ public class Funcionalidad implements ActionListener{
 		}
 		
 		if(e.getSource() == vista.BTNModificacion) {
-			
+			vista.PanelAdmin.setVisible(true);
+			vista.BTNHamburguesa.setVisible(false);
+			vista.BTNBebidas.setVisible(false);
+			vista.BTNComponentes.setVisible(false);
+			vista.BTNPostres.setVisible(false);
+			vista.BTNPromociones.setVisible(false);
+			vista.BTNCerrarSesion.setVisible(false);
+			vista.BTNRuleta.setVisible(false);
+			vista.BTNCarrito.setVisible(false);
+			vista.LblMenu.setVisible(false);
+			if(usuarios.get(posicion).isAdmin()) {
+				vista.BTNModificacion.setVisible(false);
+			}
 		}
+		
+		if(e.getSource() == vista.BTNCarrito) {
+			vista.PanelCarrito.setVisible(true);
+			vista.BTNHamburguesa.setVisible(false);
+			vista.BTNBebidas.setVisible(false);
+			vista.BTNComponentes.setVisible(false);
+			vista.BTNPostres.setVisible(false);
+			vista.BTNPromociones.setVisible(false);
+			vista.BTNCerrarSesion.setVisible(false);
+			vista.BTNRuleta.setVisible(false);
+			vista.BTNCarrito.setVisible(false);
+			vista.LblMenu.setVisible(false);
+			if(usuarios.get(posicion).isAdmin()) {
+				vista.BTNModificacion.setVisible(false);
+			}
+		}
+		
+		
 
 		}
 	
