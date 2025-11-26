@@ -50,6 +50,8 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelHamburguesa.BtnBebi.addActionListener(this);
 		vista.PanelHamburguesa.BtnPost.addActionListener(this);
 		vista.BTNCarrito.addActionListener(this);
+		vista.PanelPromocion.BTNAnadirOf1.addActionListener(this);
+		vista.PanelPromocion.BTNAnadirOf2.addActionListener(this);
 		
 		//-------------------------------------------------------------------
 		
@@ -108,6 +110,9 @@ public class Funcionalidad implements ActionListener{
 		comidas.add(new Comida("Natillas","imagenes/tillas.png",1.99,1,17,4));
 		usuarios.add(new Usuario("Juan", "Perez", "a", "a",false));
 		usuarios.add(new Usuario("Manolo", "Montes", "b", "b",true));
+		
+		
+		
 		
 	}
 
@@ -500,7 +505,9 @@ public class Funcionalidad implements ActionListener{
 			if(usuarios.get(posicion).isAdmin()) {
 				vista.BTNModificacion.setVisible(false);
 			}
-			
+			vista.PanelPromocion.Foto1Of1.setIcon(getScaledIcon("Imagenes/Hbbq.png", vista.PanelPromocion.Foto1Of1.getHeight()));
+			vista.PanelPromocion.Foto2Of1.setIcon(getScaledIcon("Imagenes/cerveza.png", vista.PanelPromocion.Foto2Of1.getHeight()));
+			vista.PanelPromocion.Foto1Of2.setIcon(getScaledIcon("Imagenes/Hdeluxe.png", vista.PanelPromocion.Foto1Of2.getHeight()));
 		}
 		
 		if(e.getSource()==vista.PanelHamburguesa.BtnAtras) {
@@ -574,7 +581,13 @@ public class Funcionalidad implements ActionListener{
 			
 		}
 		
+		if(e.getSource() == vista.PanelPromocion.BTNAnadirOf1) {
+			
+		}
 		
+		if(e.getSource() == vista.PanelPromocion.BTNAnadirOf2) {
+			
+		}
 
 		}
 	
@@ -679,6 +692,8 @@ public class Funcionalidad implements ActionListener{
 	public void comprobarcarrito() {
 		if(compras == 0) {
 		/*	vista.BTNCarrito.setEnabled(false);*/
+		} else if(compras > 0) {
+		/*	vista.BTNCarrito.setEnabled(true);*/
 		}
 	}
 	

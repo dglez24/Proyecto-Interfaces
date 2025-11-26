@@ -25,6 +25,15 @@ public class PanelPromocion extends JPanel {
 	public JPanel PanelPro2;
 	public JLabel LblOferton1;
 	public JLabel LblOferton2;
+	public JLabel Foto1Of1;
+	public JLabel Foto2Of1;
+	public JLabel LblMas;
+	public JLabel LblinfoOf;
+	public JButton BTNAnadirOf1;
+	public JLabel Foto1Of2;
+	public JLabel lblSoloPor;
+	public JButton BTNAnadirOf2;
+	public JLabel Lblpor3;
 
 	/**
 	 * Create the panel.
@@ -67,11 +76,38 @@ public class PanelPromocion extends JPanel {
 				g2.dispose();
 			}			
 		};
+		LblOferton1.setForeground(new Color(255, 255, 255));
 		LblOferton1.setText("¡¡¡Oferton!!!");
 		LblOferton1.setHorizontalAlignment(SwingConstants.CENTER);
 		LblOferton1.setFont(new Font("Tahoma", Font.BOLD, 34));
 		LblOferton1.setBounds(-28, -30, 206, 153);
 		PanelPro1.add(LblOferton1);
+		
+		Foto1Of1 = new JLabel("New label");
+		Foto1Of1.setBounds(10, 47, 150, 150);
+		PanelPro1.add(Foto1Of1);
+		
+		
+		Foto2Of1 = new JLabel("New label");
+		Foto2Of1.setBounds(210, 47, 150, 150);
+		PanelPro1.add(Foto2Of1);
+		
+		LblMas = new JLabel("+");
+		LblMas.setFont(new Font("Tahoma", Font.BOLD, 30));
+		LblMas.setHorizontalAlignment(SwingConstants.CENTER);
+		LblMas.setBounds(156, 105, 44, 43);
+		PanelPro1.add(LblMas);
+		
+		LblinfoOf = new JLabel("Solo por: 13.99 €");
+		LblinfoOf.setFont(new Font("Tahoma", Font.BOLD, 25));
+		LblinfoOf.setBounds(10, 207, 231, 46);
+		PanelPro1.add(LblinfoOf);
+		
+		BTNAnadirOf1 = new JButton("Añadir");
+		BTNAnadirOf1.setBackground(new Color(255, 255, 128));
+		BTNAnadirOf1.setFont(new Font("Tempus Sans ITC", Font.BOLD, 12));
+		BTNAnadirOf1.setBounds(237, 219, 123, 21);
+		PanelPro1.add(BTNAnadirOf1);
 		
 		
 		
@@ -95,12 +131,34 @@ public class PanelPromocion extends JPanel {
 				g2.dispose();
 			}
 		};
+		LblOferton2.setForeground(new Color(255, 255, 255));
 		LblOferton2.setBounds(196, -25, 206, 153);
 
 		LblOferton2.setText("¡¡¡Oferton!!!");
 		LblOferton2.setHorizontalAlignment(SwingConstants.CENTER);
 		LblOferton2.setFont(new Font("Tahoma", Font.BOLD, 34));
 		PanelPro2.add(LblOferton2);
+		
+		Foto1Of2 = new JLabel("New label");
+		Foto1Of2.setBounds(35, 55, 150, 150);
+		PanelPro2.add(Foto1Of2);
+		
+		lblSoloPor = new JLabel("Solo por: 19.99 €");
+		lblSoloPor.setFont(new Font("Tahoma", Font.BOLD, 25));
+		lblSoloPor.setBounds(10, 207, 231, 46);
+		PanelPro2.add(lblSoloPor);
+		
+		BTNAnadirOf2 = new JButton("Añadir");
+		BTNAnadirOf2.setFont(new Font("Tempus Sans ITC", Font.BOLD, 12));
+		BTNAnadirOf2.setBackground(new Color(255, 255, 128));
+		BTNAnadirOf2.setBounds(237, 219, 123, 21);
+		PanelPro2.add(BTNAnadirOf2);
+		
+		Lblpor3 = new JLabel("x3");
+		Lblpor3.setFont(new Font("Tahoma", Font.BOLD, 35));
+		Lblpor3.setHorizontalAlignment(SwingConstants.CENTER);
+		Lblpor3.setBounds(237, 96, 64, 64);
+		PanelPro2.add(Lblpor3);
 		
 		btnAtras = new JButton("Atras");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 10));
