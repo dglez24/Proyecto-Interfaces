@@ -682,9 +682,6 @@ public class Funcionalidad implements ActionListener{
 		}
 	}
 	
-	public void comprobarrule() {
-		
-	}
 	
 
 }
