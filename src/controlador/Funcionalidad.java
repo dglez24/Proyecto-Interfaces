@@ -740,9 +740,9 @@ public class Funcionalidad implements ActionListener{
 	
 	public void comprobarcarrito() {
 		if(compras == 0) {
-		/*	vista.BTNCarrito.setEnabled(false);*/
+		/*	vista.BTNCarrito.setEnabled(false);
 		} else if(compras > 0) {
-		/*	vista.BTNCarrito.setEnabled(true);*/
+			vista.BTNCarrito.setEnabled(true);*/
 		}
 	}
 	
