@@ -644,20 +644,20 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		}
 		
 		if(e.getSource() == vista.PanelHamburguesa.img2) {
-			if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(1).getNombre())) {
+			if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(1).getNombre())) {
 				compras = compras + 1;
 				vista.BTNCarrito.setText("\n\n🛒" + compras);
 				comprobarcarrito();
-			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(4).getNombre())) {
+			} else if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(4).getNombre())) {
 				compras = compras + 1;
 				vista.BTNCarrito.setText("\n\n🛒" + compras);
 				comprobarcarrito();
 				vista.BTNCarrito.setText("\n\n🛒" + compras);
-			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(7).getNombre())) {
+			} else if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(7).getNombre())) {
 				compras = compras + 1;
 				vista.BTNCarrito.setText("\n\n🛒" + compras);
 				comprobarcarrito();
-			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(10).getNombre())) {
+			} else if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(10).getNombre())) {
 				compras = compras + 1;
 				vista.BTNCarrito.setText("\n\n🛒" + compras);
 				comprobarcarrito();
@@ -665,19 +665,19 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		}
 		
 		if(e.getSource() == vista.PanelHamburguesa.img3) {
-			if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(2).getNombre())) {
+			if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(2).getNombre())) {
 				compras = compras + 1;
 				vista.BTNCarrito.setText("\n\n🛒" + compras);
 				comprobarcarrito();
-			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(5).getNombre())) {
+			} else if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(5).getNombre())) {
 				compras = compras + 1;
 				vista.BTNCarrito.setText("\n\n🛒" + compras);
 				comprobarcarrito();
-			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(8).getNombre())) {
+			} else if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(8).getNombre())) {
 				compras = compras + 1;
 				vista.BTNCarrito.setText("\n\n🛒" + compras);
 				comprobarcarrito();
-			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(11).getNombre())) {
+			} else if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(11).getNombre())) {
 				compras = compras + 1;
 				vista.BTNCarrito.setText("\n\n🛒" + compras);
 				comprobarcarrito();
