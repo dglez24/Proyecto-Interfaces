@@ -3,6 +3,8 @@ package controlador;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.*;
 
 import javax.swing.DefaultListModel;
@@ -13,7 +15,7 @@ import modelo.Usuario;
 import modelo.Comida;
 import vista.VistaPrincipal;
 
-public class Funcionalidad implements ActionListener{
+public class Funcionalidad implements ActionListener,MouseListener{
 	private boolean permiso;
 	VistaPrincipal vista = new VistaPrincipal();
 	HashMap<String, Integer> recibo = new HashMap<String, Integer>();
@@ -750,6 +752,41 @@ public class Funcionalidad implements ActionListener{
 		} else if(compras > 0) {
 			vista.BTNCarrito.setEnabled(true);*/
 		}
+	}
+
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
