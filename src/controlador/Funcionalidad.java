@@ -554,16 +554,19 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			hp.setFin(false);
 			hpc.setFin(false);
 			ponerVisible();
+			comprobarcarrito();
 		}
 		if(e.getSource() == vista.PanelPromocion.btnAtras) {
 			hp.setFin(false);
 			hpc.setFin(false);
 			ponerVisible();
+			comprobarcarrito();
 		}
 		if(e.getSource() == vista.PanelLista.btnAtras) {
 			hp.setFin(false);
 			hpc.setFin(false);
 			ponerVisible();
+			comprobarcarrito();
 		}
 		
 		if(e.getSource() == vista.BTNModificacion) {
