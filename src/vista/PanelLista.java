@@ -4,6 +4,9 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
 
 public class PanelLista extends JPanel {
 
@@ -27,8 +30,9 @@ public class PanelLista extends JPanel {
 		
 		panel_1 = new JPanel();
 		panel_1.setBackground(new Color(255, 128, 64));
-		panel_1.setBounds(0, 22, 859, 357);
+		panel_1.setBounds(0, 10, 859, 357);
 		panel.add(panel_1);
+		panel_1.setLayout(null);
 		
 		btnAtras = new JButton("Atras");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 10));
