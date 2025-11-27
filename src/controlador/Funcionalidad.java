@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
 
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -18,6 +19,7 @@ public class Funcionalidad implements ActionListener{
 	HashMap<String, Integer> recibo = new HashMap<String, Integer>();
 	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
 	ArrayList<Comida> comidas=new ArrayList<Comida>();
+	public DefaultListModel <HashMap> modelo = new DefaultListModel <>();
 	int posicion,tipo, compras = 0;
 	HiloPublicidad hp = null;
 	HiloPubliColor hpc = null;
@@ -637,6 +639,10 @@ public class Funcionalidad implements ActionListener{
 			
 		}
 
+		
+		
+		
+		
 		}
 	
 	public void panelComidas() {
