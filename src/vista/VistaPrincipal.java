@@ -481,8 +481,8 @@ public class VistaPrincipal extends JFrame {
 		
 		panelPubliColor = new JPanel();
 		panelPubliColor.setLayout(null);
-		panelPubliColor.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panelPubliColor.setBackground(UIManager.getColor("ToolTip.background"));
+		panelPubliColor.setBorder(new LineBorder(new Color(255, 255, 255)));
+		panelPubliColor.setBackground(new Color(31, 31, 31));
 		panelPubliColor.setBounds(700, 165, 149, 169);
 		panel_1.add(panelPubliColor);
 		

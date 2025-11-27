@@ -115,13 +115,13 @@ public class Funcionalidad implements ActionListener{
 		usuarios.add(new Usuario("Manolo", "Montes", "b", "b",true));
 		
 		hp = new HiloPublicidad(vista);
-
+		hpc = new HiloPubliColor(vista);
 		
 		hp.start();
-		
-		hpc = new HiloPubliColor(vista);
-		hpc.start();
 		hp.setFin(true);
+		
+
+		hpc.start();
 		hpc.setFin(true);
 	}
 
@@ -547,14 +547,17 @@ public class Funcionalidad implements ActionListener{
 		
 		if(e.getSource()==vista.PanelHamburguesa.BtnAtras) {
 			hp.setFin(false);
+			hpc.setFin(false);
 			ponerVisible();
 		}
 		if(e.getSource() == vista.PanelPromocion.btnAtras) {
 			hp.setFin(false);
+			hpc.setFin(false);
 			ponerVisible();
 		}
 		if(e.getSource() == vista.PanelLista.btnAtras) {
 			hp.setFin(false);
+			hpc.setFin(false);
 			ponerVisible();
 		}
 		
@@ -594,6 +597,7 @@ public class Funcionalidad implements ActionListener{
 				}
 				comprobarcarrito();
 				hp.setFin(false);
+				hpc.setFin(false);
 			} else {
 				vista.PanelCarrito.setVisible(true);
 				vista.BTNHamburguesa.setEnabled(false);
