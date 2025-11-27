@@ -4,15 +4,14 @@ public class Comida {
 	private String Nombre;
 	private String Foto;
 	private double Precio;
-	private int Cantidad,Stock,tipo;
+	private int Cantidad,tipo;
 	
 	
-	public Comida(String Nombre, String Foto, double Precio, int Cantidad,int Stock,int tipo) {
+	public Comida(String Nombre, String Foto, double Precio, int Cantidad,int tipo) {
 		this.Nombre = Nombre;
 		this.Foto = Foto;
 		this.Precio = Precio;
 		this.Cantidad = Cantidad;
-		this.Stock=Stock;
 		this.tipo=tipo;
 	}
 
@@ -22,14 +21,6 @@ public class Comida {
 
 	public void setNombre(String nombre) {
 		Nombre = nombre;
-	}
-
-	public int getStock() {
-		return Stock;
-	}
-
-	public void setStock(int tipo) {
-		Stock = tipo;
 	}
 
 	public String getFoto() {
