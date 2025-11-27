@@ -89,9 +89,9 @@ public class VistaPrincipal extends JFrame {
 	public JLabel FotoOferta1;
 	public JLabel FotoOferta2;
 	public JPanel panelPubliColor;
-	public JLabel lblPubli1;
-	public JLabel lblDe;
-	public JLabel lblOfertas;
+	public JLabel LblPubli1;
+	public JLabel LblPubli2;
+	public JLabel LblPubli3;
 
 	/**
 	 * Launch the application.
@@ -294,30 +294,7 @@ public class VistaPrincipal extends JFrame {
 		LblSaludo.setBounds(235, 10, 429, 37);
 		panel_1.add(LblSaludo);
 		
-		panelPubliColor = new JPanel();
-		panelPubliColor.setLayout(null);
-		panelPubliColor.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panelPubliColor.setBackground(UIManager.getColor("ToolTip.background"));
-		panelPubliColor.setBounds(700, 165, 149, 169);
-		panel_1.add(panelPubliColor);
 		
-		lblPubli1 = new JLabel("Estamos");
-		lblPubli1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPubli1.setFont(new Font("Tempus Sans ITC", Font.BOLD, 30));
-		lblPubli1.setBounds(10, 10, 133, 50);
-		panelPubliColor.add(lblPubli1);
-		
-		lblDe = new JLabel("DE");
-		lblDe.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDe.setFont(new Font("Tempus Sans ITC", Font.BOLD, 30));
-		lblDe.setBounds(10, 65, 133, 50);
-		panelPubliColor.add(lblDe);
-		
-		lblOfertas = new JLabel("OFERTAS");
-		lblOfertas.setHorizontalAlignment(SwingConstants.CENTER);
-		lblOfertas.setFont(new Font("Tempus Sans ITC", Font.BOLD, 30));
-		lblOfertas.setBounds(10, 113, 133, 50);
-		panelPubliColor.add(lblOfertas);
 		
 
 		
@@ -502,6 +479,30 @@ public class VistaPrincipal extends JFrame {
 		BTNCarrito.setBounds(559, 10, 59, 20);
 		contentPane.add(BTNCarrito);
 		
+		panelPubliColor = new JPanel();
+		panelPubliColor.setLayout(null);
+		panelPubliColor.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panelPubliColor.setBackground(UIManager.getColor("ToolTip.background"));
+		panelPubliColor.setBounds(700, 165, 149, 169);
+		panel_1.add(panelPubliColor);
+		
+		LblPubli1 = new JLabel("Estamos");
+		LblPubli1.setHorizontalAlignment(SwingConstants.CENTER);
+		LblPubli1.setFont(new Font("Tempus Sans ITC", Font.BOLD, 30));
+		LblPubli1.setBounds(10, 10, 133, 50);
+		panelPubliColor.add(LblPubli1);
+		
+		LblPubli2 = new JLabel("DE");
+		LblPubli2.setHorizontalAlignment(SwingConstants.CENTER);
+		LblPubli2.setFont(new Font("Tempus Sans ITC", Font.BOLD, 30));
+		LblPubli2.setBounds(10, 65, 133, 50);
+		panelPubliColor.add(LblPubli2);
+		
+		LblPubli3 = new JLabel("OFERTAS");
+		LblPubli3.setHorizontalAlignment(SwingConstants.CENTER);
+		LblPubli3.setFont(new Font("Tempus Sans ITC", Font.BOLD, 30));
+		LblPubli3.setBounds(10, 113, 133, 50);
+		panelPubliColor.add(LblPubli3);
 
 
 

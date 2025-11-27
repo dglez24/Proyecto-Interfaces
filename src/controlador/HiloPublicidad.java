@@ -26,7 +26,6 @@ public class HiloPublicidad extends Thread{
 			if(fin) {
 				
 			} else {
-			this.vista.LblSaludo.setForeground(Color.BLUE);
 			this.vista.FotoOferta2.setVisible(false);
 			this.vista.FotoOferta1.setVisible(true);
 			
@@ -42,7 +41,6 @@ public class HiloPublicidad extends Thread{
 			if(fin) {
 				
 			} else {
-				this.vista.LblSaludo.setForeground(Color.RED);
 			this.vista.FotoOferta1.setVisible(false);
 			this.vista.FotoOferta2.setVisible(true);
 			}
