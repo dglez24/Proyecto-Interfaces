@@ -626,21 +626,41 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		
 		if(e.getSource() == vista.PanelHamburguesa.img1) {
 			if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(0).getNombre())) {
+				if(comidas.get(0).getCantidad() > 0) {
 				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
 				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
+				comidas.get(0).setCantidad(comidas.get(0).getCantidad() - 1);
+				} else {
+					
+				}
 			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(3).getNombre())) {
+				if(comidas.get(3).getCantidad() > 0) {
 				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
 				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
+				comidas.get(3).setCantidad(comidas.get(3).getCantidad() - 1);
+				} else {
+					
+				}
 			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(6).getNombre())) {
+				if(comidas.get(6).getCantidad() > 0) {
 				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
 				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
+				comidas.get(6).setCantidad(comidas.get(6).getCantidad() - 1);
+				} else {
+					
+				}
 			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(9).getNombre())) {
+				if(comidas.get(9).getCantidad() > 0) {
 				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
 				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
+				comidas.get(9).setCantidad(comidas.get(9).getCantidad() - 1);
+				} else {
+					
+				}
 			}
 			
 		}
@@ -656,37 +676,72 @@ public class Funcionalidad implements ActionListener,MouseListener{
 					
 				}
 			} else if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(4).getNombre())) {
+				if(comidas.get(4).getCantidad() > 0) {
 				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
 				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
+				comidas.get(4).setCantidad(comidas.get(4).getCantidad() - 1);
+				} else {
+					
+				}
 			} else if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(7).getNombre())) {
+				if(comidas.get(7).getCantidad() > 0) {
 				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
 				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
+				comidas.get(7).setCantidad(comidas.get(7).getCantidad() - 1);
+				} else {
+					
+				}
 			} else if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(10).getNombre())) {
+				if(comidas.get(10).getCantidad() > 0) {
 				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
 				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
+				comidas.get(10).setCantidad(comidas.get(10).getCantidad() - 1);
+				} else {
+					
+				}
 			}
 		}
 		
 		if(e.getSource() == vista.PanelHamburguesa.img3) {
 			if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(2).getNombre())) {
+				if(comidas.get(2).getCantidad() > 0) {
 				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
 				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
+				comidas.get(2).setCantidad(comidas.get(2).getCantidad() - 1);
+				} else {
+					
+				}
 			} else if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(5).getNombre())) {
+				if(comidas.get(5).getCantidad() > 0) {
 				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
 				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
+				comidas.get(5).setCantidad(comidas.get(5).getCantidad() - 1);
+				} else {
+					
+				}
 			} else if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(8).getNombre())) {
+				if(comidas.get(8).getCantidad() > 0) {
 				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
 				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
+				comidas.get(8).setCantidad(comidas.get(8).getCantidad() - 1);
+				} else {
+					
+				}
 			} else if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(11).getNombre())) {
+				if(comidas.get(11).getCantidad() > 0) {
 				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
 				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
+				comidas.get(11).setCantidad(comidas.get(11).getCantidad() - 1);
+				} else {
+					
+				}
 			}
 		}
 		
