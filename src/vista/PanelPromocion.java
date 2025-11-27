@@ -105,7 +105,7 @@ public class PanelPromocion extends JPanel {
 		
 		BTNAnadirOf1 = new JButton("Añadir");
 		BTNAnadirOf1.setBackground(new Color(255, 255, 128));
-		BTNAnadirOf1.setFont(new Font("Tempus Sans ITC", Font.BOLD, 12));
+		BTNAnadirOf1.setFont(new Font("Tempus Sans ITC", Font.BOLD, 12) );
 		BTNAnadirOf1.setBounds(237, 219, 123, 21);
 		PanelPro1.add(BTNAnadirOf1);
 		
