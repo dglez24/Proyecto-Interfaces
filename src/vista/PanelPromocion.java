@@ -71,7 +71,7 @@ public class PanelPromocion extends JPanel {
 			@Override
 			protected void paintComponent(Graphics g) {
 				Graphics2D g2 = (Graphics2D) g.create();
-				g2.rotate(Math.toRadians(-35), getWidth() / 2, getHeight() / 2);
+				g2.rotate(Math.toRadians(-35), getWidth() / 2, getHeight() / 2 );
 				super.paintComponent(g2);
 				g2.dispose();
 			}			
