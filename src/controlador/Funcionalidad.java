@@ -22,7 +22,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
 	ArrayList<Comida> comidas=new ArrayList<Comida>();
 	public DefaultListModel <HashMap> modelo = new DefaultListModel <>();
-	int posicion,tipo, compras = 0;
+	int posicion,tipo;
 	HiloPublicidad hp = null;
 	HiloPubliColor hpc = null;
 	
@@ -114,6 +114,8 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		comidas.add(new Comida("Helado de chocolate","imagenes/Elado.png",3.99,5,4));
 		comidas.add(new Comida("Batido de vainilla","imagenes/vanila.png",5.99,13,4));
 		comidas.add(new Comida("Natillas","imagenes/tillas.png",1.99,17,4));
+		comidas.add(new Comida("Oferta burguer y bebida","imagenes/vanila.png",13.99,4,5));
+		comidas.add(new Comida("Oferta triple burguer","imagenes/tillas.png",19.99,7,5));
 		usuarios.add(new Usuario("Juan", "Perez", "a", "a",false));
 		usuarios.add(new Usuario("Manolo", "Montes", "b", "b",true));
 		
@@ -306,7 +308,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 								vista.LblSaludo.setText("Bienvenido " + usuarios.get(posicion).getNombre() + "!!!");
 								hp.setFin(false);
 								hpc.setFin(false);
-								vista.BTNCarrito.setText("\n\n🛒" + compras);
+								vista.BTNCarrito.setText("\n\n🛒" + usuarios.get(posicion).getCompras());
 								comprobarcarrito();
 							} else {
 								vista.LblAvisoClave.setText("Clave Incorrecta");
@@ -321,7 +323,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 						vista.BTNModificacion.setVisible(false);
 						posicion=usuarios.size()-1;
 						vista.LblSaludo.setText("Bienvenido " + usuarios.get(posicion).getNombre() + "!!!");
-						vista.BTNCarrito.setText("\n\n🛒" + compras);
+						vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 						comprobarcarrito();
 						hp.setFin(false);
 						hpc.setFin(false);
@@ -340,7 +342,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 							posicion=i;
 							vista.BTNModificacion.setVisible(true);
 							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");	
-							vista.BTNCarrito.setText("\n\n🛒" + compras);
+							vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 							comprobarcarrito();
 							hp.setFin(false);
 							hpc.setFin(false);
@@ -349,7 +351,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 							posicion=i;
 							vista.BTNModificacion.setVisible(false);
 							vista.LblSaludo.setText("Bienvenido " + usuarios.get(i).getNombre() + "!!!");
-							vista.BTNCarrito.setText("\n\n🛒" + compras);
+							vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 							comprobarcarrito();
 							hp.setFin(false);
 							hpc.setFin(false);
@@ -598,7 +600,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 				if(usuarios.get(posicion).isAdmin()) {
 					vista.BTNModificacion.setEnabled(true);
 				}
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
+				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
 				hp.setFin(false);
 				hpc.setFin(false);
@@ -624,20 +626,20 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		
 		if(e.getSource() == vista.PanelHamburguesa.img1) {
 			if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(0).getNombre())) {
-				compras = compras + 1;
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
+				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
+				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
 			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(3).getNombre())) {
-				compras = compras + 1;
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
+				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
+				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
 			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(6).getNombre())) {
-				compras = compras + 1;
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
+				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
+				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
 			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(9).getNombre())) {
-				compras = compras + 1;
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
+				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
+				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
 			}
 			
@@ -645,41 +647,45 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		
 		if(e.getSource() == vista.PanelHamburguesa.img2) {
 			if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(1).getNombre())) {
-				compras = compras + 1;
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
+				if(comidas.get(1).getCantidad() > 0) {
+				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
+				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
+				comidas.get(1).setCantidad(comidas.get(1).getCantidad() - 1);
+				} else {
+					
+				}
 			} else if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(4).getNombre())) {
-				compras = compras + 1;
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
+				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
+				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
 			} else if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(7).getNombre())) {
-				compras = compras + 1;
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
+				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
+				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
 			} else if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(10).getNombre())) {
-				compras = compras + 1;
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
+				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
+				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
 			}
 		}
 		
 		if(e.getSource() == vista.PanelHamburguesa.img3) {
 			if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(2).getNombre())) {
-				compras = compras + 1;
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
+				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
+				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
 			} else if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(5).getNombre())) {
-				compras = compras + 1;
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
+				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
+				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
 			} else if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(8).getNombre())) {
-				compras = compras + 1;
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
+				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
+				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
 			} else if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(11).getNombre())) {
-				compras = compras + 1;
-				vista.BTNCarrito.setText("\n\n🛒" + compras);
+				usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
+				vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 				comprobarcarrito();
 			}
 		}
@@ -798,9 +804,9 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	}
 	
 	public void comprobarcarrito() {
-		if(compras == 0) {
+		if( usuarios.get(posicion).getCompras() == 0) {
 			vista.BTNCarrito.setEnabled(false);
-		} else if(compras > 0) {
+		} else if( usuarios.get(posicion).getCompras() > 0) {
 			vista.BTNCarrito.setEnabled(true);
 		}
 	}

@@ -11,6 +11,7 @@ public class Usuario {
 	private boolean g1;
 	private boolean g2;
 	private boolean g3;
+	private int compras;
 	
 	public Usuario(String nombre, String apellidos, String correo, String contra,boolean admin) {
 		this.Nombre = nombre;
@@ -23,6 +24,7 @@ public class Usuario {
 		this.g1 = false;
 		this.g2 = false;
 		this.g3 = false;
+		this.compras = 0;
 	}
 
 	public String getNombre() {
@@ -103,5 +105,15 @@ public class Usuario {
 	public void setG3(boolean g3) {
 		this.g3 = g3;
 	}
+
+	public int getCompras() {
+		return compras;
+	}
+
+	public void setCompras(int compras) {
+		this.compras = compras;
+	}
+	
+	
 
 }
