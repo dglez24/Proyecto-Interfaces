@@ -4,7 +4,7 @@ public class Comida {
 	private String Nombre;
 	private String Foto;
 	private double Precio;
-	private int Cantidad,tipo;
+	private int Cantidad,tipo,vendido;
 	
 	
 	public Comida(String Nombre, String Foto, double Precio, int Cantidad,int tipo) {
@@ -13,6 +13,7 @@ public class Comida {
 		this.Precio = Precio;
 		this.Cantidad = Cantidad;
 		this.tipo=tipo;
+		this.vendido=0;
 	}
 
 	public String getNombre() {
@@ -51,7 +52,23 @@ public class Comida {
 	public void setCantidad(int cantidad) {
 		Cantidad = cantidad;
 	}
-	
-	
 
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
+	public int getVendido() {
+		return vendido;
+	}
+
+	public void setVendido(int vendido) {
+		this.vendido = vendido;
+	}
+	
+	
+	
 }
