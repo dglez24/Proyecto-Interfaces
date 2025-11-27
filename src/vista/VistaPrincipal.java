@@ -78,7 +78,6 @@ public class VistaPrincipal extends JFrame {
 	public PanelLista PanelLista;
 	public PanelHamburguesa PanelHamburguesa;
 	public PanelPromocion PanelPromocion;
-	public PanelAdmin PanelAdmin;
 	public PanelCarrito PanelCarrito;
 	public Ruleta Ruleta;
 	public JButton BTNRuleta;
@@ -158,11 +157,6 @@ public class VistaPrincipal extends JFrame {
 		PanelPromocion.setLayout(null);
 		
 
-		
-		PanelAdmin = new PanelAdmin();
-		PanelAdmin.setBounds(0, 0, 859, 484);
-		contentPane.add(PanelAdmin);
-		PanelAdmin.setLayout(null);
 		
 
 		
@@ -482,7 +476,7 @@ public class VistaPrincipal extends JFrame {
 		panelPubliColor = new JPanel();
 		panelPubliColor.setLayout(null);
 		panelPubliColor.setBorder(new LineBorder(new Color(255, 255, 255)));
-		panelPubliColor.setBackground(new Color(31, 31, 31));
+		panelPubliColor.setBackground(new Color(15, 15, 15));
 		panelPubliColor.setBounds(700, 165, 149, 169);
 		panel_1.add(panelPubliColor);
 		

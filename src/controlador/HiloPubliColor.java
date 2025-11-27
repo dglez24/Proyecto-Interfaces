@@ -20,6 +20,10 @@ public class HiloPubliColor extends Thread{
 	
 	public void run() {
 		boolean fin2 = false;
+
+		vista.LblPubli1.setForeground(Color.GREEN);
+		vista.LblPubli2.setForeground(Color.GREEN);
+		vista.LblPubli3.setForeground(Color.GREEN);
 		
 		while (!fin2) {
 			
@@ -32,7 +36,7 @@ public class HiloPubliColor extends Thread{
 			}
 			
 			try {
-				this.sleep(300);
+				this.sleep(250);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -46,7 +50,7 @@ public class HiloPubliColor extends Thread{
 			vista.LblPubli3.setForeground(Color.RED);
 			}
 			try {
-				this.sleep(300);
+				this.sleep(250);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -61,7 +65,7 @@ public class HiloPubliColor extends Thread{
 			vista.LblPubli3.setForeground(Color.BLUE);
 			}
 			try {
-				this.sleep(300);
+				this.sleep(250);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -75,7 +79,7 @@ public class HiloPubliColor extends Thread{
 			vista.LblPubli3.setForeground(Color.YELLOW);
 			}
 			try {
-				this.sleep(300);
+				this.sleep(250);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -78,7 +78,6 @@ public class Funcionalidad implements ActionListener{
 		vista.PanelHamburguesa.setVisible(false);
 		vista.PanelPromocion.setVisible(false);
 		vista.PanelCarrito.setVisible(false);
-		vista.PanelAdmin.setVisible(false);
 		vista.OpcionRegistrar.BTNSalir.setVisible(false);
 		vista.BTNModificacion.setVisible(false);
 		vista.panelPubliColor.setVisible(false);
@@ -564,7 +563,7 @@ public class Funcionalidad implements ActionListener{
 		if(e.getSource() == vista.BTNModificacion) {
 			hp.setFin(true);
 			hpc.setFin(true);
-			vista.PanelAdmin.setVisible(true);
+			vista.PanelLista.setVisible(true);
 			vista.BTNHamburguesa.setVisible(false);
 			vista.BTNBebidas.setVisible(false);
 			vista.BTNComponentes.setVisible(false);
