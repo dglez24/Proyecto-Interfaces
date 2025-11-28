@@ -822,7 +822,6 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	    } else if (tipo == 4) {
 	        index += 9;
 	    }
-
 	    // Comprobación de seguridad: evitar accesos fuera de rango
 	    if (index < 0 || index >= comidas.size()) {
 	        System.err.println("Índice fuera de rango en comprobanteCarrito: " + index);
@@ -832,6 +831,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	    Comida seleccionado = comidas.get(index);
 
 	    // Recorremos las entradas del mapa y actualizamos sólo la que coincida
+	    
 	    for (Map.Entry<Comida, Integer> entry : cantidades.entrySet()) {
 	        if (entry.getKey().equals(seleccionado)) {
 	            cantidades.put(entry.getKey(), entry.getValue() + 1);
