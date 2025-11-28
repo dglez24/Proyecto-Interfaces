@@ -16,15 +16,16 @@ import modelo.Comida;
 import vista.VistaPrincipal;
 
 public class Funcionalidad implements ActionListener,MouseListener{
-	private boolean permiso;
-	VistaPrincipal vista = new VistaPrincipal();
-	HashMap<String, Integer> recibo = new HashMap<String, Integer>();
-	ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
-	ArrayList<Comida> comidas=new ArrayList<Comida>();
+	public  boolean permiso;
+	public VistaPrincipal vista = new VistaPrincipal();
+	public HashMap<String, Integer> recibo = new HashMap<String, Integer>();
+	public HashMap<Comida, Integer> cantidades = new HashMap<Comida, Integer>();
+	public ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
+	public ArrayList<Comida> comidas=new ArrayList<Comida>();
 	public DefaultListModel <HashMap> modelo = new DefaultListModel <>();
 	int posicion,tipo;
-	HiloPublicidad hp = null;
-	HiloPubliColor hpc = null;
+	public HiloPublicidad hp = null;
+	public HiloPubliColor hpc = null;
 	
 	public Funcionalidad (VistaPrincipal frame) {
 		vista = frame;
@@ -114,10 +115,14 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		comidas.add(new Comida("Helado de chocolate","imagenes/Elado.png",3.99,5,4));
 		comidas.add(new Comida("Batido de vainilla","imagenes/vanila.png",5.99,13,4));
 		comidas.add(new Comida("Natillas","imagenes/tillas.png",1.99,17,4));
-		comidas.add(new Comida("Oferta burguer y bebida","imagenes/vanila.png",13.99,4,5));
-		comidas.add(new Comida("Oferta triple burguer","imagenes/tillas.png",19.99,7,5));
+	/*	comidas.add(new Comida("Oferta burguer y bebida","imagenes/vanila.png",13.99,4,5));
+		comidas.add(new Comida("Oferta triple burguer","imagenes/tillas.png",19.99,7,5));*/
 		usuarios.add(new Usuario("Juan", "Perez", "a", "a",false));
 		usuarios.add(new Usuario("Manolo", "Montes", "b", "b",true));
+		
+		for(int i = 0; i< comidas.size(); i++) {
+		cantidades.put(comidas.get(i), 0);
+		}
 		
 		hp = new HiloPublicidad(vista);
 		hpc = new HiloPubliColor(vista);
@@ -628,112 +633,24 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		
 		
 		if(e.getSource() == vista.PanelHamburguesa.img1) {
-			if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(0).getNombre())) {
-				if(comidas.get(0).getCantidad() > 0) {
-					anadircarro();
-				comprobarcarrito();
-				comidas.get(0).setCantidad(comidas.get(0).getCantidad() - 1);
-				} else {
-					
-				}
-			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(3).getNombre())) {
-				if(comidas.get(3).getCantidad() > 0) {
-					anadircarro();
-				comprobarcarrito();
-				comidas.get(3).setCantidad(comidas.get(3).getCantidad() - 1);
-				} else {
-					
-				}
-			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(6).getNombre())) {
-				if(comidas.get(6).getCantidad() > 0) {
-					anadircarro();
-				comprobarcarrito();
-				comidas.get(6).setCantidad(comidas.get(6).getCantidad() - 1);
-				} else {
-					
-				}
-			} else if(vista.PanelHamburguesa.nom1.getText().equals(comidas.get(9).getNombre())) {
-				if(comidas.get(9).getCantidad() > 0) {
-					anadircarro();
-				comprobarcarrito();
-				comidas.get(9).setCantidad(comidas.get(9).getCantidad() - 1);
-				} else {
-					
-				}
-			}
+			int pos = 0;
 			
+			
+			comprobanteCarrito( pos, tipo, comidas, cantidades);
 		}
 		
 		if(e.getSource() == vista.PanelHamburguesa.img2) {
-			if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(1).getNombre())) {
-				if(comidas.get(1).getCantidad() > 0) {
-					anadircarro();
-				comprobarcarrito();
-				comidas.get(1).setCantidad(comidas.get(1).getCantidad() - 1);
-				} else {
-					
-				}
-			} else if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(4).getNombre())) {
-				if(comidas.get(4).getCantidad() > 0) {
-					anadircarro();
-				comprobarcarrito();
-				comidas.get(4).setCantidad(comidas.get(4).getCantidad() - 1);
-				} else {
-					
-				}
-			} else if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(7).getNombre())) {
-				if(comidas.get(7).getCantidad() > 0) {
-					anadircarro();
-				comprobarcarrito();
-				comidas.get(7).setCantidad(comidas.get(7).getCantidad() - 1);
-				} else {
-					
-				}
-			} else if(vista.PanelHamburguesa.nom2.getText().equals(comidas.get(10).getNombre())) {
-				if(comidas.get(10).getCantidad() > 0) {
-					anadircarro();
-				comprobarcarrito();
-				comidas.get(10).setCantidad(comidas.get(10).getCantidad() - 1);
-				} else {
-					
-				}
-			}
+			int pos = 1;
+			
+			
+			comprobanteCarrito( pos, tipo, comidas, cantidades);
 		}
 		
 		if(e.getSource() == vista.PanelHamburguesa.img3) {
-			if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(2).getNombre())) {
-				if(comidas.get(2).getCantidad() > 0) {
-				anadircarro();
-				comprobarcarrito();
-				comidas.get(2).setCantidad(comidas.get(2).getCantidad() - 1);
-				} else {
-					
-				}
-			} else if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(5).getNombre())) {
-				if(comidas.get(5).getCantidad() > 0) {
-				anadircarro();
-				comprobarcarrito();
-				comidas.get(5).setCantidad(comidas.get(5).getCantidad() - 1);
-				} else {
-					
-				}
-			} else if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(8).getNombre())) {
-				if(comidas.get(8).getCantidad() > 0) {
-				anadircarro();
-				comprobarcarrito();
-				comidas.get(8).setCantidad(comidas.get(8).getCantidad() - 1);
-				} else {
-					
-				}
-			} else if(vista.PanelHamburguesa.nom3.getText().equals(comidas.get(11).getNombre())) {
-				if(comidas.get(11).getCantidad() > 0) {
-				anadircarro();
-				comprobarcarrito();
-				comidas.get(11).setCantidad(comidas.get(11).getCantidad() - 1);
-				} else {
-					
-				}
-			}
+			int pos = 2;
+			
+			
+			comprobanteCarrito( pos, tipo, comidas, cantidades);
 		}
 		
 		if(e.getSource() == vista.PanelPromocion.BTNAnadirOf1) {
@@ -861,8 +778,78 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
 		vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 	}
+/*
+	public void comprobanteCarrito(int pos, int tipo, ArrayList <Comida> comidas, HashMap <Comida, Integer> cantidades) {
+		for(Map.Entry<Comida, Integer> c : cantidades.entrySet()) {
+			if(tipo == 1) {
+				if(c.getKey().equals(comidas.get(pos))) {
+					cantidades.put(c.getKey(), c.getValue() + 1);
+					System.out.println(c.getValue());
+				}
+			} else if(tipo == 2) {
+				pos += 3;
+				if(c.getKey().equals(comidas.get(pos))) {
+					cantidades.put(c.getKey(), c.getValue() + 1);
+					System.out.println(c.getValue());
+				}
+			} else if(tipo == 3) {
+				pos += 6;
+				if(c.getKey().equals(comidas.get(pos))) {
+					cantidades.put(c.getKey(), c.getValue() + 1);
+					System.out.println(c.getValue());
+				}
+			} else if(tipo == 4) {
+				pos += 9;
+				if(c.getKey().equals(comidas.get(pos))) {
+				cantidades.put(c.getKey(), c.getValue() + 1);
+				System.out.println(c.getValue());
+				}	
+			}
 
+			
+		}
+		
+		
+	}*/
+	
+	public void comprobanteCarrito(int pos, int tipo, ArrayList<Comida> comidas, HashMap<Comida, Integer> cantidades) {
+	    // Calculamos el índice real de la comida seleccionada sin modificar 'pos' repetidamente dentro del bucle
+	    int index = pos;
+	    if (tipo == 2) {
+	        index += 3;
+	    } else if (tipo == 3) {
+	        index += 6;
+	    } else if (tipo == 4) {
+	        index += 9;
+	    }
 
+	    // Comprobación de seguridad: evitar accesos fuera de rango
+	    if (index < 0 || index >= comidas.size()) {
+	        System.err.println("Índice fuera de rango en comprobanteCarrito: " + index);
+	        return;
+	    }
+
+	    Comida seleccionado = comidas.get(index);
+
+	    // Recorremos las entradas del mapa y actualizamos sólo la que coincida
+	    for (Map.Entry<Comida, Integer> entry : cantidades.entrySet()) {
+	        if (entry.getKey().equals(seleccionado)) {
+	            cantidades.put(entry.getKey(), entry.getValue() + 1);
+	            System.out.println("Nueva cantidad de " + seleccionado.getNombre() + ": " + (entry.getValue()));
+	            // si la intención es incrementar el contador visual / de usuario:
+	            anadircarro();
+	            break; // hemos encontrado y actualizado la comida, salimos
+	        }
+	    }
+	}
+
+	
+	public void comprobarStock() {
+		
+		
+		
+	}
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
