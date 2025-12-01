@@ -34,6 +34,7 @@ public class PanelHamburguesa extends JPanel {
 	public JButton BtnComple;
 	public JButton BtnBebi;
 	public JButton BtnPost;
+	public JLabel LblAlertaStock;
 
 	/**
 	 * Create the panel.
@@ -130,6 +131,13 @@ public class PanelHamburguesa extends JPanel {
 		BtnPost.setBackground(new Color(255, 255, 128));
 		BtnPost.setBounds(675, 327, 141, 20);
 		panel_1.add(BtnPost);
+		
+		LblAlertaStock = new JLabel("");
+		LblAlertaStock.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		LblAlertaStock.setBounds(197, 0, 452, 22);
+		panel.add(LblAlertaStock);
+		LblAlertaStock.setHorizontalAlignment(SwingConstants.CENTER);
+		LblAlertaStock.setForeground(new Color(255, 0, 0));
 
 	}
 }

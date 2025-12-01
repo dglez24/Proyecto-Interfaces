@@ -634,23 +634,30 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		
 		if(e.getSource() == vista.PanelHamburguesa.img1) {
 			int pos = 0;
-			
-			
-			comprobanteCarrito( pos, tipo, comidas, cantidades);
+			boolean existe=comprobanteStock(pos,tipo,comidas,cantidades);
+			if(!existe) {
+				comprobanteCarrito( pos, tipo, comidas, cantidades);
+			}else {
+				vista.PanelHamburguesa.LblAlertaStock.setText("No quedan mas productos de este tipo");
+			}
 		}
-		
 		if(e.getSource() == vista.PanelHamburguesa.img2) {
 			int pos = 1;
-			
-			
-			comprobanteCarrito( pos, tipo, comidas, cantidades);
+			boolean existe=comprobanteStock(pos,tipo,comidas,cantidades);
+			if(!existe) {
+				comprobanteCarrito( pos, tipo, comidas, cantidades);
+			}else {
+				vista.PanelHamburguesa.LblAlertaStock.setText("No quedan mas productos de este tipo");
+			}	
 		}
-		
 		if(e.getSource() == vista.PanelHamburguesa.img3) {
 			int pos = 2;
-			
-			
-			comprobanteCarrito( pos, tipo, comidas, cantidades);
+			boolean existe=comprobanteStock(pos,tipo,comidas,cantidades);
+			if(!existe) {
+				comprobanteCarrito( pos, tipo, comidas, cantidades);
+			}else {
+				vista.PanelHamburguesa.LblAlertaStock.setText("No quedan mas productos de este tipo");
+			}
 		}
 		
 		if(e.getSource() == vista.PanelPromocion.BTNAnadirOf1) {
@@ -778,42 +785,56 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		usuarios.get(posicion).setCompras( usuarios.get(posicion).getCompras() + 1);
 		vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 	}
-/*
-	public void comprobanteCarrito(int pos, int tipo, ArrayList <Comida> comidas, HashMap <Comida, Integer> cantidades) {
+
+	public boolean comprobanteStock(int pos, int tipo, ArrayList <Comida> comidas, HashMap <Comida, Integer> cantidades) {
+		boolean existencias=false;
 		for(Map.Entry<Comida, Integer> c : cantidades.entrySet()) {
 			if(tipo == 1) {
 				if(c.getKey().equals(comidas.get(pos))) {
-					cantidades.put(c.getKey(), c.getValue() + 1);
-					System.out.println(c.getValue());
+					if(c.getKey().getCantidad()-c.getValue()<=0) {
+						existencias=true;
+						System.out.println(c.getKey().getCantidad());
+					}
 				}
 			} else if(tipo == 2) {
 				pos += 3;
 				if(c.getKey().equals(comidas.get(pos))) {
-					cantidades.put(c.getKey(), c.getValue() + 1);
-					System.out.println(c.getValue());
+					if(c.getKey().equals(comidas.get(pos))) {
+						if(c.getKey().getCantidad()-c.getValue()<=0) {
+							existencias=true;
+							System.out.println(c.getKey().getCantidad());
+						}
+					}
 				}
 			} else if(tipo == 3) {
 				pos += 6;
 				if(c.getKey().equals(comidas.get(pos))) {
-					cantidades.put(c.getKey(), c.getValue() + 1);
-					System.out.println(c.getValue());
+					if(c.getKey().equals(comidas.get(pos))) {
+						if(c.getKey().getCantidad()-c.getValue()<=0) {
+							existencias=true;
+							System.out.println(c.getKey().getCantidad());
+						}
+					}
 				}
 			} else if(tipo == 4) {
 				pos += 9;
 				if(c.getKey().equals(comidas.get(pos))) {
-				cantidades.put(c.getKey(), c.getValue() + 1);
-				System.out.println(c.getValue());
+					if(c.getKey().equals(comidas.get(pos))) {
+						if(c.getKey().getCantidad()-c.getValue()<=0) {
+							existencias=true;
+							System.out.println(c.getKey().getCantidad());
+						}
+					}
 				}	
 			}
 
 			
 		}
+		return existencias;
 		
-		
-	}*/
+	}
 	
 	public void comprobanteCarrito(int pos, int tipo, ArrayList<Comida> comidas, HashMap<Comida, Integer> cantidades) {
-	    // Calculamos el índice real de la comida seleccionada sin modificar 'pos' repetidamente dentro del bucle
 	    int index = pos;
 	    if (tipo == 2) {
 	        index += 3;
@@ -822,7 +843,6 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	    } else if (tipo == 4) {
 	        index += 9;
 	    }
-	    // Comprobación de seguridad: evitar accesos fuera de rango
 	    if (index < 0 || index >= comidas.size()) {
 	        System.err.println("Índice fuera de rango en comprobanteCarrito: " + index);
 	        return;
@@ -830,15 +850,14 @@ public class Funcionalidad implements ActionListener,MouseListener{
 
 	    Comida seleccionado = comidas.get(index);
 
-	    // Recorremos las entradas del mapa y actualizamos sólo la que coincida
 	    
 	    for (Map.Entry<Comida, Integer> entry : cantidades.entrySet()) {
 	        if (entry.getKey().equals(seleccionado)) {
 	            cantidades.put(entry.getKey(), entry.getValue() + 1);
 	            System.out.println("Nueva cantidad de " + seleccionado.getNombre() + ": " + (entry.getValue()));
-	            // si la intención es incrementar el contador visual / de usuario:
+	            
 	            anadircarro();
-	            break; // hemos encontrado y actualizado la comida, salimos
+	            break; 
 	        }
 	    }
 	}
