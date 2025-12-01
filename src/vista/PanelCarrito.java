@@ -59,11 +59,11 @@ public class PanelCarrito extends JPanel {
 		
 		LblTotalPagar = new JLabel("Total a pagar:");
 		LblTotalPagar.setHorizontalAlignment(SwingConstants.CENTER);
-		LblTotalPagar.setBounds(290, 265, 99, 23);
+		LblTotalPagar.setBounds(60, 62, 99, 23);
 		add(LblTotalPagar);
 		
 		LblCobroTotal = new JLabel("");
-		LblCobroTotal.setBounds(395, 265, 45, 23);
+		LblCobroTotal.setBounds(147, 62, 45, 23);
 		add(LblCobroTotal);
 
 	}
