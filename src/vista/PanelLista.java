@@ -25,6 +25,7 @@ public class PanelLista extends JPanel {
 	public JLabel lblUds;
 	public JLabel lblTituloUds;
 	public JLabel LblTituloComida;
+	public JList listacomidas;
 
 	/**
 	 * Create the panel.
@@ -49,6 +50,9 @@ public class PanelLista extends JPanel {
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(123, 61, 239, 296);
 		PanelModUds.add(scrollPane);
+		
+		listacomidas = new JList();
+		scrollPane.setViewportView(listacomidas);
 		
 		bTNRestar = new JButton("-");
 		bTNRestar.addActionListener(new ActionListener() {

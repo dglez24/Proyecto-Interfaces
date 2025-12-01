@@ -23,6 +23,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	public ArrayList <Usuario> usuarios  = new ArrayList <Usuario>();
 	public ArrayList<Comida> comidas=new ArrayList<Comida>();
 	public DefaultListModel <String> modelo = new DefaultListModel <>();
+	public DefaultListModel modeloadmin = new DefaultListModel();
 	int posicion,tipo;
 	public HiloPublicidad hp = null;
 	public HiloPubliColor hpc = null;
@@ -61,7 +62,9 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		vista.PanelPromocion.BTNAnadirOf2.addActionListener(this);
 		vista.PanelCarrito.BtnEliminar.addActionListener(this);
 		vista.PanelCarrito.BtnPagar.addActionListener(this);
-		
+		vista.PanelLista.bTNSumar.addActionListener(this);
+		vista.PanelLista.bTNRestar.addActionListener(this);
+		vista.PanelLista.listacomidas.addMouseListener(this);
 		//-------------------------------------------------------------------
 		
 		vista.PClave.setVisible(false);
@@ -125,6 +128,12 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		for(int i = 0; i< comidas.size(); i++) {
 		cantidades.put(comidas.get(i), 0);
 		}
+		
+
+	 	for(int i = 0; i<comidas.size(); i++) {
+	 		modeloadmin.addElement(comidas.get(i).getNombre());
+	 	}
+	 	vista.PanelLista.listacomidas.setModel(modeloadmin);
 		
 		hp = new HiloPublicidad(vista);
 		hpc = new HiloPubliColor(vista);
@@ -590,6 +599,8 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			if(usuarios.get(posicion).isAdmin()) {
 				vista.BTNModificacion.setVisible(false);
 			}
+			vista.PanelLista.LblTituloComida.setText(comidas.get(0).getNombre());
+			vista.PanelLista.lblUds.setText(String.valueOf(comidas.get(0).getCantidad()));
 		}
 		
 		if(e.getSource() == vista.BTNCarrito) {
@@ -665,6 +676,30 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		}
 		
 		if(e.getSource() == vista.PanelPromocion.BTNAnadirOf2) {
+			
+		}
+		
+		if(e.getSource() == vista.PanelLista.bTNSumar) {
+			for(int i = 0; i < comidas.size(); i++) {
+				if(comidas.get(i).getNombre().equals(vista.PanelLista.LblTituloComida.getText())) {
+					comidas.get(i).setCantidad(comidas.get(i).getCantidad() + 1);
+					vista.PanelLista.lblUds.setText(String.valueOf(Integer.valueOf(vista.PanelLista.lblUds.getText())  + 1));
+				}
+			}
+			
+		}
+		
+		if(e.getSource() == vista.PanelLista.bTNRestar) {
+			if(vista.PanelLista.lblUds.getText().equals("0")) {
+				
+			} else {
+			for(int i = 0; i < comidas.size(); i++) {
+				if(comidas.get(i).getNombre().equals(vista.PanelLista.LblTituloComida.getText())) {
+					comidas.get(i).setCantidad(comidas.get(i).getCantidad() - 1);
+					vista.PanelLista.lblUds.setText(String.valueOf(Integer.valueOf(vista.PanelLista.lblUds.getText())  - 1));
+				}
+			}
+			}
 			
 		}
 		
@@ -886,8 +921,13 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	}
 	
 	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
+	public void mouseClicked(MouseEvent e) {		
+		
+		if(e.getClickCount() == 2) {
+			int posicion = this.vista.PanelLista.listacomidas.locationToIndex(e.getPoint());
+			this.vista.PanelLista.LblTituloComida.setText(comidas.get(posicion).getNombre());
+			this.vista.PanelLista.lblUds.setText(String.valueOf(comidas.get(posicion).getCantidad()));
+		}
 		
 	}
 
