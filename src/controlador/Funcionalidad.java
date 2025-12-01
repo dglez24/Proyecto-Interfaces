@@ -24,7 +24,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	public ArrayList<Comida> comidas=new ArrayList<Comida>();
 	public DefaultListModel <String> modelo = new DefaultListModel <>();
 	public DefaultListModel modeloadmin = new DefaultListModel();
-	int posicion,tipo;
+	int posicion,tipo,total;
 	public HiloPublicidad hp = null;
 	public HiloPubliColor hpc = null;
 	
@@ -484,6 +484,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 				vista.BTNModificacion.setEnabled(true);
 			}
 		}
+		//---------------------------------------------------
 		if(e.getSource() == vista.BTNHamburguesa) {
 			hp.setFin(true);
 			hpc.setFin(true);
@@ -530,13 +531,13 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			rellenarMenu(6);
 			tipo=3;
 			habilitar(tipo);
-			
 		}
 		if(e.getSource()==vista.PanelHamburguesa.BtnPost) {
 			rellenarMenu(9);
 			tipo=4;
 			habilitar(tipo);
 		}
+		//-------------------------------------------------------
 		if(e.getSource() == vista.BTNPromociones) {
 			
 			hp.setFin(true);
@@ -679,13 +680,12 @@ public class Funcionalidad implements ActionListener,MouseListener{
 					vista.PanelLista.lblUds.setText(String.valueOf(Integer.valueOf(vista.PanelLista.lblUds.getText())  + 1));
 				}
 			}
-			
 		}
 		
 		if(e.getSource() == vista.PanelLista.bTNRestar) {
 			if(vista.PanelLista.lblUds.getText().equals("0")) {
 				
-			} else { 
+			}else{ 
 			for(int i = 0; i < comidas.size(); i++) {
 				if(comidas.get(i).getNombre().equals(vista.PanelLista.LblTituloComida.getText())) {
 					comidas.get(i).setCantidad(comidas.get(i).getCantidad() - 1);
@@ -693,7 +693,6 @@ public class Funcionalidad implements ActionListener,MouseListener{
 				}
 			}
 			}
-			
 		}
 		
 		if(e.getSource()==vista.PanelCarrito.BtnEliminar) {
@@ -705,7 +704,11 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			
 		}
 		if(e.getSource()==vista.PanelCarrito.BtnPagar) {
-			
+			contadorVentas(comidas,cantidades, total);
+			resetearValores(cantidades);
+			modelo.clear();
+			usuarios.get(posicion).setCompras(0);
+			vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 		}
 		
 		
@@ -744,7 +747,6 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		if(usuarios.get(posicion).isAdmin()) {
 			vista.BTNModificacion.setEnabled(true);
 		}
-
 		vista.PanelRegistro.setVisible(false);
 		vista.LblMenu.setVisible(true);
 		vista.BTNHamburguesa.setVisible(true);
@@ -761,7 +763,6 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		if(usuarios.get(posicion).isAdmin()) {
 			vista.BTNModificacion.setVisible(true);
 		}
-
 	}
 	public ImageIcon getScaledIcon(String path,  int height) {
 	    try {
@@ -828,28 +829,36 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		for(Map.Entry<Comida, Integer> c : cantidades.entrySet()) {
 			if(tipo == 1) {
 				if(c.getKey().equals(comidas.get(pos))) {
+					System.out.println("Se han cogido "+c.getValue());
 					if(c.getKey().getCantidad()-c.getValue()<=0) {
+						System.out.println("Se han cogido "+c.getValue());
 						existencias=true;
 					}
 				}
 			} else if(tipo == 2) {
 				pos =+ 3;
 				if(c.getKey().equals(comidas.get(pos))) {
+					System.out.println("Se han cogido "+c.getValue());
 					if(c.getKey().getCantidad()-c.getValue()<=0) {
+						System.out.println("Se han cogido "+c.getValue());
 						existencias=true;
 					}
 				}
 			} else if(tipo == 3) {
 				pos =+ 6;
 				if(c.getKey().equals(comidas.get(pos))) {
+					System.out.println("Se han cogido "+c.getValue());
 					if(c.getKey().getCantidad()-c.getValue()<=0) {
+						System.out.println("Se han cogido "+c.getValue());
 						existencias=true;
 					}
 				}
 			} else if(tipo == 4) {
 				pos =+ 9;
 				if(c.getKey().equals(comidas.get(pos))) {
+					System.out.println("Se han cogido "+c.getValue());
 					if(c.getKey().getCantidad()-c.getValue()<=0) {
+						System.out.println("Se han cogido "+c.getValue());
 						existencias=true;
 					}
 				}	
@@ -859,21 +868,16 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	}
 	
 	public void comprobanteCarrito(int pos, int tipo, ArrayList<Comida> comidas, HashMap<Comida, Integer> cantidades) {
-	    int index = pos;
+	    
 	    if (tipo == 2) {
-	        index += 3;
+	    	pos =pos+ 3;
 	    } else if (tipo == 3) {
-	        index += 6;
+	        pos =pos+ 6;
 	    } else if (tipo == 4) {
-	        index += 9;
+	        pos =pos+ 9;
 	    }
-	    if (index < 0 || index >= comidas.size()) {
-	        System.err.println("Índice fuera de rango en comprobanteCarrito: " + index);
-	        return;
-	    }
-	    Comida seleccionado = comidas.get(index);
 	    for (Map.Entry<Comida, Integer> entry : cantidades.entrySet()) {
-	        if (entry.getKey().equals(seleccionado)) {
+	        if (entry.getKey().equals(comidas.get(pos))) {
 	            cantidades.put(entry.getKey(), entry.getValue() + 1);
 	            
 	            vista.PanelHamburguesa.LblAlertaStock.setText("Se ha añadido 1 producto");
@@ -886,12 +890,25 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	}
 	public void añadirJlist(HashMap<Comida,Integer>carrito,DefaultListModel<String> modelo) {
 		modelo.clear();
+		
 		for (Map.Entry<Comida, Integer> entry : carrito.entrySet()) {
 			if(entry.getValue()>0) {
 				Comida comida = entry.getKey();
 			    int cantidad = entry.getValue();
-			    double total = cantidad * comida.getPrecio();
+				double total = cantidad * comida.getPrecio();
 			    double recibo=+total;
+				/*if(usuarios.get(posicion).isG1()&&entry.getKey().getTipo()==3) {
+					usuarios.get(posicion).setG1(false);
+					double total = cantidad-1 * comida.getPrecio();
+				}else if(usuarios.get(posicion).isG2()) {
+					usuarios.get(posicion).setG2(false);
+					double total = cantidad-1 * comida.getPrecio();
+				}else if(usuarios.get(posicion).isG3()&&entry.getKey().getTipo()==2) {
+					usuarios.get(posicion).setG3(false);
+					double total = cantidad-1 * comida.getPrecio();
+				}else {
+				}*/
+				 
 			    modelo.addElement(cantidad + " uds → " + comida.getNombre() + " | Total: " + total + "€");
 			    vista.PanelCarrito.list.setModel(modelo);
 			    vista.PanelCarrito.LblCobroTotal.setText(String.valueOf(recibo));
@@ -903,22 +920,35 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	    	cantidades.put(key, 0);
 	    }
 	}
+	public void contadorVentas(ArrayList<Comida>comidas,HashMap<Comida,Integer>cantidades,Integer total) {
+		for(Map.Entry<Comida, Integer> c: cantidades.entrySet()) {
+			if(c.getValue()>0) {
+				c.getKey().setVendido(c.getValue());
+				c.getKey().setCantidad(c.getKey().getCantidad()-c.getValue());
+				total=total+c.getValue();
+			}
+		}
+	}
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {		
 		
 		if(e.getClickCount() == 2) {
+			vista.PanelLista.LblTitVentas.setText(String.valueOf(total));
 			int posicion = this.vista.PanelLista.listacomidas.locationToIndex(e.getPoint());
 			this.vista.PanelLista.LblTituloComida.setText(comidas.get(posicion).getNombre());
 			this.vista.PanelLista.lblUds.setText(String.valueOf(comidas.get(posicion).getCantidad()));
+			if(total==0) {
+				vista.PanelLista.Barracomida.setValue(0);
+			}else {
+				int progreso=(comidas.get(posicion).getVendido()*100)/total;
+				vista.PanelLista.Barracomida.setValue(progreso);
+			}
+			
 		}
 		
 	}
-	public void contadorVentas(ArrayList<Comida>comidas,HashMap<Comida,Integer>cantidades) {
-		
-	}
-
-
+	
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
