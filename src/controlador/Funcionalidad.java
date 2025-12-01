@@ -59,6 +59,8 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		vista.BTNCarrito.addActionListener(this);
 		vista.PanelPromocion.BTNAnadirOf1.addActionListener(this);
 		vista.PanelPromocion.BTNAnadirOf2.addActionListener(this);
+		vista.PanelCarrito.BtnEliminar.addActionListener(this);
+		vista.PanelCarrito.BtnPagar.addActionListener(this);
 		
 		//-------------------------------------------------------------------
 		
@@ -668,6 +670,11 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		
 		if(e.getSource()==vista.PanelCarrito.BtnEliminar) {
 			resetearValores(cantidades);
+			modelo.clear();
+			usuarios.get(posicion).setCompras(0);
+			vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
+			System.out.println(usuarios.get(posicion).getCompras());
+			
 		}
 		if(e.getSource()==vista.PanelCarrito.BtnPagar) {
 			
@@ -859,6 +866,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 
 	
 	public void añadirJlist(HashMap<Comida,Integer>carrito,DefaultListModel<String> modelo) {
+		modelo.clear();
 		for (Map.Entry<Comida, Integer> entry : carrito.entrySet()) {
 			if(entry.getValue()>0) {
 				Comida comida = entry.getKey();
