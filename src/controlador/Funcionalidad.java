@@ -797,7 +797,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 					}
 				}
 			} else if(tipo == 2) {
-				pos += 3;
+				pos =+ 3;
 				if(c.getKey().equals(comidas.get(pos))) {
 					if(c.getKey().equals(comidas.get(pos))) {
 						if(c.getKey().getCantidad()-c.getValue()<=0) {
@@ -807,7 +807,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 					}
 				}
 			} else if(tipo == 3) {
-				pos += 6;
+				pos =+ 6;
 				if(c.getKey().equals(comidas.get(pos))) {
 					if(c.getKey().equals(comidas.get(pos))) {
 						if(c.getKey().getCantidad()-c.getValue()<=0) {
@@ -817,7 +817,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 					}
 				}
 			} else if(tipo == 4) {
-				pos += 9;
+				pos =+ 9;
 				if(c.getKey().equals(comidas.get(pos))) {
 					if(c.getKey().equals(comidas.get(pos))) {
 						if(c.getKey().getCantidad()-c.getValue()<=0) {
