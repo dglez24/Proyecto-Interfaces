@@ -24,6 +24,7 @@ public class PanelLista extends JPanel {
 	public JPanel panelUds;
 	public JLabel lblUds;
 	public JLabel lblTituloUds;
+	public JLabel LblTituloComida;
 
 	/**
 	 * Create the panel.
@@ -41,12 +42,12 @@ public class PanelLista extends JPanel {
 		PanelModUds = new JPanel();
 		PanelModUds.setBorder(new LineBorder(new Color(0, 0, 0)));
 		PanelModUds.setBackground(new Color(128, 128, 128));
-		PanelModUds.setBounds(29, 28, 387, 349);
+		PanelModUds.setBounds(31, 10, 387, 380);
 		panel.add(PanelModUds);
 		PanelModUds.setLayout(null);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(123, 27, 239, 296);
+		scrollPane.setBounds(123, 61, 239, 296);
 		PanelModUds.add(scrollPane);
 		
 		bTNRestar = new JButton("-");
@@ -57,21 +58,21 @@ public class PanelLista extends JPanel {
 		bTNRestar.setForeground(Color.WHITE);
 		bTNRestar.setFont(new Font("Tahoma", Font.BOLD, 30));
 		bTNRestar.setBackground(Color.BLACK);
-		bTNRestar.setBounds(29, 93, 84, 56);
+		bTNRestar.setBounds(29, 127, 84, 56);
 		PanelModUds.add(bTNRestar);
 		
 		bTNSumar = new JButton("+");
 		bTNSumar.setForeground(Color.WHITE);
 		bTNSumar.setFont(new Font("Tahoma", Font.BOLD, 30));
 		bTNSumar.setBackground(Color.BLACK);
-		bTNSumar.setBounds(29, 27, 84, 56);
+		bTNSumar.setBounds(29, 61, 84, 56);
 		PanelModUds.add(bTNSumar);
 		
 		panelUds = new JPanel();
 		panelUds.setLayout(null);
 		panelUds.setBorder(new LineBorder(new Color(255, 255, 255)));
 		panelUds.setBackground(Color.BLACK);
-		panelUds.setBounds(29, 203, 84, 120);
+		panelUds.setBounds(29, 237, 84, 120);
 		PanelModUds.add(panelUds);
 		
 		lblUds = new JLabel("20");
@@ -85,8 +86,15 @@ public class PanelLista extends JPanel {
 		lblTituloUds.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTituloUds.setForeground(Color.WHITE);
 		lblTituloUds.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblTituloUds.setBounds(29, 159, 84, 34);
+		lblTituloUds.setBounds(29, 193, 84, 34);
 		PanelModUds.add(lblTituloUds);
+		
+		LblTituloComida = new JLabel("New label");
+		LblTituloComida.setForeground(new Color(255, 255, 255));
+		LblTituloComida.setFont(new Font("Tahoma", Font.BOLD, 20));
+		LblTituloComida.setHorizontalAlignment(SwingConstants.CENTER);
+		LblTituloComida.setBounds(0, 10, 387, 41);
+		PanelModUds.add(LblTituloComida);
 		
 		btnAtras = new JButton("Atras");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 10));
