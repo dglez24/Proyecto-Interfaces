@@ -692,7 +692,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		if(e.getSource() == vista.PanelLista.bTNRestar) {
 			if(vista.PanelLista.lblUds.getText().equals("0")) {
 				
-			} else {
+			} else { 
 			for(int i = 0; i < comidas.size(); i++) {
 				if(comidas.get(i).getNombre().equals(vista.PanelLista.LblTituloComida.getText())) {
 					comidas.get(i).setCantidad(comidas.get(i).getCantidad() - 1);
