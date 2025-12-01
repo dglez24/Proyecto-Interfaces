@@ -9,19 +9,21 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PanelLista extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	public JPanel panel;
 	public JButton btnAtras;
+	public JPanel PanelModUds;
 	public JScrollPane scrollPane;
-	public JList list;
-	public JButton BTNRestar;
-	public JButton BTNSumar;
-	public JPanel PanelUds;
-	public JLabel LblUds;
-	public JLabel LblTituloUds;
+	public JButton bTNRestar;
+	public JButton bTNSumar;
+	public JPanel panelUds;
+	public JLabel lblUds;
+	public JLabel lblTituloUds;
 
 	/**
 	 * Create the panel.
@@ -36,47 +38,55 @@ public class PanelLista extends JPanel {
 		add(panel);
 		panel.setLayout(null);
 		
+		PanelModUds = new JPanel();
+		PanelModUds.setBorder(new LineBorder(new Color(0, 0, 0)));
+		PanelModUds.setBackground(new Color(128, 128, 128));
+		PanelModUds.setBounds(29, 28, 387, 349);
+		panel.add(PanelModUds);
+		PanelModUds.setLayout(null);
+		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(128, 35, 399, 331);
-		panel.add(scrollPane);
+		scrollPane.setBounds(123, 27, 239, 296);
+		PanelModUds.add(scrollPane);
 		
-		list = new JList();
-		scrollPane.setViewportView(list);
+		bTNRestar = new JButton("-");
+		bTNRestar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		bTNRestar.setForeground(Color.WHITE);
+		bTNRestar.setFont(new Font("Tahoma", Font.BOLD, 30));
+		bTNRestar.setBackground(Color.BLACK);
+		bTNRestar.setBounds(29, 93, 84, 56);
+		PanelModUds.add(bTNRestar);
 		
-		BTNRestar = new JButton("-");
-		BTNRestar.setForeground(new Color(255, 255, 255));
-		BTNRestar.setFont(new Font("Tahoma", Font.BOLD, 30));
-		BTNRestar.setBackground(new Color(0, 0, 0));
-		BTNRestar.setBounds(34, 101, 84, 56);
-		panel.add(BTNRestar);
+		bTNSumar = new JButton("+");
+		bTNSumar.setForeground(Color.WHITE);
+		bTNSumar.setFont(new Font("Tahoma", Font.BOLD, 30));
+		bTNSumar.setBackground(Color.BLACK);
+		bTNSumar.setBounds(29, 27, 84, 56);
+		PanelModUds.add(bTNSumar);
 		
-		BTNSumar = new JButton("+");
-		BTNSumar.setForeground(new Color(255, 255, 255));
-		BTNSumar.setFont(new Font("Tahoma", Font.BOLD, 30));
-		BTNSumar.setBackground(new Color(0, 0, 0));
-		BTNSumar.setBounds(34, 35, 84, 56);
-		panel.add(BTNSumar);
+		panelUds = new JPanel();
+		panelUds.setLayout(null);
+		panelUds.setBorder(new LineBorder(new Color(255, 255, 255)));
+		panelUds.setBackground(Color.BLACK);
+		panelUds.setBounds(29, 203, 84, 120);
+		PanelModUds.add(panelUds);
 		
-		PanelUds = new JPanel();
-		PanelUds.setBorder(new LineBorder(new Color(255, 255, 255)));
-		PanelUds.setBackground(new Color(0, 0, 0));
-		PanelUds.setBounds(34, 246, 84, 120);
-		panel.add(PanelUds);
-		PanelUds.setLayout(null);
+		lblUds = new JLabel("20");
+		lblUds.setHorizontalAlignment(SwingConstants.CENTER);
+		lblUds.setForeground(Color.WHITE);
+		lblUds.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblUds.setBounds(10, 6, 64, 104);
+		panelUds.add(lblUds);
 		
-		LblUds = new JLabel("20");
-		LblUds.setFont(new Font("Tahoma", Font.BOLD, 30));
-		LblUds.setHorizontalAlignment(SwingConstants.CENTER);
-		LblUds.setBounds(10, 6, 64, 104);
-		LblUds.setForeground(new Color(255, 255, 255));
-		PanelUds.add(LblUds);
-		
-		LblTituloUds = new JLabel("Uds");
-		LblTituloUds.setFont(new Font("Tahoma", Font.BOLD, 30));
-		LblTituloUds.setForeground(new Color(255, 255, 255));
-		LblTituloUds.setHorizontalAlignment(SwingConstants.CENTER);
-		LblTituloUds.setBounds(34, 202, 84, 34);
-		panel.add(LblTituloUds);
+		lblTituloUds = new JLabel("Uds");
+		lblTituloUds.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTituloUds.setForeground(Color.WHITE);
+		lblTituloUds.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblTituloUds.setBounds(29, 159, 84, 34);
+		PanelModUds.add(lblTituloUds);
 		
 		btnAtras = new JButton("Atras");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 10));
