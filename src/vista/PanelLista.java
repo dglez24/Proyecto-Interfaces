@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JProgressBar;
 
 public class PanelLista extends JPanel {
 
@@ -26,6 +27,11 @@ public class PanelLista extends JPanel {
 	public JLabel lblTituloUds;
 	public JLabel LblTituloComida;
 	public JList listacomidas;
+	public JPanel panelModUds;
+	public JProgressBar Barracomida;
+	public JLabel LblTitVentas;
+	public JLabel LblVentas;
+	public JLabel LblPorcentaje;
 
 	/**
 	 * Create the panel.
@@ -43,7 +49,7 @@ public class PanelLista extends JPanel {
 		PanelModUds = new JPanel();
 		PanelModUds.setBorder(new LineBorder(new Color(0, 0, 0)));
 		PanelModUds.setBackground(new Color(128, 128, 128));
-		PanelModUds.setBounds(31, 10, 387, 380);
+		PanelModUds.setBounds(24, 10, 387, 380);
 		panel.add(PanelModUds);
 		PanelModUds.setLayout(null);
 		
@@ -79,7 +85,7 @@ public class PanelLista extends JPanel {
 		panelUds.setBounds(29, 237, 84, 120);
 		PanelModUds.add(panelUds);
 		
-		lblUds = new JLabel("20");
+		lblUds = new JLabel("0");
 		lblUds.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUds.setForeground(Color.WHITE);
 		lblUds.setFont(new Font("Tahoma", Font.BOLD, 30));
@@ -93,12 +99,44 @@ public class PanelLista extends JPanel {
 		lblTituloUds.setBounds(29, 193, 84, 34);
 		PanelModUds.add(lblTituloUds);
 		
-		LblTituloComida = new JLabel("New label");
+		LblTituloComida = new JLabel("Titulo");
 		LblTituloComida.setForeground(new Color(255, 255, 255));
 		LblTituloComida.setFont(new Font("Tahoma", Font.BOLD, 20));
 		LblTituloComida.setHorizontalAlignment(SwingConstants.CENTER);
 		LblTituloComida.setBounds(0, 10, 387, 41);
 		PanelModUds.add(LblTituloComida);
+		
+		panelModUds = new JPanel();
+		panelModUds.setLayout(null);
+		panelModUds.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panelModUds.setBackground(Color.GRAY);
+		panelModUds.setBounds(442, 104, 387, 178);
+		panel.add(panelModUds);
+		
+		Barracomida = new JProgressBar();
+		Barracomida.setForeground(new Color(0, 255, 0));
+		Barracomida.setBounds(28, 81, 331, 22);
+		panelModUds.add(Barracomida);
+		
+		LblTitVentas = new JLabel("Ventas totales:");
+		LblTitVentas.setHorizontalAlignment(SwingConstants.LEFT);
+		LblTitVentas.setFont(new Font("Tahoma", Font.BOLD, 35));
+		LblTitVentas.setForeground(new Color(255, 255, 255));
+		LblTitVentas.setBounds(28, 10, 301, 61);
+		panelModUds.add(LblTitVentas);
+		
+		LblVentas = new JLabel("0");
+		LblVentas.setFont(new Font("Tahoma", Font.BOLD, 35));
+		LblVentas.setForeground(new Color(255, 255, 255));
+		LblVentas.setBounds(304, 10, 73, 61);
+		panelModUds.add(LblVentas);
+		
+		LblPorcentaje = new JLabel("0 %");
+		LblPorcentaje.setFont(new Font("Tahoma", Font.BOLD, 30));
+		LblPorcentaje.setForeground(new Color(255, 255, 255));
+		LblPorcentaje.setHorizontalAlignment(SwingConstants.CENTER);
+		LblPorcentaje.setBounds(28, 113, 331, 51);
+		panelModUds.add(LblPorcentaje);
 		
 		btnAtras = new JButton("Atras");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 10));
