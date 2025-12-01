@@ -704,6 +704,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			usuarios.get(posicion).setCompras(0);
 			vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 			System.out.println(usuarios.get(posicion).getCompras());
+			vista.PanelCarrito.LblCobroTotal.setText("0");
 			
 		}
 		if(e.getSource()==vista.PanelCarrito.BtnPagar) {
@@ -712,6 +713,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			modelo.clear();
 			usuarios.get(posicion).setCompras(0);
 			vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
+			vista.PanelCarrito.LblCobroTotal.setText("0");
 		}
 		
 		
@@ -894,19 +896,21 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	}
 	public void añadirJlist(HashMap<Comida,Integer>carrito,DefaultListModel<String> modelo) {
 		modelo.clear();
-		
+		 double recibo=0;
 		for (Map.Entry<Comida, Integer> entry : carrito.entrySet()) {
 			if(entry.getValue()>0) {
 				Comida comida = entry.getKey();
 			    int cantidad = entry.getValue();
 				
-			    double recibo=+total;
+			     
 			    double total = cantidad * comida.getPrecio();
+			    recibo+=total;
 				 
 			    modelo.addElement(cantidad + " uds → " + comida.getNombre() + " | Total: " + total + "€");
 			    vista.PanelCarrito.list.setModel(modelo);
-			    vista.PanelCarrito.LblCobroTotal.setText(String.valueOf(recibo));
+			    
 			} 
+			vista.PanelCarrito.LblCobroTotal.setText(String.valueOf(recibo)+" $");
 		}
 	}
 	public static void resetearValores(HashMap<Comida, Integer> cantidades) {
