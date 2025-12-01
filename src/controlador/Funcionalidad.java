@@ -453,17 +453,17 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			if(a == b && b == c) {
 				if(a == 1) {
 					usuarios.get(posicion).setG1(true);
+					vista.PanelHamburguesa.LblPremio.setText("Bebida Gratis");
 				} else if (a == 2) {
 					usuarios.get(posicion).setG2(true);
+					vista.PanelHamburguesa.LblPremio.setText("Hamburguesa Gratis");
 				} else if (a == 3) {
 					usuarios.get(posicion).setG3(true);
+					vista.PanelHamburguesa.LblPremio.setText("Complemento Gratis");
 				}
 			} else {
 				//fallo
 			}
-			
-			
-			
 			}
 		}
 		
@@ -484,8 +484,6 @@ public class Funcionalidad implements ActionListener,MouseListener{
 				vista.BTNModificacion.setEnabled(true);
 			}
 		}
-		
-		
 		if(e.getSource() == vista.BTNHamburguesa) {
 			hp.setFin(true);
 			hpc.setFin(true);
@@ -539,7 +537,6 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			tipo=4;
 			habilitar(tipo);
 		}
-		
 		if(e.getSource() == vista.BTNPromociones) {
 			
 			hp.setFin(true);
@@ -602,11 +599,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			vista.PanelLista.LblTituloComida.setText(comidas.get(0).getNombre());
 			vista.PanelLista.lblUds.setText(String.valueOf(comidas.get(0).getCantidad()));
 		}
-		
 		if(e.getSource() == vista.BTNCarrito) {
-			
-
-			
 			if(vista.PanelCarrito.isVisible()) {
 				vista.PanelCarrito.setVisible(false);
 				vista.BTNHamburguesa.setEnabled(true);
@@ -815,7 +808,6 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			vista.PanelHamburguesa.BtnBebi.setEnabled(true);
 			vista.PanelHamburguesa.BtnHambu.setEnabled(true);
 		}
-		
 	}
 	
 	public void comprobarcarrito() {
@@ -843,28 +835,22 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			} else if(tipo == 2) {
 				pos =+ 3;
 				if(c.getKey().equals(comidas.get(pos))) {
-					if(c.getKey().equals(comidas.get(pos))) {
-						if(c.getKey().getCantidad()-c.getValue()<=0) {
-							existencias=true;
-						}
+					if(c.getKey().getCantidad()-c.getValue()<=0) {
+						existencias=true;
 					}
 				}
 			} else if(tipo == 3) {
 				pos =+ 6;
 				if(c.getKey().equals(comidas.get(pos))) {
-					if(c.getKey().equals(comidas.get(pos))) {
-						if(c.getKey().getCantidad()-c.getValue()<=0) {
-							existencias=true;
-						}
+					if(c.getKey().getCantidad()-c.getValue()<=0) {
+						existencias=true;
 					}
 				}
 			} else if(tipo == 4) {
 				pos =+ 9;
 				if(c.getKey().equals(comidas.get(pos))) {
-					if(c.getKey().equals(comidas.get(pos))) {
-						if(c.getKey().getCantidad()-c.getValue()<=0) {
-							existencias=true;
-						}
+					if(c.getKey().getCantidad()-c.getValue()<=0) {
+						existencias=true;
 					}
 				}	
 			}
@@ -898,8 +884,6 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	        }
 	    }
 	}
-
-	
 	public void añadirJlist(HashMap<Comida,Integer>carrito,DefaultListModel<String> modelo) {
 		modelo.clear();
 		for (Map.Entry<Comida, Integer> entry : carrito.entrySet()) {
@@ -928,6 +912,9 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			this.vista.PanelLista.LblTituloComida.setText(comidas.get(posicion).getNombre());
 			this.vista.PanelLista.lblUds.setText(String.valueOf(comidas.get(posicion).getCantidad()));
 		}
+		
+	}
+	public void contadorVentas(ArrayList<Comida>comidas,HashMap<Comida,Integer>cantidades) {
 		
 	}
 
