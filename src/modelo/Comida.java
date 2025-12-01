@@ -4,7 +4,7 @@ public class Comida {
 	private String Nombre;
 	private String Foto;
 	private double Precio;
-	private int Cantidad,tipo,vendido;
+	private int Cantidad,tipo,ventas;
 	
 	
 	public Comida(String Nombre, String Foto, double Precio, int Cantidad,int tipo) {
@@ -13,7 +13,7 @@ public class Comida {
 		this.Precio = Precio;
 		this.Cantidad = Cantidad;
 		this.tipo=tipo;
-		this.vendido=0;
+		this.ventas=0;
 	}
 
 	public String getNombre() {
@@ -62,11 +62,11 @@ public class Comida {
 	}
 
 	public int getVendido() {
-		return vendido;
+		return ventas;
 	}
 
 	public void setVendido(int vendido) {
-		this.vendido = vendido;
+		this.ventas = vendido;
 	}
 	
 	

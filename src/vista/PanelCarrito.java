@@ -23,6 +23,8 @@ public class PanelCarrito extends JPanel {
 	public JList list;
 	public JButton BtnEliminar;
 	public JButton BtnPagar;
+	public JLabel LblTotalPagar;
+	public JLabel LblCobroTotal;
 
 	public PanelCarrito() {
 		setBorder(new EmptyBorder(0, 2, 0, 0));
@@ -54,6 +56,15 @@ public class PanelCarrito extends JPanel {
 		BtnPagar.setBackground(new Color(0, 255, 0));
 		BtnPagar.setBounds(161, 308, 116, 40);
 		add(BtnPagar);
+		
+		LblTotalPagar = new JLabel("Total a pagar:");
+		LblTotalPagar.setHorizontalAlignment(SwingConstants.CENTER);
+		LblTotalPagar.setBounds(290, 265, 99, 23);
+		add(LblTotalPagar);
+		
+		LblCobroTotal = new JLabel("");
+		LblCobroTotal.setBounds(395, 265, 45, 23);
+		add(LblCobroTotal);
 
 	}
 }
