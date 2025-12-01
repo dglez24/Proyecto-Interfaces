@@ -639,6 +639,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		
 		if(e.getSource() == vista.PanelHamburguesa.img1) {
 			int pos = 0;
+			
 			boolean existe=comprobanteStock(pos,tipo,comidas,cantidades);
 			if(!existe) {
 				comprobanteCarrito( pos, tipo, comidas, cantidades);
@@ -648,6 +649,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		}
 		if(e.getSource() == vista.PanelHamburguesa.img2) {
 			int pos = 1;
+			
 			boolean existe=comprobanteStock(pos,tipo,comidas,cantidades);
 			if(!existe) {
 				comprobanteCarrito( pos, tipo, comidas, cantidades);
@@ -657,6 +659,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		}
 		if(e.getSource() == vista.PanelHamburguesa.img3) {
 			int pos = 2;
+			
 			boolean existe=comprobanteStock(pos,tipo,comidas,cantidades);
 			if(!existe) {
 				comprobanteCarrito( pos, tipo, comidas, cantidades);
@@ -836,8 +839,8 @@ public class Funcionalidad implements ActionListener,MouseListener{
 					}
 				}
 			} else if(tipo == 2) {
-				pos =+ 3;
-				if(c.getKey().equals(comidas.get(pos))) {
+				int prueba=pos+3;
+				if(c.getKey().equals(comidas.get(prueba))) {
 					System.out.println("Se han cogido "+c.getValue());
 					if(c.getKey().getCantidad()-c.getValue()<=0) {
 						System.out.println("Se han cogido "+c.getValue());
@@ -845,8 +848,8 @@ public class Funcionalidad implements ActionListener,MouseListener{
 					}
 				}
 			} else if(tipo == 3) {
-				pos =+ 6;
-				if(c.getKey().equals(comidas.get(pos))) {
+				int prueba=pos+6;
+				if(c.getKey().equals(comidas.get(prueba))) {
 					System.out.println("Se han cogido "+c.getValue());
 					if(c.getKey().getCantidad()-c.getValue()<=0) {
 						System.out.println("Se han cogido "+c.getValue());
@@ -854,8 +857,8 @@ public class Funcionalidad implements ActionListener,MouseListener{
 					}
 				}
 			} else if(tipo == 4) {
-				pos =+ 9;
-				if(c.getKey().equals(comidas.get(pos))) {
+				int prueba=pos+9;
+				if(c.getKey().equals(comidas.get(prueba))) {
 					System.out.println("Se han cogido "+c.getValue());
 					if(c.getKey().getCantidad()-c.getValue()<=0) {
 						System.out.println("Se han cogido "+c.getValue());
@@ -864,6 +867,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 				}	
 			}
 		}
+		System.out.println("DEBUG → tipo = " + tipo + ", pos inicial = " + pos);
 		return existencias;
 	}
 	
@@ -895,19 +899,9 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			if(entry.getValue()>0) {
 				Comida comida = entry.getKey();
 			    int cantidad = entry.getValue();
-				double total = cantidad * comida.getPrecio();
+				
 			    double recibo=+total;
-				/*if(usuarios.get(posicion).isG1()&&entry.getKey().getTipo()==3) {
-					usuarios.get(posicion).setG1(false);
-					double total = cantidad-1 * comida.getPrecio();
-				}else if(usuarios.get(posicion).isG2()) {
-					usuarios.get(posicion).setG2(false);
-					double total = cantidad-1 * comida.getPrecio();
-				}else if(usuarios.get(posicion).isG3()&&entry.getKey().getTipo()==2) {
-					usuarios.get(posicion).setG3(false);
-					double total = cantidad-1 * comida.getPrecio();
-				}else {
-				}*/
+			    double total = cantidad * comida.getPrecio();
 				 
 			    modelo.addElement(cantidad + " uds → " + comida.getNombre() + " | Total: " + total + "€");
 			    vista.PanelCarrito.list.setModel(modelo);
@@ -948,6 +942,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		}
 		
 	}
+	
 	
 	@Override
 	public void mousePressed(MouseEvent e) {
