@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.border.LineBorder;
 
 public class PanelHamburguesa extends JPanel {
 
@@ -36,6 +37,9 @@ public class PanelHamburguesa extends JPanel {
 	public JButton BtnPost;
 	public JLabel LblAlertaStock;
 	public JLabel LblPremio;
+	public JPanel panel_2;
+	public JPanel panel_3;
+	public JPanel panel_4;
 
 	/**
 	 * Create the panel.
@@ -64,24 +68,6 @@ public class PanelHamburguesa extends JPanel {
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
-		nom1 = new JLabel("Texto prod 1");
-		nom1.setForeground(new Color(255, 255, 255));
-		nom1.setHorizontalAlignment(SwingConstants.CENTER);
-		nom1.setBounds(48, 198, 177, 13);
-		panel_1.add(nom1);
-		
-		nom2 = new JLabel("Texto prod 2");
-		nom2.setHorizontalAlignment(SwingConstants.CENTER);
-		nom2.setForeground(new Color(255, 255, 255));
-		nom2.setBounds(334, 198, 177, 13);
-		panel_1.add(nom2);
-		
-		nom3 = new JLabel("Texto prod 3");
-		nom3.setHorizontalAlignment(SwingConstants.CENTER);
-		nom3.setForeground(new Color(255, 255, 255));
-		nom3.setBounds(626, 198, 177, 13);
-		panel_1.add(nom3);
-		
 		img1 = new JButton("New button");
 		img1.setBounds(61, 10, 156, 156);
 		panel_1.add(img1);
@@ -93,21 +79,6 @@ public class PanelHamburguesa extends JPanel {
 		img3 = new JButton("New button");
 		img3.setBounds(638, 10, 156, 156);
 		panel_1.add(img3);
-		
-		precio1 = new JLabel("Precio 1");
-		precio1.setHorizontalAlignment(SwingConstants.CENTER);
-		precio1.setBounds(111, 221, 44, 12);
-		panel_1.add(precio1);
-		
-		precio2 = new JLabel("Precio 2");
-		precio2.setHorizontalAlignment(SwingConstants.CENTER);
-		precio2.setBounds(400, 221, 44, 12);
-		panel_1.add(precio2);
-		
-		precio3 = new JLabel("Precio 3");
-		precio3.setHorizontalAlignment(SwingConstants.CENTER);
-		precio3.setBounds(696, 221, 44, 12);
-		panel_1.add(precio3);
 		
 		BtnHambu = new JButton("Hamburguesas");
 		BtnHambu.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 10));
@@ -132,6 +103,66 @@ public class PanelHamburguesa extends JPanel {
 		BtnPost.setBackground(new Color(255, 255, 128));
 		BtnPost.setBounds(675, 327, 141, 20);
 		panel_1.add(BtnPost);
+		
+		panel_2 = new JPanel();
+		panel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_2.setBackground(new Color(255, 255, 128));
+		panel_2.setBounds(51, 176, 177, 99);
+		panel_1.add(panel_2);
+		panel_2.setLayout(null);
+		
+		precio1 = new JLabel("Precio 1");
+		precio1.setFont(new Font("Stencil", Font.PLAIN, 16));
+		precio1.setBounds(10, 47, 157, 13);
+		panel_2.add(precio1);
+		precio1.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		nom1 = new JLabel("Texto prod 1");
+		nom1.setBounds(0, 10, 177, 14);
+		panel_2.add(nom1);
+		nom1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		nom1.setForeground(new Color(0, 0, 0));
+		nom1.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		panel_3 = new JPanel();
+		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_3.setBackground(new Color(255, 255, 128));
+		panel_3.setBounds(333, 176, 177, 99);
+		panel_1.add(panel_3);
+		panel_3.setLayout(null);
+		
+		nom2 = new JLabel("Texto prod 2");
+		nom2.setBounds(0, 10, 177, 13);
+		panel_3.add(nom2);
+		nom2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		nom2.setHorizontalAlignment(SwingConstants.CENTER);
+		nom2.setForeground(new Color(0, 0, 0));
+		
+		precio2 = new JLabel("Precio 2");
+		precio2.setFont(new Font("Stencil", Font.PLAIN, 16));
+		precio2.setBounds(10, 47, 157, 12);
+		panel_3.add(precio2);
+		precio2.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		panel_4 = new JPanel();
+		panel_4.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_4.setBackground(new Color(255, 255, 128));
+		panel_4.setBounds(626, 179, 177, 99);
+		panel_1.add(panel_4);
+		panel_4.setLayout(null);
+		
+		nom3 = new JLabel("Texto prod 3");
+		nom3.setBounds(0, 10, 177, 13);
+		panel_4.add(nom3);
+		nom3.setFont(new Font("Tahoma", Font.BOLD, 11));
+		nom3.setHorizontalAlignment(SwingConstants.CENTER);
+		nom3.setForeground(new Color(0, 0, 0));
+		
+		precio3 = new JLabel("Precio 3");
+		precio3.setFont(new Font("Stencil", Font.PLAIN, 16));
+		precio3.setBounds(10, 46, 157, 12);
+		panel_4.add(precio3);
+		precio3.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		LblAlertaStock = new JLabel("");
 		LblAlertaStock.setFont(new Font("Tahoma", Font.PLAIN, 14));
