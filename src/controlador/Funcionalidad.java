@@ -120,8 +120,8 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		comidas.add(new Comida("Helado de chocolate","imagenes/Elado.png",3.99,5,4));
 		comidas.add(new Comida("Batido de vainilla","imagenes/vanila.png",5.99,13,4));
 		comidas.add(new Comida("Natillas","imagenes/tillas.png",1.99,17,4));
-	/*	comidas.add(new Comida("Oferta burguer y bebida","imagenes/vanila.png",13.99,4,5));
-		comidas.add(new Comida("Oferta triple burguer","imagenes/tillas.png",19.99,7,5));*/
+		comidas.add(new Comida("Oferta burguer y bebida","imagenes/vanila.png",13.99,4,5));
+		comidas.add(new Comida("Oferta triple burguer","imagenes/tillas.png",19.99,7,5));
 		usuarios.add(new Usuario("Juan", "Perez", "a", "a",false));
 		usuarios.add(new Usuario("Manolo", "Montes", "b", "b",true));
 		
@@ -669,10 +669,29 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		}
 		
 		if(e.getSource() == vista.PanelPromocion.BTNAnadirOf1) {
-			
+			for(Map.Entry<Comida, Integer> c : cantidades.entrySet()) {
+				if(c.getKey().equals(comidas.get(12))) {
+					 cantidades.put(c.getKey(), c.getValue() + 1);
+				} 
+
+
+			}
+			añadirJlist(cantidades, modelo);
+			anadircarro();
+
+
 		}
 		
 		if(e.getSource() == vista.PanelPromocion.BTNAnadirOf2) {
+			for(Map.Entry<Comida, Integer> c : cantidades.entrySet()) {
+				if(c.getKey().equals(comidas.get(13))) {
+					 cantidades.put(c.getKey(), c.getValue() + 1);
+				} 
+
+
+			}
+			añadirJlist(cantidades, modelo);
+			anadircarro();
 			
 		}
 		
@@ -886,7 +905,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	        if (entry.getKey().equals(comidas.get(pos))) {
 	            cantidades.put(entry.getKey(), entry.getValue() + 1);
 	            
-	            vista.PanelHamburguesa.LblAlertaStock.setText("Se ha añadido 1 producto");
+	           vista.PanelHamburguesa.LblAlertaStock.setText("Se ha añadido 1 producto");
 	           añadirJlist(cantidades,modelo);
 	            
 	            anadircarro();
@@ -913,6 +932,8 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			vista.PanelCarrito.LblCobroTotal.setText(String.valueOf(recibo)+" $");
 		}
 	}
+	
+	
 	public static void resetearValores(HashMap<Comida, Integer> cantidades) {
 	    for (Comida key : cantidades.keySet()) {
 	    	cantidades.put(key, 0);
