@@ -19,7 +19,7 @@ public class Usuario {
 		this.Correo = correo;
 		this.Contra = contra;
 		this.pedido = 0;
-		this.tirada = 100;
+		this.tirada = 1;
 		this.admin=admin;
 		this.g1 = false;
 		this.g2 = false;
