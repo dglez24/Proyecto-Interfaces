@@ -112,7 +112,7 @@ public class PanelHamburguesa extends JPanel {
 		panel_2.setLayout(null);
 		
 		precio1 = new JLabel("Precio 1");
-		precio1.setFont(new Font("Stencil", Font.PLAIN, 16));
+		precio1.setFont(new Font("Stencil", Font.PLAIN, 18));
 		precio1.setBounds(10, 47, 157, 13);
 		panel_2.add(precio1);
 		precio1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -139,7 +139,7 @@ public class PanelHamburguesa extends JPanel {
 		nom2.setForeground(new Color(0, 0, 0));
 		
 		precio2 = new JLabel("Precio 2");
-		precio2.setFont(new Font("Stencil", Font.PLAIN, 16));
+		precio2.setFont(new Font("Stencil", Font.PLAIN, 18));
 		precio2.setBounds(10, 47, 157, 12);
 		panel_3.add(precio2);
 		precio2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -159,7 +159,7 @@ public class PanelHamburguesa extends JPanel {
 		nom3.setForeground(new Color(0, 0, 0));
 		
 		precio3 = new JLabel("Precio 3");
-		precio3.setFont(new Font("Stencil", Font.PLAIN, 16));
+		precio3.setFont(new Font("Stencil", Font.PLAIN, 18));
 		precio3.setBounds(10, 46, 157, 12);
 		panel_4.add(precio3);
 		precio3.setHorizontalAlignment(SwingConstants.CENTER);

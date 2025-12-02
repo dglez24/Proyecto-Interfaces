@@ -118,17 +118,17 @@ public class PanelLista extends JPanel {
 		Barracomida.setBounds(28, 81, 331, 22);
 		panelModUds.add(Barracomida);
 		
-		LblTitVentas = new JLabel("Ventas totales:");
+		LblTitVentas = new JLabel("Ventas producto:");
 		LblTitVentas.setHorizontalAlignment(SwingConstants.LEFT);
-		LblTitVentas.setFont(new Font("Tahoma", Font.BOLD, 35));
+		LblTitVentas.setFont(new Font("Tahoma", Font.BOLD, 30));
 		LblTitVentas.setForeground(new Color(255, 255, 255));
-		LblTitVentas.setBounds(28, 10, 301, 61);
+		LblTitVentas.setBounds(28, 10, 275, 61);
 		panelModUds.add(LblTitVentas);
 		
 		LblVentas = new JLabel("0");
-		LblVentas.setFont(new Font("Tahoma", Font.BOLD, 35));
+		LblVentas.setFont(new Font("Tahoma", Font.BOLD, 30));
 		LblVentas.setForeground(new Color(255, 255, 255));
-		LblVentas.setBounds(304, 10, 73, 61);
+		LblVentas.setBounds(300, 10, 87, 61);
 		panelModUds.add(LblVentas);
 		
 		LblPorcentaje = new JLabel("0 %");
