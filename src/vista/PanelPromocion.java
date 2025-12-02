@@ -34,6 +34,7 @@ public class PanelPromocion extends JPanel {
 	public JLabel lblSoloPor;
 	public JButton BTNAnadirOf2;
 	public JLabel Lblpor3;
+	public JLabel LblAlertaStockPro;
 
 	/**
 	 * Create the panel.
@@ -159,6 +160,13 @@ public class PanelPromocion extends JPanel {
 		Lblpor3.setHorizontalAlignment(SwingConstants.CENTER);
 		Lblpor3.setBounds(237, 96, 64, 64);
 		PanelPro2.add(Lblpor3);
+		
+		LblAlertaStockPro = new JLabel("");
+		LblAlertaStockPro.setHorizontalAlignment(SwingConstants.CENTER);
+		LblAlertaStockPro.setForeground(Color.RED);
+		LblAlertaStockPro.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		LblAlertaStockPro.setBounds(196, 0, 452, 22);
+		panel.add(LblAlertaStockPro);
 		
 		btnAtras = new JButton("Atras");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 10));

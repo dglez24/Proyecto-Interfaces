@@ -669,30 +669,28 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		}
 		
 		if(e.getSource() == vista.PanelPromocion.BTNAnadirOf1) {
-			for(Map.Entry<Comida, Integer> c : cantidades.entrySet()) {
-				if(c.getKey().equals(comidas.get(12))) {
-					 cantidades.put(c.getKey(), c.getValue() + 1);
-				} 
-
-
+			int pos = 12;
+			
+			boolean existe=comprobanteStock(pos,5,comidas,cantidades);
+			if(!existe) {
+				comprobanteCarrito( pos, 5, comidas, cantidades);
+			}else {
+				vista.PanelPromocion.LblAlertaStockPro.setText("No quedan mas productos de este tipo");
 			}
-			añadirJlist(cantidades, modelo);
-			anadircarro();
 
 
 		}
 		
 		if(e.getSource() == vista.PanelPromocion.BTNAnadirOf2) {
-			for(Map.Entry<Comida, Integer> c : cantidades.entrySet()) {
-				if(c.getKey().equals(comidas.get(13))) {
-					 cantidades.put(c.getKey(), c.getValue() + 1);
-				} 
-
-
-			}
-			añadirJlist(cantidades, modelo);
-			anadircarro();
+			int pos = 13;
 			
+			boolean existe=comprobanteStock(pos,5,comidas,cantidades);
+			if(!existe) {
+				comprobanteCarrito( pos, 5, comidas, cantidades);
+			}else {
+				vista.PanelPromocion.LblAlertaStockPro.setText("No quedan mas productos de este tipo");
+			
+			}
 		}
 		
 		if(e.getSource() == vista.PanelLista.bTNSumar) {
@@ -886,6 +884,14 @@ public class Funcionalidad implements ActionListener,MouseListener{
 						existencias=true;
 					}
 				}	
+			}  else if(tipo == 5) {
+				if(c.getKey().equals(comidas.get(pos))) {
+					System.out.println("Se han cogido "+c.getValue());
+					if(c.getKey().getCantidad()-c.getValue()<=0) {
+						System.out.println("Se han cogido "+c.getValue());
+						existencias=true;
+					}
+				}
 			}
 		}
 		System.out.println("DEBUG → tipo = " + tipo + ", pos inicial = " + pos);
@@ -905,7 +911,12 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	        if (entry.getKey().equals(comidas.get(pos))) {
 	            cantidades.put(entry.getKey(), entry.getValue() + 1);
 	            
-	           vista.PanelHamburguesa.LblAlertaStock.setText("Se ha añadido 1 producto");
+	           if(vista.PanelHamburguesa.isVisible()) {
+		           vista.PanelHamburguesa.LblAlertaStock.setText("Se ha añadido 1 producto");
+	           } else if(vista.PanelPromocion.isVisible()) {
+		           vista.PanelPromocion.LblAlertaStockPro.setText("Se ha añadido 1 producto");
+	           }
+	           
 	           añadirJlist(cantidades,modelo);
 	            
 	            anadircarro();
@@ -959,9 +970,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			this.vista.PanelLista.lblUds.setText(String.valueOf(comidas.get(posicion).getCantidad()));
 			if(total==0) {
 				vista.PanelLista.Barracomida.setValue(0);
-				System.out.println(total + "a");
 			}else {
-				System.out.println(total);
 				int progreso=(comidas.get(posicion).getVendido()*100)/total;
 				vista.PanelLista.Barracomida.setValue(progreso);
 				vista.PanelLista.LblPorcentaje.setText(String.valueOf((comidas.get(posicion).getVendido() * 100) / total)+" %");
