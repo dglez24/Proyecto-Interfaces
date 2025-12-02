@@ -953,15 +953,18 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	public void mouseClicked(MouseEvent e) {		
 		
 		if(e.getClickCount() == 2) {
-			vista.PanelLista.LblTitVentas.setText(String.valueOf(total));
 			int posicion = this.vista.PanelLista.listacomidas.locationToIndex(e.getPoint());
+			vista.PanelLista.LblVentas.setText(String.valueOf(comidas.get(posicion).getVendido()));
 			this.vista.PanelLista.LblTituloComida.setText(comidas.get(posicion).getNombre());
 			this.vista.PanelLista.lblUds.setText(String.valueOf(comidas.get(posicion).getCantidad()));
 			if(total==0) {
 				vista.PanelLista.Barracomida.setValue(0);
+				System.out.println(total + "a");
 			}else {
+				System.out.println(total);
 				int progreso=(comidas.get(posicion).getVendido()*100)/total;
 				vista.PanelLista.Barracomida.setValue(progreso);
+				vista.PanelLista.LblPorcentaje.setText(String.valueOf((comidas.get(posicion).getVendido() * 100) / total));
 			}
 			
 		}
