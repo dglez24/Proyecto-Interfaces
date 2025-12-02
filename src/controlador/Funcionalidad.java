@@ -953,7 +953,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	public void contadorVentas(ArrayList<Comida>comidas,HashMap<Comida,Integer>cantidades) {
 		for(Map.Entry<Comida, Integer> c: cantidades.entrySet()) {
 			if(c.getValue()>0) {
-				c.getKey().setVendido(c.getValue());
+				c.getKey().setVendido(c.getKey().getVendido() + c.getValue());
 				c.getKey().setCantidad(c.getKey().getCantidad()-c.getValue());
 				total=total+c.getValue();
 				}
