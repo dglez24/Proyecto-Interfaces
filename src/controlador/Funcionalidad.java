@@ -727,7 +727,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			
 		}
 		if(e.getSource()==vista.PanelCarrito.BtnPagar) {
-			contadorVentas(comidas,cantidades, total);
+			contadorVentas(comidas,cantidades);
 			resetearValores(cantidades);
 			modelo.clear();
 			usuarios.get(posicion).setCompras(0);
@@ -939,13 +939,13 @@ public class Funcionalidad implements ActionListener,MouseListener{
 	    	cantidades.put(key, 0);
 	    }
 	}
-	public void contadorVentas(ArrayList<Comida>comidas,HashMap<Comida,Integer>cantidades,Integer total) {
+	public void contadorVentas(ArrayList<Comida>comidas,HashMap<Comida,Integer>cantidades) {
 		for(Map.Entry<Comida, Integer> c: cantidades.entrySet()) {
 			if(c.getValue()>0) {
 				c.getKey().setVendido(c.getValue());
 				c.getKey().setCantidad(c.getKey().getCantidad()-c.getValue());
 				total=total+c.getValue();
-			}
+				}
 		}
 	}
 	
@@ -964,7 +964,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 				System.out.println(total);
 				int progreso=(comidas.get(posicion).getVendido()*100)/total;
 				vista.PanelLista.Barracomida.setValue(progreso);
-				vista.PanelLista.LblPorcentaje.setText(String.valueOf((comidas.get(posicion).getVendido() * 100) / total));
+				vista.PanelLista.LblPorcentaje.setText(String.valueOf((comidas.get(posicion).getVendido() * 100) / total)+" %");
 			}
 			
 		}
