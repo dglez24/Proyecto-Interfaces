@@ -25,6 +25,7 @@ public class PanelCarrito extends JPanel {
 	public JButton BtnPagar;
 	public JLabel LblTotalPagar;
 	public JLabel LblCobroTotal;
+	public JLabel LblDescuento;
 
 	public PanelCarrito() {
 		setBorder(new EmptyBorder(0, 2, 0, 0));
@@ -65,6 +66,10 @@ public class PanelCarrito extends JPanel {
 		LblCobroTotal = new JLabel("");
 		LblCobroTotal.setBounds(147, 62, 45, 23);
 		add(LblCobroTotal);
+		
+		LblDescuento = new JLabel("Descuento");
+		LblDescuento.setBounds(202, 59, 45, 28);
+		add(LblDescuento);
 
 	}
 }
