@@ -735,7 +735,8 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			vista.BTNCarrito.setText("\n\n🛒" +  usuarios.get(posicion).getCompras());
 			System.out.println(usuarios.get(posicion).getCompras());
 			vista.PanelCarrito.LblCobroTotal.setText("0");
-			
+			vista.PanelCarrito.LblDescuento.setText("");
+
 		}
 		if(e.getSource()==vista.PanelCarrito.BtnPagar) {
 			
@@ -747,10 +748,8 @@ public class Funcionalidad implements ActionListener,MouseListener{
 			vista.PanelCarrito.LblCobroTotal.setText("0");
 			vista.PanelCarrito.LblDescuento.setText("");
 		}
-		
-		
-		
 		}
+	
 	//METODOS DEL PROYECTO
 	public void panelComidas() {
 		vista.PanelHamburguesa.setVisible(true);
