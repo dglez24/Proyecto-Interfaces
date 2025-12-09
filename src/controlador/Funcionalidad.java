@@ -223,6 +223,7 @@ public class Funcionalidad implements ActionListener,MouseListener{
 		
 		if(e.getSource() == vista.BTNCerrarSesion) {
 			resetearValores(cantidades);
+			vista.PanelCarrito.LblDescuento.setText("");
 			if(!vista.PanelRegistro.isVisible()) {
 				vista.LblMenu.setEnabled(false);
 				vista.BTNHamburguesa.setEnabled(false);
