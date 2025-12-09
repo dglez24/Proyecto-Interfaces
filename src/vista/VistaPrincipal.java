@@ -113,6 +113,7 @@ public class VistaPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public VistaPrincipal() {
+		setResizable(false);
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
